@@ -1,0 +1,17 @@
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaNegocio.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaNegocio.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaNegocio.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaDatos.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaEntidad.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaDatos.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaDatos.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaEntidad.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\bin\Debug\CapaEntidad.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.vbprojAssemblyReference.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.Resources.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.vbproj.GenerateResource.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.vbproj.CoreCompileInputs.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.vbproj.CopyComplete
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaNegocio\obj\Debug\CapaNegocio.pdb

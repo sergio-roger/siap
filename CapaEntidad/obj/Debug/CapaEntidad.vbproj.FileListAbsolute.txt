@@ -1,0 +1,10 @@
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\bin\Debug\CapaEntidad.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\bin\Debug\CapaEntidad.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\bin\Debug\CapaEntidad.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.vbprojAssemblyReference.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.Resources.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.vbproj.GenerateResource.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.vbproj.CoreCompileInputs.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaEntidad\obj\Debug\CapaEntidad.pdb

@@ -1,0 +1,14 @@
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaDatos.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaDatos.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaEntidad.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaEntidad.pdb
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\bin\Debug\CapaEntidad.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.vbprojAssemblyReference.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.Resources.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.vbproj.GenerateResource.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.vbproj.CoreCompileInputs.cache
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.vbproj.CopyComplete
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.dll
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\CapaDatos\obj\Debug\CapaDatos.pdb
