@@ -71,7 +71,7 @@ Public Class frm_login
 
     Private Sub btn_iniciar_Click(sender As Object, e As EventArgs) Handles btn_iniciar.Click
         Dim frm As New frm_principal()
-        frm.Show()
+        frm.ShowDialog()
         Me.Hide()
     End Sub
 
