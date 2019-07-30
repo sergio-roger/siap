@@ -1,0 +1,5 @@
+SERVIDOR:DESKTOP-MR73BSK:
+BD:BD_Restaurante:
+USUARIO:sergio:
+CLAVE:1234roger:
+FFECHA:yyyy/MM/dd:

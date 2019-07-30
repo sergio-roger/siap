@@ -11,9 +11,10 @@
     <AssemblyName>SistemaPedidosAutomatizado</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,12 +74,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_login.Designer.vb">
+    <Compile Include="Inicio\frm_login.designer.vb">
       <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.vb">
+    <Compile Include="Inicio\frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inicio\frm_principal.designer.vb">
+      <DependentUpon>frm_principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\frm_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo\Variables.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,8 +104,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frm_login.resx">
+    <EmbeddedResource Include="Inicio\frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\frm_principal.resx">
+      <DependentUpon>frm_principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -127,6 +138,120 @@
       <Project>{855bb66a-2b2d-4a43-8f5f-a8782350acf2}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar_50_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_borrar_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_guardar_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton_nuevo_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_icon-icons.com_73703.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default-image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\experiencia-de-usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_mesero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_mesero_tablet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondopantalla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grabar_50_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_mood_bad_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_mood_bad_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_mood_bad_black_36dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgxdefecto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llaveroja.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milogo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo_50_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo_azul_50_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash_b_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Turn_Off_Icon_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
