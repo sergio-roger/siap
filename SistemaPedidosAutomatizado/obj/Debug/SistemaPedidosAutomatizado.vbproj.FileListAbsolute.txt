@@ -21,3 +21,16 @@ D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAut
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\bin\Debug\CapaDatos.dll
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\bin\Debug\CapaDatos.pdb
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\bin\Debug\CapaDatos.xml
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_modalidad_aux.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_perfil.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_buscar_usuario.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_usuario.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_estado_pedido.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_lista_pedido.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_pedido.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_servir_pedido.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_combo.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_mantCombo.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_mantPlato.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_mesa.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_plato.resources

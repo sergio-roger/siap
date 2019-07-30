@@ -74,6 +74,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion\Configuracion\frm_modalidad_aux.designer.vb">
+      <DependentUpon>frm_modalidad_aux.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Configuracion\frm_modalidad_aux.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Perfil\frm_perfil.designer.vb">
+      <DependentUpon>frm_perfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Perfil\frm_perfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Usuarios\frm_buscar_usuario.designer.vb">
+      <DependentUpon>frm_buscar_usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Usuarios\frm_buscar_usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Usuarios\frm_usuario.designer.vb">
+      <DependentUpon>frm_usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Seguridad\Usuarios\frm_usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio\frm_login.designer.vb">
       <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
@@ -102,8 +126,74 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pedidos\frm_estado_pedido.designer.vb">
+      <DependentUpon>frm_estado_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frm_estado_pedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\frm_lista_pedido.designer.vb">
+      <DependentUpon>frm_lista_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frm_lista_pedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\frm_pedido.designer.vb">
+      <DependentUpon>frm_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frm_pedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\frm_servir_pedido.designer.vb">
+      <DependentUpon>frm_servir_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frm_servir_pedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\frm_combo.designer.vb">
+      <DependentUpon>frm_combo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\frm_combo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\frm_mantCombo.designer.vb">
+      <DependentUpon>frm_mantCombo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\frm_mantCombo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\frm_mantPlato.designer.vb">
+      <DependentUpon>frm_mantPlato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\frm_mantPlato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\frm_mesa.designer.vb">
+      <DependentUpon>frm_mesa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\frm_mesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\frm_plato.designer.vb">
+      <DependentUpon>frm_plato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\frm_plato.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Administracion\Configuracion\frm_modalidad_aux.resx">
+      <DependentUpon>frm_modalidad_aux.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Seguridad\Perfil\frm_perfil.resx">
+      <DependentUpon>frm_perfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Seguridad\Usuarios\frm_buscar_usuario.resx">
+      <DependentUpon>frm_buscar_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Seguridad\Usuarios\frm_usuario.resx">
+      <DependentUpon>frm_usuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +205,33 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frm_estado_pedido.resx">
+      <DependentUpon>frm_estado_pedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frm_lista_pedido.resx">
+      <DependentUpon>frm_lista_pedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frm_pedido.resx">
+      <DependentUpon>frm_pedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frm_servir_pedido.resx">
+      <DependentUpon>frm_servir_pedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\frm_combo.resx">
+      <DependentUpon>frm_combo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\frm_mantCombo.resx">
+      <DependentUpon>frm_mantCombo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\frm_mantPlato.resx">
+      <DependentUpon>frm_mantPlato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\frm_mesa.resx">
+      <DependentUpon>frm_mesa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\frm_plato.resx">
+      <DependentUpon>frm_plato.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +369,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Windows_Turn_Off_Icon_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Auditoria\" />
+    <Folder Include="Facturacion\" />
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
