@@ -14,4 +14,9 @@ Public Class ConexionNegocio
             MsgBox(ex.Message)
         End Try
     End Function
+
+    Public Function getMenuPrincipal(id_Perfil As Integer) As List(Of Menu)
+        Dim datoConexion As New DatosConexion()
+        getMenuPrincipal = datoConexion.getMenuPrincipal(id_Perfil)
+    End Function
 End Class

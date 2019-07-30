@@ -65,14 +65,87 @@ Public Class frm_login
         End Try
     End Function
 
+    Function Validar() As Boolean
+        Try
+            Validar = False
+
+            If txt_usuario.Text = "" Then
+                MsgBox("Ingrese el usuario")
+                txt_usuario.Focus()
+                Exit Function
+            End If
+
+            If txt_clave.Text = "" Then
+                MsgBox("Ingrese la clave del usuario")
+                txt_clave.Focus()
+                Exit Function
+            End If
+
+            Validar = True
+        Catch ex As Exception
+            Validar = False
+        End Try
+    End Function
+
+    Function VerificarUsuario(ByVal usuario As String, ByVal clave As String) As Boolean
+        Try
+            VerificarUsuario = False
+
+            Dim listaAux As New List(Of Usuario)
+            Dim usuarioNegocio As New UsuarioNegocio()
+            Dim n, i As Integer
+
+            listaAux = usuarioNegocio.VerificarUsuario(usuario, clave)
+            usuarioSeccion = listaAux.Item(0)
+            n = listaAux.Count - 1
+
+            'If n >= 0 Then
+            '    For i = 0 To n
+            '        g_str_nombreUsuario = listaAux.Item(i).Nombres
+            '        g_int_perfil = listaAux.Item(i).Id_perfil
+            '        g_int_Id_usuario = listaAux.Item(i).Id
+            '    Next
+            'End If
+
+            VerificarUsuario = True
+        Catch ex As Exception
+            VerificarUsuario = False
+        End Try
+    End Function
+
+    Sub Limpiar()
+        txt_usuario.Text = ""
+        txt_clave.Text = ""
+    End Sub
+
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
         Application.ExitThread()
     End Sub
 
     Private Sub btn_iniciar_Click(sender As Object, e As EventArgs) Handles btn_iniciar.Click
-        Dim frm As New frm_principal()
-        frm.ShowDialog()
-        Me.Hide()
+        Try
+            If Validar() = False Then
+                Exit Sub
+            End If
+
+            If VerificarUsuario(txt_usuario.Text, txt_clave.Text) = True Then
+                Dim frm As New frm_principal()
+                Me.Hide()
+                'frm.int_perfil = g_int_perfil
+                frm.Show()
+            Else
+                MsgBox("Clave de Acceso incorrecta")
+                Limpiar()
+                txt_usuario.Focus()
+            End If
+
+            'Dim miobj As New cls_CE_AccesoAlSistema
+            'miobj.Usu_id = txt_usuario.Text
+            'miobj.Usu_nombres = txt_clave.Text
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load

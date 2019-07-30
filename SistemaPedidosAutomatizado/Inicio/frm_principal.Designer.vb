@@ -27,6 +27,7 @@ Partial Class frm_principal
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.lbl_hora = New System.Windows.Forms.ToolStripLabel()
         Me.lbl_fecha = New System.Windows.Forms.ToolStripLabel()
+        Me.lbl_usuario_estado = New System.Windows.Forms.ToolStripLabel()
         Me.MenuPpal = New System.Windows.Forms.MenuStrip()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_usuario = New System.Windows.Forms.Label()
@@ -46,7 +47,7 @@ Partial Class frm_principal
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_hora, Me.lbl_fecha})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_hora, Me.lbl_fecha, Me.lbl_usuario_estado})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 502)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -69,6 +70,12 @@ Partial Class frm_principal
         Me.lbl_fecha.Size = New System.Drawing.Size(80, 22)
         Me.lbl_fecha.Text = "aki va fecha"
         '
+        'lbl_usuario_estado
+        '
+        Me.lbl_usuario_estado.Name = "lbl_usuario_estado"
+        Me.lbl_usuario_estado.Size = New System.Drawing.Size(88, 22)
+        Me.lbl_usuario_estado.Text = "ToolStripLabel1"
+        '
         'MenuPpal
         '
         Me.MenuPpal.Location = New System.Drawing.Point(0, 0)
@@ -81,9 +88,9 @@ Partial Class frm_principal
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.lbl_usuario)
-        Me.Panel2.Location = New System.Drawing.Point(14, 94)
+        Me.Panel2.Location = New System.Drawing.Point(12, 79)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(182, 42)
+        Me.Panel2.Size = New System.Drawing.Size(184, 35)
         Me.Panel2.TabIndex = 17
         '
         'lbl_usuario
@@ -92,7 +99,7 @@ Partial Class frm_principal
         Me.lbl_usuario.BackColor = System.Drawing.Color.Transparent
         Me.lbl_usuario.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_usuario.ForeColor = System.Drawing.Color.White
-        Me.lbl_usuario.Location = New System.Drawing.Point(10, 12)
+        Me.lbl_usuario.Location = New System.Drawing.Point(10, 10)
         Me.lbl_usuario.Name = "lbl_usuario"
         Me.lbl_usuario.Size = New System.Drawing.Size(94, 15)
         Me.lbl_usuario.TabIndex = 7
@@ -104,7 +111,7 @@ Partial Class frm_principal
         Me.Panel1.Controls.Add(Me.lbl_perfil)
         Me.Panel1.Location = New System.Drawing.Point(12, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(184, 44)
+        Me.Panel1.Size = New System.Drawing.Size(184, 33)
         Me.Panel1.TabIndex = 16
         '
         'lbl_perfil
@@ -113,7 +120,7 @@ Partial Class frm_principal
         Me.lbl_perfil.BackColor = System.Drawing.Color.Transparent
         Me.lbl_perfil.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_perfil.ForeColor = System.Drawing.Color.White
-        Me.lbl_perfil.Location = New System.Drawing.Point(3, 10)
+        Me.lbl_perfil.Location = New System.Drawing.Point(3, 5)
         Me.lbl_perfil.Name = "lbl_perfil"
         Me.lbl_perfil.Size = New System.Drawing.Size(169, 21)
         Me.lbl_perfil.TabIndex = 5
@@ -163,4 +170,5 @@ Partial Class frm_principal
     Friend WithEvents lbl_usuario As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lbl_perfil As Label
+    Friend WithEvents lbl_usuario_estado As ToolStripLabel
 End Class
