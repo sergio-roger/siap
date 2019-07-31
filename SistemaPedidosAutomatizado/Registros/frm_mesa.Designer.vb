@@ -22,7 +22,7 @@ Partial Class frm_mesa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgv_datos = New System.Windows.Forms.DataGridView()
+        Me.dgv_mesas = New System.Windows.Forms.DataGridView()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_asientos = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,25 +34,25 @@ Partial Class frm_mesa
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_codigo = New System.Windows.Forms.TextBox()
+        Me.txt_id = New System.Windows.Forms.TextBox()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
-        CType(Me.dgv_datos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_mesas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dgv_datos
+        'dgv_mesas
         '
-        Me.dgv_datos.AllowUserToAddRows = False
-        Me.dgv_datos.BackgroundColor = System.Drawing.Color.DodgerBlue
-        Me.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_asientos, Me.col_estado})
-        Me.dgv_datos.Location = New System.Drawing.Point(12, 193)
-        Me.dgv_datos.Name = "dgv_datos"
-        Me.dgv_datos.ReadOnly = True
-        Me.dgv_datos.Size = New System.Drawing.Size(393, 175)
-        Me.dgv_datos.TabIndex = 41
+        Me.dgv_mesas.AllowUserToAddRows = False
+        Me.dgv_mesas.BackgroundColor = System.Drawing.Color.DodgerBlue
+        Me.dgv_mesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_mesas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_asientos, Me.col_estado})
+        Me.dgv_mesas.Location = New System.Drawing.Point(12, 193)
+        Me.dgv_mesas.Name = "dgv_mesas"
+        Me.dgv_mesas.ReadOnly = True
+        Me.dgv_mesas.Size = New System.Drawing.Size(393, 175)
+        Me.dgv_mesas.TabIndex = 41
         '
         'col_id
         '
@@ -60,25 +60,29 @@ Partial Class frm_mesa
         Me.col_id.HeaderText = "ID"
         Me.col_id.Name = "col_id"
         Me.col_id.ReadOnly = True
+        Me.col_id.Width = 50
         '
         'col_codigo
         '
-        Me.col_codigo.HeaderText = "Codigo"
+        Me.col_codigo.HeaderText = "N° Asientos"
         Me.col_codigo.Name = "col_codigo"
         Me.col_codigo.ReadOnly = True
+        Me.col_codigo.Width = 75
         '
         'col_asientos
         '
         Me.col_asientos.FillWeight = 80.0!
-        Me.col_asientos.HeaderText = "Asientos"
+        Me.col_asientos.HeaderText = "Descripcion"
         Me.col_asientos.Name = "col_asientos"
         Me.col_asientos.ReadOnly = True
+        Me.col_asientos.Width = 175
         '
         'col_estado
         '
         Me.col_estado.HeaderText = "Estado"
         Me.col_estado.Name = "col_estado"
         Me.col_estado.ReadOnly = True
+        Me.col_estado.Width = 50
         '
         'Label10
         '
@@ -98,7 +102,7 @@ Partial Class frm_mesa
         Me.GroupBox1.Controls.Add(Me.txt_descripcion)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txt_codigo)
+        Me.GroupBox1.Controls.Add(Me.txt_id)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 50)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(393, 120)
@@ -149,16 +153,17 @@ Partial Class frm_mesa
         Me.Label1.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label1.Location = New System.Drawing.Point(9, 31)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
         Me.Label1.TabIndex = 38
-        Me.Label1.Text = "*  Codigo"
+        Me.Label1.Text = "*  Id"
         '
-        'txt_codigo
+        'txt_id
         '
-        Me.txt_codigo.Location = New System.Drawing.Point(99, 28)
-        Me.txt_codigo.Name = "txt_codigo"
-        Me.txt_codigo.Size = New System.Drawing.Size(80, 20)
-        Me.txt_codigo.TabIndex = 37
+        Me.txt_id.Location = New System.Drawing.Point(99, 28)
+        Me.txt_id.Name = "txt_id"
+        Me.txt_id.ReadOnly = True
+        Me.txt_id.Size = New System.Drawing.Size(80, 20)
+        Me.txt_id.TabIndex = 37
         '
         'btn_eliminar
         '
@@ -207,12 +212,12 @@ Partial Class frm_mesa
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.btn_nuevo)
         Me.Controls.Add(Me.btn_grabar)
-        Me.Controls.Add(Me.dgv_datos)
+        Me.Controls.Add(Me.dgv_mesas)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_mesa"
         Me.Text = "frm_mesa"
-        CType(Me.dgv_datos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_mesas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -223,11 +228,7 @@ Partial Class frm_mesa
     Friend WithEvents btn_eliminar As Button
     Friend WithEvents btn_nuevo As Button
     Friend WithEvents btn_grabar As Button
-    Friend WithEvents dgv_datos As DataGridView
-    Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
-    Friend WithEvents col_asientos As DataGridViewTextBoxColumn
-    Friend WithEvents col_estado As DataGridViewTextBoxColumn
+    Friend WithEvents dgv_mesas As DataGridView
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
@@ -235,5 +236,9 @@ Partial Class frm_mesa
     Friend WithEvents txt_descripcion As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txt_codigo As TextBox
+    Friend WithEvents txt_id As TextBox
+    Friend WithEvents col_id As DataGridViewTextBoxColumn
+    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
+    Friend WithEvents col_asientos As DataGridViewTextBoxColumn
+    Friend WithEvents col_estado As DataGridViewTextBoxColumn
 End Class

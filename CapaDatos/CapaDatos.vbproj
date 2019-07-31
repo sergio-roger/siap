@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosConexion.vb" />
+    <Compile Include="MesaDatos.vb" />
     <Compile Include="Modulos\mod_AccesoDatos.vb" />
     <Compile Include="Modulos\Variables.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
