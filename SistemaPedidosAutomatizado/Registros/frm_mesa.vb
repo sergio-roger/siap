@@ -7,11 +7,23 @@ Public Class frm_mesa
 
     Private Function crearMesa() As Mesa
         Dim mesa As New Mesa()
+        Dim estado As String
 
         mesa.Nombre = txt_descripcion.Text
         mesa.Cantidad = txt_asientos.Text
-        mesa.Estado = "A"
+        mesa.Estado = cmb_estado.SelectedValue
 
+        If (cmb_estado.SelectedValue.Equals("Disponible")) Then
+            estado = "D"
+        ElseIf (cmb_estado.SelectedValue.Equals("Ocupado")) Then
+            estado = "O"
+        ElseIf (cmb_estado.SelectedValue.Equals("No Disponible")) Then
+            estado = "N"
+        Else
+            estado = "M"
+        End If
+
+        mesa.Estado = estado
         Return mesa
     End Function
 

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="ConexionNegocio.vb" />
     <Compile Include="MesaNegocio.vb" />
+    <Compile Include="ModalidadNegocio.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -82,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PlatoNegocio.vb" />
     <Compile Include="UsuarioNegocio.vb" />
   </ItemGroup>
   <ItemGroup>

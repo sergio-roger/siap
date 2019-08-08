@@ -24,7 +24,7 @@ Partial Class frm_modalidad_aux
     Private Sub InitializeComponent()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dgv_datos = New System.Windows.Forms.DataGridView()
+        Me.dgv_modalidad = New System.Windows.Forms.DataGridView()
         Me.per_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.per_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_empieza = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,7 +40,7 @@ Partial Class frm_modalidad_aux
         Me.btn_grabar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.dgv_datos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_modalidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label10
@@ -56,7 +56,7 @@ Partial Class frm_modalidad_aux
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.dgv_datos)
+        Me.GroupBox1.Controls.Add(Me.dgv_modalidad)
         Me.GroupBox1.Controls.Add(Me.date_hora_termina)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.date_hora_empieza)
@@ -69,17 +69,17 @@ Partial Class frm_modalidad_aux
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         '
-        'dgv_datos
+        'dgv_modalidad
         '
-        Me.dgv_datos.AllowUserToAddRows = False
-        Me.dgv_datos.BackgroundColor = System.Drawing.SystemColors.Highlight
-        Me.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.per_Id, Me.per_nombre, Me.col_empieza, Me.col_termina, Me.per_estado})
-        Me.dgv_datos.Location = New System.Drawing.Point(18, 112)
-        Me.dgv_datos.Name = "dgv_datos"
-        Me.dgv_datos.ReadOnly = True
-        Me.dgv_datos.Size = New System.Drawing.Size(431, 150)
-        Me.dgv_datos.TabIndex = 40
+        Me.dgv_modalidad.AllowUserToAddRows = False
+        Me.dgv_modalidad.BackgroundColor = System.Drawing.SystemColors.Highlight
+        Me.dgv_modalidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_modalidad.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.per_Id, Me.per_nombre, Me.col_empieza, Me.col_termina, Me.per_estado})
+        Me.dgv_modalidad.Location = New System.Drawing.Point(18, 112)
+        Me.dgv_modalidad.Name = "dgv_modalidad"
+        Me.dgv_modalidad.ReadOnly = True
+        Me.dgv_modalidad.Size = New System.Drawing.Size(431, 150)
+        Me.dgv_modalidad.TabIndex = 40
         '
         'per_Id
         '
@@ -230,7 +230,7 @@ Partial Class frm_modalidad_aux
         Me.Text = "frm_modalidad_aux"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.dgv_datos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_modalidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,7 +241,7 @@ Partial Class frm_modalidad_aux
     Friend WithEvents btn_nuevo As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents dgv_datos As DataGridView
+    Friend WithEvents dgv_modalidad As DataGridView
     Friend WithEvents per_Id As DataGridViewTextBoxColumn
     Friend WithEvents per_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_empieza As DataGridViewTextBoxColumn
