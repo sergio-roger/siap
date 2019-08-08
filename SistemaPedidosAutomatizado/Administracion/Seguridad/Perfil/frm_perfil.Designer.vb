@@ -29,6 +29,7 @@ Partial Class frm_perfil
         Me.dgv_datos = New System.Windows.Forms.DataGridView()
         Me.per_Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.per_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.per_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.per_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_buscar = New System.Windows.Forms.TextBox()
         Me.btn_eliminar = New System.Windows.Forms.Button()
@@ -48,7 +49,7 @@ Partial Class frm_perfil
         Me.GroupBox1.Controls.Add(Me.txt_buscar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 65)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(363, 267)
+        Me.GroupBox1.Size = New System.Drawing.Size(392, 289)
         Me.GroupBox1.TabIndex = 40
         Me.GroupBox1.TabStop = False
         '
@@ -57,7 +58,7 @@ Partial Class frm_perfil
         Me.txt_descripcion.Location = New System.Drawing.Point(138, 53)
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(204, 36)
+        Me.txt_descripcion.Size = New System.Drawing.Size(240, 36)
         Me.txt_descripcion.TabIndex = 36
         '
         'Label2
@@ -84,11 +85,11 @@ Partial Class frm_perfil
         '
         Me.dgv_datos.AllowUserToAddRows = False
         Me.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.per_Id, Me.per_nombre, Me.per_estado})
+        Me.dgv_datos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.per_Id, Me.per_nombre, Me.per_descripcion, Me.per_estado})
         Me.dgv_datos.Location = New System.Drawing.Point(25, 102)
         Me.dgv_datos.Name = "dgv_datos"
         Me.dgv_datos.ReadOnly = True
-        Me.dgv_datos.Size = New System.Drawing.Size(317, 150)
+        Me.dgv_datos.Size = New System.Drawing.Size(353, 172)
         Me.dgv_datos.TabIndex = 34
         '
         'per_Id
@@ -105,6 +106,12 @@ Partial Class frm_perfil
         Me.per_nombre.ReadOnly = True
         Me.per_nombre.Width = 152
         '
+        'per_descripcion
+        '
+        Me.per_descripcion.HeaderText = "Descripcion"
+        Me.per_descripcion.Name = "per_descripcion"
+        Me.per_descripcion.ReadOnly = True
+        '
         'per_estado
         '
         Me.per_estado.HeaderText = "Estado"
@@ -116,7 +123,7 @@ Partial Class frm_perfil
         '
         Me.txt_buscar.Location = New System.Drawing.Point(138, 19)
         Me.txt_buscar.Name = "txt_buscar"
-        Me.txt_buscar.Size = New System.Drawing.Size(204, 20)
+        Me.txt_buscar.Size = New System.Drawing.Size(240, 20)
         Me.txt_buscar.TabIndex = 31
         '
         'btn_eliminar
@@ -124,7 +131,7 @@ Partial Class frm_perfil
         Me.btn_eliminar.BackColor = System.Drawing.Color.Tomato
         Me.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_eliminar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_borrar_n
-        Me.btn_eliminar.Location = New System.Drawing.Point(402, 228)
+        Me.btn_eliminar.Location = New System.Drawing.Point(410, 228)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(90, 50)
         Me.btn_eliminar.TabIndex = 38
@@ -137,7 +144,7 @@ Partial Class frm_perfil
         Me.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_nuevo.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_nuevo_n
         Me.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_nuevo.Location = New System.Drawing.Point(402, 74)
+        Me.btn_nuevo.Location = New System.Drawing.Point(410, 74)
         Me.btn_nuevo.Name = "btn_nuevo"
         Me.btn_nuevo.Size = New System.Drawing.Size(90, 50)
         Me.btn_nuevo.TabIndex = 39
@@ -150,7 +157,7 @@ Partial Class frm_perfil
         Me.btn_grabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_grabar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_guardar_n
         Me.btn_grabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_grabar.Location = New System.Drawing.Point(402, 148)
+        Me.btn_grabar.Location = New System.Drawing.Point(410, 148)
         Me.btn_grabar.Name = "btn_grabar"
         Me.btn_grabar.Size = New System.Drawing.Size(90, 50)
         Me.btn_grabar.TabIndex = 37
@@ -192,12 +199,13 @@ Partial Class frm_perfil
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents dgv_datos As DataGridView
-    Friend WithEvents per_Id As DataGridViewTextBoxColumn
-    Friend WithEvents per_nombre As DataGridViewTextBoxColumn
-    Friend WithEvents per_estado As DataGridViewTextBoxColumn
     Friend WithEvents txt_buscar As TextBox
     Friend WithEvents btn_eliminar As Button
     Friend WithEvents btn_nuevo As Button
     Friend WithEvents btn_grabar As Button
     Friend WithEvents Label10 As Label
+    Friend WithEvents per_Id As DataGridViewTextBoxColumn
+    Friend WithEvents per_nombre As DataGridViewTextBoxColumn
+    Friend WithEvents per_descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents per_estado As DataGridViewTextBoxColumn
 End Class

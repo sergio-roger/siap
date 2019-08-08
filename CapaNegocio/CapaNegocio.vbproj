@@ -83,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PerfilNegocio.vb" />
     <Compile Include="PlatoNegocio.vb" />
     <Compile Include="UsuarioNegocio.vb" />
   </ItemGroup>
