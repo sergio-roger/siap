@@ -49,10 +49,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -181,6 +188,30 @@
     <Compile Include="Registros\frm_plato.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Factura\frm_factura_rpt.Designer.vb">
+      <DependentUpon>frm_factura_rpt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Factura\frm_factura_rpt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Factura\frm_movimiento.Designer.vb">
+      <DependentUpon>frm_movimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Factura\frm_movimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_disponibles.Designer.vb">
+      <DependentUpon>frm_disponibles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_disponibles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_ventas_platos.Designer.vb">
+      <DependentUpon>frm_ventas_platos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_ventas_platos.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administracion\Configuracion\frm_modalidad_aux.resx">
@@ -233,6 +264,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\frm_plato.resx">
       <DependentUpon>frm_plato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Factura\frm_movimiento.resx">
+      <DependentUpon>frm_movimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PlatosCombos\frm_disponibles.resx">
+      <DependentUpon>frm_disponibles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PlatosCombos\frm_ventas_platos.resx">
+      <DependentUpon>frm_ventas_platos.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -374,7 +414,6 @@
   <ItemGroup>
     <Folder Include="Auditoria\" />
     <Folder Include="Facturacion\" />
-    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
