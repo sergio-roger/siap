@@ -18,4 +18,16 @@ Public Class UsuarioNegocio
             VerificarUsuario = Nothing
         End Try
     End Function
+
+    Public Function getListaPerfiles() As ArrayList
+        Return usuarioDatos.getListaPerfiles()
+    End Function
+
+    Public Function getUsuarios(buscar As String, opcion As String) As List(Of Usuario)
+        Return usuarioDatos.getUsuarios(buscar, opcion)
+    End Function
+
+    Public Function getUsuario(cedula As String) As Usuario
+        Return usuarioDatos.getUsuario(cedula)
+    End Function
 End Class

@@ -164,4 +164,8 @@ Public Class frm_modalidad_aux
 
         End Try
     End Sub
+
+    Private Sub dgv_modalidad_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_modalidad.CellContentClick
+
+    End Sub
 End Class

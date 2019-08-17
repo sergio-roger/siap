@@ -1,6 +1,7 @@
 ﻿Public Class Usuario
     Private _id As Integer
     Private _id_perfil As Integer
+    Private _perfil As String
     Private _cedula As String
     Private _nombres As String
     Private _apellidos As String
@@ -117,6 +118,15 @@
         End Get
         Set(value As String)
             _estado = value
+        End Set
+    End Property
+
+    Public Property Perfil As String
+        Get
+            Return _perfil
+        End Get
+        Set(value As String)
+            _perfil = value
         End Set
     End Property
 End Class

@@ -40,6 +40,7 @@ Partial Class frm_usuario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_cargar = New System.Windows.Forms.Button()
+        Me.pb_foto = New System.Windows.Forms.PictureBox()
         Me.cbo_perfil = New System.Windows.Forms.ComboBox()
         Me.txt_clave = New System.Windows.Forms.TextBox()
         Me.txt_usuario = New System.Windows.Forms.TextBox()
@@ -50,7 +51,6 @@ Partial Class frm_usuario
         Me.txt_nombres = New System.Windows.Forms.TextBox()
         Me.txt_cedula = New System.Windows.Forms.TextBox()
         Me.btn_buscausuario = New System.Windows.Forms.Button()
-        Me.pb_foto = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pb_foto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -140,10 +140,12 @@ Partial Class frm_usuario
         Me.cmb_sexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_sexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_sexo.FormattingEnabled = True
+        Me.cmb_sexo.Items.AddRange(New Object() {"M", "F"})
         Me.cmb_sexo.Location = New System.Drawing.Point(127, 174)
         Me.cmb_sexo.Name = "cmb_sexo"
         Me.cmb_sexo.Size = New System.Drawing.Size(204, 24)
         Me.cmb_sexo.TabIndex = 26
+        Me.cmb_sexo.Visible = False
         '
         'Label11
         '
@@ -154,6 +156,7 @@ Partial Class frm_usuario
         Me.Label11.Size = New System.Drawing.Size(48, 13)
         Me.Label11.TabIndex = 25
         Me.Label11.Text = "*  Sexo"
+        Me.Label11.Visible = False
         '
         'chk_validar
         '
@@ -269,6 +272,17 @@ Partial Class frm_usuario
         Me.btn_cargar.Text = "Seleccionar Imagen"
         Me.btn_cargar.UseVisualStyleBackColor = False
         '
+        'pb_foto
+        '
+        Me.pb_foto.BackColor = System.Drawing.Color.DimGray
+        Me.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pb_foto.Location = New System.Drawing.Point(373, 50)
+        Me.pb_foto.Name = "pb_foto"
+        Me.pb_foto.Size = New System.Drawing.Size(197, 163)
+        Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pb_foto.TabIndex = 10
+        Me.pb_foto.TabStop = False
+        '
         'cbo_perfil
         '
         Me.cbo_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -346,17 +360,6 @@ Partial Class frm_usuario
         Me.btn_buscausuario.Size = New System.Drawing.Size(90, 50)
         Me.btn_buscausuario.TabIndex = 30
         Me.btn_buscausuario.UseVisualStyleBackColor = True
-        '
-        'pb_foto
-        '
-        Me.pb_foto.BackColor = System.Drawing.Color.DimGray
-        Me.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pb_foto.Location = New System.Drawing.Point(373, 50)
-        Me.pb_foto.Name = "pb_foto"
-        Me.pb_foto.Size = New System.Drawing.Size(197, 163)
-        Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pb_foto.TabIndex = 10
-        Me.pb_foto.TabStop = False
         '
         'frm_usuario
         '
