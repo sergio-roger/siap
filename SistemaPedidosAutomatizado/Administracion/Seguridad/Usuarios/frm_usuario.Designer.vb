@@ -51,6 +51,7 @@ Partial Class frm_usuario
         Me.txt_nombres = New System.Windows.Forms.TextBox()
         Me.txt_cedula = New System.Windows.Forms.TextBox()
         Me.btn_buscausuario = New System.Windows.Forms.Button()
+        Me.date_fecha = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pb_foto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -106,6 +107,7 @@ Partial Class frm_usuario
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.Controls.Add(Me.date_fecha)
         Me.GroupBox1.Controls.Add(Me.cmb_sexo)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.chk_validar)
@@ -265,7 +267,7 @@ Partial Class frm_usuario
         Me.btn_cargar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_cargar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cargar.ForeColor = System.Drawing.Color.White
-        Me.btn_cargar.Location = New System.Drawing.Point(373, 230)
+        Me.btn_cargar.Location = New System.Drawing.Point(373, 271)
         Me.btn_cargar.Name = "btn_cargar"
         Me.btn_cargar.Size = New System.Drawing.Size(197, 36)
         Me.btn_cargar.TabIndex = 11
@@ -276,7 +278,7 @@ Partial Class frm_usuario
         '
         Me.pb_foto.BackColor = System.Drawing.Color.DimGray
         Me.pb_foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pb_foto.Location = New System.Drawing.Point(373, 50)
+        Me.pb_foto.Location = New System.Drawing.Point(373, 91)
         Me.pb_foto.Name = "pb_foto"
         Me.pb_foto.Size = New System.Drawing.Size(197, 163)
         Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -361,6 +363,15 @@ Partial Class frm_usuario
         Me.btn_buscausuario.TabIndex = 30
         Me.btn_buscausuario.UseVisualStyleBackColor = True
         '
+        'date_fecha
+        '
+        Me.date_fecha.Enabled = False
+        Me.date_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_fecha.Location = New System.Drawing.Point(370, 54)
+        Me.date_fecha.Name = "date_fecha"
+        Me.date_fecha.Size = New System.Drawing.Size(200, 20)
+        Me.date_fecha.TabIndex = 27
+        '
         'frm_usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -411,4 +422,5 @@ Partial Class frm_usuario
     Friend WithEvents txt_apellidos As TextBox
     Friend WithEvents txt_nombres As TextBox
     Friend WithEvents txt_cedula As TextBox
+    Friend WithEvents date_fecha As DateTimePicker
 End Class

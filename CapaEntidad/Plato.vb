@@ -6,6 +6,7 @@
     Private _precio As String
     Private _estado As String
     Private _descripcion As String
+    Private _fecha As Date
     Private _imagen As Byte()
 
     Public Property Id As Integer
@@ -80,4 +81,12 @@
         End Set
     End Property
 
+    Public Property Fecha As Date
+        Get
+            Return _fecha
+        End Get
+        Set(value As Date)
+            _fecha = value
+        End Set
+    End Property
 End Class

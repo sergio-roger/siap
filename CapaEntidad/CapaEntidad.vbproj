@@ -65,6 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combo.vb" />
     <Compile Include="ElementoCombo.vb" />
     <Compile Include="Menu.vb" />
     <Compile Include="Mesa.vb" />

@@ -86,6 +86,7 @@ Public Class UsuarioDatos
             cmd.Parameters.AddWithValue("@usu_email", usuario.Email)
             cmd.Parameters.AddWithValue("@usu_usuario", usuario.Usuario)
             cmd.Parameters.AddWithValue("@usu_clave", usuario.Clave)
+            cmd.Parameters.AddWithValue("@fecha", usuario.Fecha)
             cmd.Parameters.AddWithValue("@usu_estado", usuario.Estado)
             cmd.Parameters.AddWithValue("@usu_foto", usuario.Foto)
 

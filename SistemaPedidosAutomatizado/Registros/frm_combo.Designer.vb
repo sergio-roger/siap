@@ -49,6 +49,9 @@ Partial Class frm_combo
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
         Me.btn_buscaPCombo = New System.Windows.Forms.Button()
+        Me.txt_descripcion = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.date_fecha = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.panel_descuento.SuspendLayout()
         CType(Me.pb_foto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +70,9 @@ Partial Class frm_combo
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.date_fecha)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.txt_descripcion)
         Me.GroupBox1.Controls.Add(Me.txt_codigo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.panel_descuento)
@@ -199,9 +205,9 @@ Partial Class frm_combo
         '
         'pb_foto
         '
-        Me.pb_foto.Location = New System.Drawing.Point(130, 181)
+        Me.pb_foto.Location = New System.Drawing.Point(130, 205)
         Me.pb_foto.Name = "pb_foto"
-        Me.pb_foto.Size = New System.Drawing.Size(315, 180)
+        Me.pb_foto.Size = New System.Drawing.Size(315, 156)
         Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_foto.TabIndex = 54
         Me.pb_foto.TabStop = False
@@ -351,6 +357,34 @@ Partial Class frm_combo
         Me.btn_buscaPCombo.TabIndex = 50
         Me.btn_buscaPCombo.UseVisualStyleBackColor = True
         '
+        'txt_descripcion
+        '
+        Me.txt_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_descripcion.Location = New System.Drawing.Point(130, 173)
+        Me.txt_descripcion.Name = "txt_descripcion"
+        Me.txt_descripcion.Size = New System.Drawing.Size(204, 22)
+        Me.txt_descripcion.TabIndex = 63
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label8.Location = New System.Drawing.Point(13, 178)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(83, 13)
+        Me.Label8.TabIndex = 64
+        Me.Label8.Text = "* Descripcion"
+        '
+        'date_fecha
+        '
+        Me.date_fecha.Enabled = False
+        Me.date_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_fecha.Location = New System.Drawing.Point(368, 176)
+        Me.date_fecha.Name = "date_fecha"
+        Me.date_fecha.Size = New System.Drawing.Size(180, 20)
+        Me.date_fecha.TabIndex = 65
+        '
         'frm_combo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -402,4 +436,7 @@ Partial Class frm_combo
     Friend WithEvents Label2 As Label
     Friend WithEvents cmb_modalidad As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txt_descripcion As TextBox
+    Friend WithEvents date_fecha As DateTimePicker
 End Class

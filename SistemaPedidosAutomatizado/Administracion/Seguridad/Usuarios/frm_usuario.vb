@@ -30,6 +30,7 @@ Public Class frm_usuario
         'Dim mi_foto As Byte()
         'mi_foto = ImageToByteArray(pb_foto.Image)
         If (user.Foto Is Nothing) Then
+            pb_foto.Image = Image.FromFile(System.AppDomain.CurrentDomain.BaseDirectory() & "img\user_default.jpg")
         Else
             pb_foto.Image = ByteArrayToImage(user.Foto)
         End If
@@ -175,6 +176,8 @@ Public Class frm_usuario
         nuevo.Usuario = txt_usuario.Text
         nuevo.Clave = txt_clave.Text
         nuevo.Foto = ImageToByteArray(pb_foto.Image)
+        nuevo.Fecha = date_fecha.Value.ToShortDateString
+        MsgBox(nuevo.Fecha)
         nuevo.Estado = "A"
 
         Return nuevo

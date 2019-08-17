@@ -40,6 +40,17 @@ Module Helper
         txt.SelectionStart = Len(txt.Text)
     End Sub
 
+    Public Sub mensaje(titulo As String, detalle As String, tipo As String)
+        Select Case tipo
+            Case "info"
+                MsgBox(detalle, MsgBoxStyle.Information, titulo)
+            Case "danger"
+                MsgBox(detalle, MsgBoxStyle.Critical, titulo)
+            Case "alert"
+                MsgBox(detalle, MsgBoxStyle.Exclamation, titulo)
+        End Select
+    End Sub
+
     Public Function fun_validafecha(ByVal strfecha As String) As Boolean
         Try
             fun_validafecha = False

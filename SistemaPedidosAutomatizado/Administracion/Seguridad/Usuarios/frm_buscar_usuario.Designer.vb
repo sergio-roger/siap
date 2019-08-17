@@ -23,9 +23,6 @@ Partial Class frm_buscar_usuario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgv_usuarios = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.cmb_opcion = New System.Windows.Forms.ComboBox()
-        Me.txt_buscar = New System.Windows.Forms.TextBox()
         Me.id1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,6 +36,9 @@ Partial Class frm_buscar_usuario
         Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmb_opcion = New System.Windows.Forms.ComboBox()
+        Me.txt_buscar = New System.Windows.Forms.TextBox()
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -54,36 +54,6 @@ Partial Class frm_buscar_usuario
         Me.dgv_usuarios.ReadOnly = True
         Me.dgv_usuarios.Size = New System.Drawing.Size(640, 131)
         Me.dgv_usuarios.TabIndex = 17
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.cmb_opcion)
-        Me.GroupBox3.Controls.Add(Me.txt_buscar)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(640, 61)
-        Me.GroupBox3.TabIndex = 18
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Buscar"
-        '
-        'cmb_opcion
-        '
-        Me.cmb_opcion.FormattingEnabled = True
-        Me.cmb_opcion.Items.AddRange(New Object() {"Cedula", "Nombres", "Apellidos"})
-        Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
-        Me.cmb_opcion.Name = "cmb_opcion"
-        Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
-        Me.cmb_opcion.TabIndex = 1
-        Me.cmb_opcion.Text = "Apellidos"
-        '
-        'txt_buscar
-        '
-        Me.txt_buscar.Location = New System.Drawing.Point(213, 21)
-        Me.txt_buscar.Name = "txt_buscar"
-        Me.txt_buscar.Size = New System.Drawing.Size(194, 22)
-        Me.txt_buscar.TabIndex = 0
         '
         'id1
         '
@@ -168,6 +138,36 @@ Partial Class frm_buscar_usuario
         Me.estado.Name = "estado"
         Me.estado.ReadOnly = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
+        Me.GroupBox3.Controls.Add(Me.cmb_opcion)
+        Me.GroupBox3.Controls.Add(Me.txt_buscar)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(640, 61)
+        Me.GroupBox3.TabIndex = 18
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Buscar"
+        '
+        'cmb_opcion
+        '
+        Me.cmb_opcion.FormattingEnabled = True
+        Me.cmb_opcion.Items.AddRange(New Object() {"Cedula", "Nombres", "Apellidos"})
+        Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
+        Me.cmb_opcion.Name = "cmb_opcion"
+        Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
+        Me.cmb_opcion.TabIndex = 1
+        Me.cmb_opcion.Text = "Apellidos"
+        '
+        'txt_buscar
+        '
+        Me.txt_buscar.Location = New System.Drawing.Point(213, 21)
+        Me.txt_buscar.Name = "txt_buscar"
+        Me.txt_buscar.Size = New System.Drawing.Size(194, 22)
+        Me.txt_buscar.TabIndex = 0
+        '
         'frm_buscar_usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -176,6 +176,7 @@ Partial Class frm_buscar_usuario
         Me.Controls.Add(Me.dgv_usuarios)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "frm_buscar_usuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_buscar_usuario"
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)

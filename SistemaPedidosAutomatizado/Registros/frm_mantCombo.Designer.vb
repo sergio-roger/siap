@@ -150,6 +150,7 @@ Partial Class frm_mantCombo
         Me.Controls.Add(Me.dgv_usuarios)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "frm_mantCombo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_mantCombo"
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)

@@ -65,6 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboNegocio.vb" />
     <Compile Include="ConexionNegocio.vb" />
     <Compile Include="MesaNegocio.vb" />
     <Compile Include="ModalidadNegocio.vb" />
