@@ -36,7 +36,7 @@ Partial Class frm_buscar_usuario
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +48,7 @@ Partial Class frm_buscar_usuario
         Me.dgv_usuarios.AllowUserToAddRows = False
         Me.dgv_usuarios.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.id, Me.nombre, Me.Column2, Me.Column1, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.perfil, Me.estado})
+        Me.dgv_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id1, Me.id, Me.nombre, Me.Column2, Me.Column1, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9, Me.perfil, Me.estado})
         Me.dgv_usuarios.Location = New System.Drawing.Point(12, 93)
         Me.dgv_usuarios.Name = "dgv_usuarios"
         Me.dgv_usuarios.ReadOnly = True
@@ -149,11 +149,11 @@ Partial Class frm_buscar_usuario
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
         '
-        'Column8
+        'Column9
         '
-        Me.Column8.HeaderText = "Foto"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
+        Me.Column9.HeaderText = "Imagen"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
         '
         'perfil
         '
@@ -198,7 +198,7 @@ Partial Class frm_buscar_usuario
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents perfil As DataGridViewTextBoxColumn
     Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class

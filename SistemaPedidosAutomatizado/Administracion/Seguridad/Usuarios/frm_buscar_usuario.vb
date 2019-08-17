@@ -15,9 +15,10 @@ Public Class frm_buscar_usuario
             If (lista IsNot Nothing) Then
                 For Each item In lista
                     If (item.Foto Is Nothing) Then
-                        dgv_usuarios.Rows.Add(item.Id, item.Cedula, item.Apellidos, item.Nombres, item.Id_perfil, item.Direccion, item.Telefono, item.Email, item.Usuario, item.Clave, "", item.Perfil, item.Estado)
+                        dgv_usuarios.Rows.Add(item.Id, item.Cedula, item.Apellidos, item.Nombres, item.Id_perfil, item.Direccion, item.Telefono, item.Email, item.Usuario, item.Clave, Nothing, item.Perfil, item.Estado)
                     Else
-                        dgv_usuarios.Rows.Add(item.Id, item.Cedula, item.Apellidos, item.Nombres, item.Id_perfil, item.Direccion, item.Telefono, item.Email, item.Usuario, item.Clave, item.Foto, item.Perfil, item.Estado)
+                        Dim img = ByteArrayToImage(item.Foto)
+                        dgv_usuarios.Rows.Add(item.Id, item.Cedula, item.Apellidos, item.Nombres, item.Id_perfil, item.Direccion, item.Telefono, item.Email, item.Usuario, item.Clave, img, item.Perfil, item.Estado)
                     End If
                 Next
             End If
@@ -67,7 +68,13 @@ Public Class frm_buscar_usuario
                 auxUsuario.Usuario = dgv_usuarios.Rows(e.RowIndex).Cells(8).Value()
                 auxUsuario.Clave = dgv_usuarios.Rows(e.RowIndex).Cells(9).Value()
 
-                auxUsuario.Foto = IIf(dgv_usuarios.Rows(e.RowIndex).Cells(10).Value() = "", Nothing, dgv_usuarios.Rows(e.RowIndex).Cells(10).Value())
+                If (dgv_usuarios.Rows(e.RowIndex).Cells(10).Value() Is Nothing) Then
+                    auxUsuario.Foto = Nothing
+                Else
+                    Dim img As Byte()
+                    img = ImageToByteArray(dgv_usuarios.Rows(e.RowIndex).Cells(10).Value())
+                    auxUsuario.Foto = img
+                End If
 
                 auxUsuario.Perfil = dgv_usuarios.Rows(e.RowIndex).Cells(11).Value()
                 auxUsuario.Estado = dgv_usuarios.Rows(e.RowIndex).Cells(12).Value()

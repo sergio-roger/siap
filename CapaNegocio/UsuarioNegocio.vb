@@ -30,4 +30,12 @@ Public Class UsuarioNegocio
     Public Function getUsuario(cedula As String) As Usuario
         Return usuarioDatos.getUsuario(cedula)
     End Function
+
+    Public Function grabar(usuario As Usuario) As Boolean
+        Return usuarioDatos.procesarDatos(usuario)
+    End Function
+
+    Public Function eliminar(usuario As Usuario) As Boolean
+        Return usuarioDatos.eliminar(usuario)
+    End Function
 End Class

@@ -168,4 +168,25 @@ Public Class frm_login
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub txt_usuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_usuario.KeyPress
+        Try
+            If (Asc(e.KeyChar) = 13 Or Asc(e.KeyChar) = 9) Then
+                txt_clave.Focus()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txt_clave_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_clave.KeyPress
+        Try
+            If (Asc(e.KeyChar) = 13 Or Asc(e.KeyChar) = 9) Then
+                btn_iniciar_Click(Me, New KeyPressEventArgs(ChrW(Keys.Enter)))
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class

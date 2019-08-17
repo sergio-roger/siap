@@ -153,4 +153,10 @@ Public Class frm_principal
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub frm_principal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        Dim frm As New frm_login
+        frm.Show()
+    End Sub
 End Class

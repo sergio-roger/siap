@@ -42,7 +42,63 @@ Public Class UsuarioDatos
         End Try
     End Function
 
+    Public Function eliminar(usuario As Usuario) As Boolean
+        Try
+            eliminar = False
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            cmd = New SqlClient.SqlCommand("sp_eliminarRegistro", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id", usuario.Id)
+            cmd.Parameters.AddWithValue("@tabla", "usuarios")
+
+            cmd.ExecuteNonQuery()
+
+            eliminar = True
+        Catch ex As Exception
+            eliminar = False
+        End Try
+    End Function
+
+    Public Function procesarDatos(usuario As Usuario) As Boolean
+        Try
+            procesarDatos = False
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            cmd = New SqlClient.SqlCommand("sp_insertar_actualizar_usuario", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id", usuario.Id)
+            cmd.Parameters.AddWithValue("@per_Id", usuario.Id_perfil)
+            cmd.Parameters.AddWithValue("@usu_cedula", usuario.Cedula)
+            cmd.Parameters.AddWithValue("@usu_nombres", usuario.Nombres)
+            cmd.Parameters.AddWithValue("@usu_apellidos", usuario.Apellidos)
+            'cmd.Parameters.AddWithValue("@sex_id", cmb_sexo.SelectedValue)
+            cmd.Parameters.AddWithValue("@usu_direccion", usuario.Direccion)
+            cmd.Parameters.AddWithValue("@usu_telefono", usuario.Telefono)
+            cmd.Parameters.AddWithValue("@usu_email", usuario.Email)
+            cmd.Parameters.AddWithValue("@usu_usuario", usuario.Usuario)
+            cmd.Parameters.AddWithValue("@usu_clave", usuario.Clave)
+            cmd.Parameters.AddWithValue("@usu_estado", usuario.Estado)
+            cmd.Parameters.AddWithValue("@usu_foto", usuario.Foto)
+
+            cmd.ExecuteNonQuery()
+
+            procesarDatos = True
+        Catch ex As Exception
+            procesarDatos = False
+        End Try
+    End Function
+
     Public Function getUsuario(cedula As String) As Usuario
+        getUsuario = Nothing
         Try
             Dim usuario As New Usuario
             If (Conectar() = False) Then
