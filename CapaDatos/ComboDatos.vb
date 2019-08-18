@@ -65,6 +65,7 @@ Public Class ComboDatos
                     a.Porcentaje = dr("com_porcentaje")
                     lista.Add(a)
                 End While
+                Return lista
             End If
         Catch ex As Exception
             getCombos = Nothing
