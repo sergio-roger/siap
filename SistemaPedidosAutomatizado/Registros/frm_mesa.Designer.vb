@@ -29,6 +29,8 @@ Partial Class frm_mesa
         Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cmb_estado = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_asientos = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
@@ -38,8 +40,6 @@ Partial Class frm_mesa
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgv_mesas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -113,6 +113,27 @@ Partial Class frm_mesa
         Me.GroupBox1.Size = New System.Drawing.Size(402, 146)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
+        '
+        'cmb_estado
+        '
+        Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_estado.FormattingEnabled = True
+        Me.cmb_estado.Items.AddRange(New Object() {"Disponible", "Ocupado", "No Disponible", "Mantenimiento"})
+        Me.cmb_estado.Location = New System.Drawing.Point(99, 61)
+        Me.cmb_estado.Name = "cmb_estado"
+        Me.cmb_estado.Size = New System.Drawing.Size(99, 21)
+        Me.cmb_estado.TabIndex = 44
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label4.Location = New System.Drawing.Point(9, 65)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(46, 13)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Estado"
         '
         'Label3
         '
@@ -207,27 +228,6 @@ Partial Class frm_mesa
         Me.btn_grabar.TabIndex = 42
         Me.btn_grabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_grabar.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label4.Location = New System.Drawing.Point(9, 65)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(46, 13)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Estado"
-        '
-        'cmb_estado
-        '
-        Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_estado.FormattingEnabled = True
-        Me.cmb_estado.Items.AddRange(New Object() {"Disponible", "Ocupado", "No Disponible", "Mantenimiento"})
-        Me.cmb_estado.Location = New System.Drawing.Point(99, 61)
-        Me.cmb_estado.Name = "cmb_estado"
-        Me.cmb_estado.Size = New System.Drawing.Size(99, 21)
-        Me.cmb_estado.TabIndex = 44
         '
         'Button1
         '

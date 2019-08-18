@@ -442,6 +442,10 @@ Public Class frm_pedido
                     MsgBox("Hubo un error al guardar el Pedido", MsgBoxStyle.Critical, "Error")
                 Else
                     Limpiar()
+                    If (cargarComboMesas() = False) Then
+                        mensaje(titulo, "Hubo un error al cargar las mesas", "danger")
+                    End If
+                    txt_codigo_pedido.Text = obtenerNPedido()
                     MsgBox("Pedido guardado correctamente", MsgBoxStyle.Information, "Exito al Guardar")
                 End If
             Else
@@ -450,5 +454,21 @@ Public Class frm_pedido
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub dgv_pedido_KeyDown(sender As Object, e As KeyEventArgs) Handles dgv_pedido.KeyDown
+        Dim li_index As Integer
+
+        If e.KeyCode = Keys.Delete Then
+
+            e.Handled = True
+
+            li_index = CType(sender, DataGridView).CurrentRow.Index
+            dgv_pedido.Rows.RemoveAt(li_index)
+        End If
+    End Sub
+
+    Private Sub btn_nuevo_Click(sender As Object, e As EventArgs) Handles btn_nuevo.Click
+        Limpiar()
     End Sub
 End Class

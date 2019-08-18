@@ -137,7 +137,7 @@ Public Class PedidoDatos
         Try
             actualizaEstadoMesa = False
 
-            cmd = New SqlClient.SqlCommand("sp_insertar_detalles", cnn)
+            cmd = New SqlClient.SqlCommand("sp_actualiza_estado_mesa", cnn)
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Parameters.AddWithValue("@id", id)
