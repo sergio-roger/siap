@@ -51,7 +51,7 @@ Public Class ComboDatos
                 Exit Function
             End If
 
-            Dim cadenasql As String = "select com_id, com_descripcion, com_precio,com_descuento, com_porcentaje from combo where com_estado = 'A' order by 2"
+            Dim cadenasql As String = "select com_id, com_descripcion, com_precio,com_descuento, com_porcentaje, com_codigo from combo where com_estado = 'A' order by 2"
 
             dr = ExecuteReader(cadenasql)
 
@@ -63,6 +63,7 @@ Public Class ComboDatos
                     a.Precio = dr("com_precio")
                     a.Descuento = dr("com_descuento")
                     a.Porcentaje = dr("com_porcentaje")
+                    a.Codigo = dr("com_codigo")
                     lista.Add(a)
                 End While
                 Return lista

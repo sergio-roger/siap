@@ -30,4 +30,15 @@ Public Class PedidoNegocio
         Dim comboDatos As New ComboDatos
         Return comboDatos.getCombos()
     End Function
+
+    Public Function calcularDescuento(detalleComida As DetallePedido) As DetallePedido
+        If (detalleComida.Descuento = True) Then
+            Dim descuento As Double
+            descuento = (detalleComida.PrecioUnitario * detalleComida.Porcentaje) / 100
+            detalleComida.Subtotal = detalleComida.PrecioUnitario - descuento
+        Else
+            detalleComida.Subtotal = detalleComida.PrecioUnitario
+        End If
+        Return detalleComida
+    End Function
 End Class

@@ -50,7 +50,6 @@ Public Class frm_mantCombo
             End If
 
             If buscarCombos(txt_buscar.Text, cmb_opcion.SelectedItem) = False Then
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

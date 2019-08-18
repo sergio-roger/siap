@@ -23,9 +23,6 @@ Partial Class frm_mantCombo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgv_combos = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.cmb_opcion = New System.Windows.Forms.ComboBox()
-        Me.txt_buscar = New System.Windows.Forms.TextBox()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +37,9 @@ Partial Class frm_mantCombo
         Me.col_porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.imagen = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmb_opcion = New System.Windows.Forms.ComboBox()
+        Me.txt_buscar = New System.Windows.Forms.TextBox()
         CType(Me.dgv_combos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -55,39 +55,6 @@ Partial Class frm_mantCombo
         Me.dgv_combos.ReadOnly = True
         Me.dgv_combos.Size = New System.Drawing.Size(607, 131)
         Me.dgv_combos.TabIndex = 21
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.cmb_opcion)
-        Me.GroupBox3.Controls.Add(Me.txt_buscar)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(607, 61)
-        Me.GroupBox3.TabIndex = 22
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Buscar por Código"
-        '
-        'cmb_opcion
-        '
-        Me.cmb_opcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_opcion.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.cmb_opcion.FormattingEnabled = True
-        Me.cmb_opcion.Items.AddRange(New Object() {"codigo", "elemento1"})
-        Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
-        Me.cmb_opcion.Name = "cmb_opcion"
-        Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
-        Me.cmb_opcion.TabIndex = 1
-        '
-        'txt_buscar
-        '
-        Me.txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_buscar.Location = New System.Drawing.Point(213, 21)
-        Me.txt_buscar.Name = "txt_buscar"
-        Me.txt_buscar.Size = New System.Drawing.Size(194, 22)
-        Me.txt_buscar.TabIndex = 0
         '
         'id
         '
@@ -175,6 +142,39 @@ Partial Class frm_mantCombo
         Me.imagen.HeaderText = "imagen"
         Me.imagen.Name = "imagen"
         Me.imagen.ReadOnly = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.White
+        Me.GroupBox3.Controls.Add(Me.cmb_opcion)
+        Me.GroupBox3.Controls.Add(Me.txt_buscar)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(607, 61)
+        Me.GroupBox3.TabIndex = 22
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Buscar por Código"
+        '
+        'cmb_opcion
+        '
+        Me.cmb_opcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_opcion.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.cmb_opcion.FormattingEnabled = True
+        Me.cmb_opcion.Items.AddRange(New Object() {"codigo", "elemento1", "descripcion"})
+        Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
+        Me.cmb_opcion.Name = "cmb_opcion"
+        Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
+        Me.cmb_opcion.TabIndex = 1
+        '
+        'txt_buscar
+        '
+        Me.txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_buscar.Location = New System.Drawing.Point(213, 21)
+        Me.txt_buscar.Name = "txt_buscar"
+        Me.txt_buscar.Size = New System.Drawing.Size(194, 22)
+        Me.txt_buscar.TabIndex = 0
         '
         'frm_mantCombo
         '

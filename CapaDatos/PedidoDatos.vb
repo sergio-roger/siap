@@ -2,7 +2,7 @@
 
 Public Class PedidoDatos
     Public Function getListaMesas() As ArrayList
-        Dim sql = "select mesa_id,mesa_nombre from mesa where mesa_estado='A' order by 2"
+        Dim sql = "select mesa_id,mesa_nombre from mesa where mesa_estado='A' or mesa_estado='D' order by 2"
         Dim lista As New ArrayList()
 
         lista = CargarComboDesdeSql(sql)

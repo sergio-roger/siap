@@ -6,25 +6,26 @@ Public Class frm_mesa
     Private mesa As New Mesa
 
     Private Function crearMesa() As Mesa
-        Dim mesa As New Mesa()
+        Dim nuevo As New Mesa
         Dim estado As String
 
-        mesa.Nombre = txt_descripcion.Text
-        mesa.Cantidad = txt_asientos.Text
-        mesa.Estado = cmb_estado.SelectedValue
+        nuevo.Id = IIf(mesa.Id = 0, 0, mesa.Id)
+        nuevo.Nombre = txt_descripcion.Text
+        nuevo.Cantidad = txt_asientos.Text
+        nuevo.Estado = cmb_estado.SelectedValue
 
-        If (cmb_estado.SelectedValue.Equals("Disponible")) Then
+        If (cmb_estado.Text = "Disponible") Then
             estado = "D"
-        ElseIf (cmb_estado.SelectedValue.Equals("Ocupado")) Then
+        ElseIf (cmb_estado.text.Equals("Ocupado")) Then
             estado = "O"
-        ElseIf (cmb_estado.SelectedValue.Equals("No Disponible")) Then
+        ElseIf (cmb_estado.text.Equals("No Disponible")) Then
             estado = "N"
         Else
             estado = "M"
         End If
 
-        mesa.Estado = estado
-        Return mesa
+        nuevo.Estado = estado
+        Return nuevo
     End Function
 
     Private Function Validar() As Boolean
@@ -44,6 +45,9 @@ Public Class frm_mesa
                 Exit Function
             End If
 
+            If (cmb_estado.SelectedItem = Nothing) Then
+                mensaje("Mesa", "seleccione una opcion de estado", "info")
+            End If
             Validar = True
         Catch ex As Exception
             Validar = False
@@ -183,6 +187,10 @@ Public Class frm_mesa
                 txt_id.Text = mesa.Id
                 txt_asientos.Text = mesa.Cantidad
                 txt_descripcion.Text = mesa.Nombre
+
+                If (mesa.Estado.ToString() = "A") Then
+                    cmb_estado.Text = "Disponible"
+                End If
             End If
 
         Catch ex As Exception

@@ -22,29 +22,19 @@ Partial Class frm_pedido
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txt_id_aux = New System.Windows.Forms.TextBox()
-        Me.txt_porcentaje = New System.Windows.Forms.TextBox()
-        Me.txt_descuento = New System.Windows.Forms.TextBox()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txt_codigo_pedido = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_regresar = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_borrar = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
+        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.dgv_pedido = New System.Windows.Forms.DataGridView()
-        Me.col_check = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_pedido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -79,6 +69,18 @@ Partial Class frm_pedido
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_comida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
@@ -88,30 +90,6 @@ Partial Class frm_pedido
         Me.GroupBox3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txt_id_aux
-        '
-        Me.txt_id_aux.Location = New System.Drawing.Point(188, 76)
-        Me.txt_id_aux.Name = "txt_id_aux"
-        Me.txt_id_aux.Size = New System.Drawing.Size(65, 20)
-        Me.txt_id_aux.TabIndex = 70
-        Me.txt_id_aux.Visible = False
-        '
-        'txt_porcentaje
-        '
-        Me.txt_porcentaje.Location = New System.Drawing.Point(362, 76)
-        Me.txt_porcentaje.Name = "txt_porcentaje"
-        Me.txt_porcentaje.Size = New System.Drawing.Size(97, 20)
-        Me.txt_porcentaje.TabIndex = 69
-        Me.txt_porcentaje.Visible = False
-        '
-        'txt_descuento
-        '
-        Me.txt_descuento.Location = New System.Drawing.Point(258, 76)
-        Me.txt_descuento.Name = "txt_descuento"
-        Me.txt_descuento.Size = New System.Drawing.Size(98, 20)
-        Me.txt_descuento.TabIndex = 68
-        Me.txt_descuento.Visible = False
         '
         'txt_codigo_pedido
         '
@@ -136,7 +114,6 @@ Partial Class frm_pedido
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
-        Me.Panel1.Controls.Add(Me.btn_regresar)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.btn_nuevo)
         Me.Panel1.Controls.Add(Me.btn_borrar)
@@ -145,16 +122,6 @@ Partial Class frm_pedido
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(743, 61)
         Me.Panel1.TabIndex = 67
-        '
-        'btn_regresar
-        '
-        Me.btn_regresar.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_regresar.Location = New System.Drawing.Point(648, 5)
-        Me.btn_regresar.Name = "btn_regresar"
-        Me.btn_regresar.Size = New System.Drawing.Size(52, 50)
-        Me.btn_regresar.TabIndex = 72
-        Me.btn_regresar.Text = "<<"
-        Me.btn_regresar.UseVisualStyleBackColor = True
         '
         'Label10
         '
@@ -198,78 +165,39 @@ Partial Class frm_pedido
         Me.btn_grabar.TabIndex = 54
         Me.btn_grabar.UseVisualStyleBackColor = False
         '
+        'btn_agregar
+        '
+        Me.btn_agregar.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_agregar.Location = New System.Drawing.Point(383, 17)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(52, 38)
+        Me.btn_agregar.TabIndex = 72
+        Me.btn_agregar.Text = "+"
+        Me.btn_agregar.UseVisualStyleBackColor = True
+        '
         'dgv_pedido
         '
         Me.dgv_pedido.AllowUserToAddRows = False
         Me.dgv_pedido.AllowUserToDeleteRows = False
         Me.dgv_pedido.BackgroundColor = System.Drawing.SystemColors.Highlight
         Me.dgv_pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_check, Me.col_id, Me.col_codigo, Me.col_pedido, Me.col_tipo, Me.col_cantidad, Me.col_precio, Me.col_descuento, Me.col_porcentaje, Me.col_subtotal, Me.col_total})
+        Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column9, Me.Column8, Me.id_comida, Me.Column17, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column15, Me.Column16, Me.Column14})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Cornsilk
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_pedido.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_pedido.GridColor = System.Drawing.Color.White
         Me.dgv_pedido.Location = New System.Drawing.Point(12, 300)
         Me.dgv_pedido.Name = "dgv_pedido"
+        Me.dgv_pedido.ReadOnly = True
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgv_pedido.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_pedido.Size = New System.Drawing.Size(447, 203)
         Me.dgv_pedido.TabIndex = 66
-        '
-        'col_check
-        '
-        Me.col_check.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.col_check.HeaderText = "Eliminar"
-        Me.col_check.Name = "col_check"
-        Me.col_check.Visible = False
-        '
-        'col_id
-        '
-        Me.col_id.HeaderText = "Id"
-        Me.col_id.Name = "col_id"
-        '
-        'col_codigo
-        '
-        Me.col_codigo.HeaderText = "Codigo"
-        Me.col_codigo.Name = "col_codigo"
-        Me.col_codigo.Width = 70
-        '
-        'col_pedido
-        '
-        Me.col_pedido.HeaderText = "Pedido"
-        Me.col_pedido.Name = "col_pedido"
-        Me.col_pedido.Width = 170
-        '
-        'col_tipo
-        '
-        Me.col_tipo.HeaderText = "Tipo"
-        Me.col_tipo.Name = "col_tipo"
-        '
-        'col_cantidad
-        '
-        Me.col_cantidad.HeaderText = "Cantidad"
-        Me.col_cantidad.Name = "col_cantidad"
-        '
-        'col_precio
-        '
-        Me.col_precio.HeaderText = "Precio U"
-        Me.col_precio.Name = "col_precio"
-        Me.col_precio.Width = 60
-        '
-        'col_descuento
-        '
-        Me.col_descuento.HeaderText = "Descuento"
-        Me.col_descuento.Name = "col_descuento"
-        '
-        'col_porcentaje
-        '
-        Me.col_porcentaje.HeaderText = "Porcentaje"
-        Me.col_porcentaje.Name = "col_porcentaje"
-        '
-        'col_subtotal
-        '
-        Me.col_subtotal.HeaderText = "Subtotal"
-        Me.col_subtotal.Name = "col_subtotal"
-        '
-        'col_total
-        '
-        Me.col_total.HeaderText = "Total"
-        Me.col_total.Name = "col_total"
         '
         'Label12
         '
@@ -296,6 +224,7 @@ Partial Class frm_pedido
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.btn_agregar)
         Me.GroupBox4.Controls.Add(Me.btn_expandir)
         Me.GroupBox4.Controls.Add(Me.rdb_combo)
         Me.GroupBox4.Controls.Add(Me.rdb_plato)
@@ -319,9 +248,9 @@ Partial Class frm_pedido
         'btn_expandir
         '
         Me.btn_expandir.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_expandir.Location = New System.Drawing.Point(383, 40)
+        Me.btn_expandir.Location = New System.Drawing.Point(383, 61)
         Me.btn_expandir.Name = "btn_expandir"
-        Me.btn_expandir.Size = New System.Drawing.Size(52, 50)
+        Me.btn_expandir.Size = New System.Drawing.Size(52, 43)
         Me.btn_expandir.TabIndex = 71
         Me.btn_expandir.Text = ">>"
         Me.btn_expandir.UseVisualStyleBackColor = True
@@ -354,6 +283,7 @@ Partial Class frm_pedido
         Me.txt_precio.Location = New System.Drawing.Point(188, 33)
         Me.txt_precio.Mask = "00.00"
         Me.txt_precio.Name = "txt_precio"
+        Me.txt_precio.ReadOnly = True
         Me.txt_precio.Size = New System.Drawing.Size(100, 22)
         Me.txt_precio.TabIndex = 61
         '
@@ -391,9 +321,9 @@ Partial Class frm_pedido
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(9, 60)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
         Me.Label8.TabIndex = 56
-        Me.Label8.Text = "Descripcion"
+        Me.Label8.Text = "Nombre"
         '
         'Label7
         '
@@ -410,6 +340,7 @@ Partial Class frm_pedido
         Me.txt_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripcion.Location = New System.Drawing.Point(11, 78)
         Me.txt_descripcion.Name = "txt_descripcion"
+        Me.txt_descripcion.ReadOnly = True
         Me.txt_descripcion.Size = New System.Drawing.Size(167, 22)
         Me.txt_descripcion.TabIndex = 55
         '
@@ -498,6 +429,7 @@ Partial Class frm_pedido
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(15, 528)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 13)
@@ -515,10 +447,30 @@ Partial Class frm_pedido
         '
         'dgv_productos
         '
+        Me.dgv_productos.AllowUserToAddRows = False
+        Me.dgv_productos.AllowUserToDeleteRows = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_productos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_productos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
         Me.dgv_productos.Location = New System.Drawing.Point(12, 87)
         Me.dgv_productos.Name = "dgv_productos"
+        Me.dgv_productos.ReadOnly = True
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_productos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgv_productos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
         Me.dgv_productos.Size = New System.Drawing.Size(249, 328)
         Me.dgv_productos.TabIndex = 71
         '
@@ -546,9 +498,9 @@ Partial Class frm_pedido
         Me.Label3.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label3.Location = New System.Drawing.Point(66, 16)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 13)
+        Me.Label3.Size = New System.Drawing.Size(115, 13)
         Me.Label3.TabIndex = 65
-        Me.Label3.Text = "Buscar por código"
+        Me.Label3.Text = "Buscar por Nombre"
         '
         'Panel2
         '
@@ -563,6 +515,7 @@ Partial Class frm_pedido
         '
         Me.Column1.HeaderText = "Id"
         Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         Me.Column1.Visible = False
         Me.Column1.Width = 50
         '
@@ -584,29 +537,111 @@ Partial Class frm_pedido
         '
         Me.Column4.HeaderText = "codigo"
         Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Visible = False
         '
         'Column5
         '
         Me.Column5.HeaderText = "descuento"
         Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
         '
         'Column6
         '
         Me.Column6.HeaderText = "porcentaje"
         Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Id"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Visible = False
+        Me.Column7.Width = 50
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Id Ped"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 50
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Id  Tc"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 50
+        '
+        'id_comida
+        '
+        Me.id_comida.HeaderText = "Id Comida"
+        Me.id_comida.Name = "id_comida"
+        Me.id_comida.ReadOnly = True
+        Me.id_comida.Visible = False
+        Me.id_comida.Width = 50
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "Nombre"
+        Me.Column17.Name = "Column17"
+        Me.Column17.ReadOnly = True
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "Cantidad"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "Precio U"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Descuento"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        '
+        'Column13
+        '
+        Me.Column13.HeaderText = "Porcentaje"
+        Me.Column13.Name = "Column13"
+        Me.Column13.ReadOnly = True
+        '
+        'Column15
+        '
+        Me.Column15.HeaderText = "Subtotal"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
+        '
+        'Column16
+        '
+        Me.Column16.HeaderText = "Total"
+        Me.Column16.Name = "Column16"
+        Me.Column16.ReadOnly = True
+        '
+        'Column14
+        '
+        Me.Column14.HeaderText = "Estado"
+        Me.Column14.Name = "Column14"
+        Me.Column14.ReadOnly = True
+        Me.Column14.Visible = False
         '
         'frm_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(762, 565)
+        Me.ClientSize = New System.Drawing.Size(753, 565)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txt_id_aux)
         Me.Controls.Add(Me.txt_observacion)
-        Me.Controls.Add(Me.txt_porcentaje)
-        Me.Controls.Add(Me.txt_descuento)
         Me.Controls.Add(Me.txt_codigo_pedido)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Panel1)
@@ -614,7 +649,10 @@ Partial Class frm_pedido
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.ForeColor = System.Drawing.Color.Cornsilk
+        Me.MaximizeBox = False
         Me.Name = "frm_pedido"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_pedido"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -633,10 +671,6 @@ Partial Class frm_pedido
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txt_id_aux As TextBox
-    Friend WithEvents txt_porcentaje As TextBox
-    Friend WithEvents txt_descuento As TextBox
     Friend WithEvents txt_codigo_pedido As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel1 As Panel
@@ -645,17 +679,6 @@ Partial Class frm_pedido
     Friend WithEvents btn_borrar As Button
     Friend WithEvents btn_grabar As Button
     Friend WithEvents dgv_pedido As DataGridView
-    Friend WithEvents col_check As DataGridViewCheckBoxColumn
-    Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
-    Friend WithEvents col_pedido As DataGridViewTextBoxColumn
-    Friend WithEvents col_tipo As DataGridViewTextBoxColumn
-    Friend WithEvents col_cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents col_precio As DataGridViewTextBoxColumn
-    Friend WithEvents col_descuento As DataGridViewTextBoxColumn
-    Friend WithEvents col_porcentaje As DataGridViewTextBoxColumn
-    Friend WithEvents col_subtotal As DataGridViewTextBoxColumn
-    Friend WithEvents col_total As DataGridViewTextBoxColumn
     Friend WithEvents Label12 As Label
     Friend WithEvents cmb_estado As ComboBox
     Friend WithEvents GroupBox4 As GroupBox
@@ -679,7 +702,7 @@ Partial Class frm_pedido
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_observacion As TextBox
     Friend WithEvents btn_expandir As Button
-    Friend WithEvents btn_regresar As Button
+    Friend WithEvents btn_agregar As Button
     Friend WithEvents dgv_productos As DataGridView
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Panel2 As Panel
@@ -691,4 +714,16 @@ Partial Class frm_pedido
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents id_comida As DataGridViewTextBoxColumn
+    Friend WithEvents Column17 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
 End Class
