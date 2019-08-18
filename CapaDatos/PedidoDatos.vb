@@ -74,7 +74,7 @@ Public Class PedidoDatos
 
         Try
             procederDetalle = False
-            auxpedido = pedido
+            'auxpedido = pedido
 
             'Grabar cabecera pedido
             If (grabar(pedido) = False) Then
@@ -93,6 +93,9 @@ Public Class PedidoDatos
             Next
 
             'Actulizar el estado de las mesas
+            If (actualizaEstadoMesa(pedido.Id_mesa) = False) Then
+                Exit Function
+            End If
 
             procederDetalle = True
         Catch ex As Exception
@@ -126,6 +129,23 @@ Public Class PedidoDatos
             grabarDetalle = True
         Catch ex As Exception
             grabarDetalle = False
+        End Try
+    End Function
+
+    Public Function actualizaEstadoMesa(id As Integer) As Boolean
+
+        Try
+            actualizaEstadoMesa = False
+
+            cmd = New SqlClient.SqlCommand("sp_insertar_detalles", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id", id)
+            cmd.ExecuteNonQuery()
+
+            actualizaEstadoMesa = True
+        Catch ex As Exception
+            actualizaEstadoMesa = False
         End Try
     End Function
 End Class
