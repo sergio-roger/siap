@@ -41,4 +41,8 @@ Public Class PedidoNegocio
         End If
         Return detalleComida
     End Function
+
+    Public Function grabar(pedido As Pedido) As Boolean
+        Return pedidoDatos.procederDetalle(pedido)
+    End Function
 End Class

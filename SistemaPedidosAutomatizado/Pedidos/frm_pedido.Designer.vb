@@ -59,28 +59,28 @@ Partial Class frm_pedido
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_observacion = New System.Windows.Forms.TextBox()
         Me.dgv_productos = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txt_buscar = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_comida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txt_buscar = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_id_ped = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_id_tc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_id_comida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_porcentaje = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
@@ -181,7 +181,7 @@ Partial Class frm_pedido
         Me.dgv_pedido.AllowUserToDeleteRows = False
         Me.dgv_pedido.BackgroundColor = System.Drawing.SystemColors.Highlight
         Me.dgv_pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column9, Me.Column8, Me.id_comida, Me.Column17, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column15, Me.Column16, Me.Column14})
+        Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_id_ped, Me.col_id_tc, Me.col_id_comida, Me.col_nombre, Me.col_cantidad, Me.col_precio, Me.col_descuento, Me.col_porcentaje, Me.col_subtotal, Me.col_total, Me.col_estado})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -474,43 +474,6 @@ Partial Class frm_pedido
         Me.dgv_productos.Size = New System.Drawing.Size(249, 328)
         Me.dgv_productos.TabIndex = 71
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.txt_buscar)
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 3)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(249, 74)
-        Me.GroupBox3.TabIndex = 62
-        Me.GroupBox3.TabStop = False
-        '
-        'txt_buscar
-        '
-        Me.txt_buscar.Location = New System.Drawing.Point(10, 37)
-        Me.txt_buscar.Name = "txt_buscar"
-        Me.txt_buscar.Size = New System.Drawing.Size(225, 20)
-        Me.txt_buscar.TabIndex = 73
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label3.Location = New System.Drawing.Point(66, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(115, 13)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "Buscar por Nombre"
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.GroupBox3)
-        Me.Panel2.Controls.Add(Me.dgv_productos)
-        Me.Panel2.Location = New System.Drawing.Point(475, 76)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(278, 427)
-        Me.Panel2.TabIndex = 72
-        '
         'Column1
         '
         Me.Column1.HeaderText = "Id"
@@ -554,84 +517,121 @@ Partial Class frm_pedido
         Me.Column6.ReadOnly = True
         Me.Column6.Visible = False
         '
-        'Column7
+        'GroupBox3
         '
-        Me.Column7.HeaderText = "Id"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Visible = False
-        Me.Column7.Width = 50
+        Me.GroupBox3.Controls.Add(Me.txt_buscar)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 3)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(249, 74)
+        Me.GroupBox3.TabIndex = 62
+        Me.GroupBox3.TabStop = False
         '
-        'Column9
+        'txt_buscar
         '
-        Me.Column9.HeaderText = "Id Ped"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 50
+        Me.txt_buscar.Location = New System.Drawing.Point(10, 37)
+        Me.txt_buscar.Name = "txt_buscar"
+        Me.txt_buscar.Size = New System.Drawing.Size(225, 20)
+        Me.txt_buscar.TabIndex = 73
         '
-        'Column8
+        'Label3
         '
-        Me.Column8.HeaderText = "Id  Tc"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 50
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label3.Location = New System.Drawing.Point(66, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(115, 13)
+        Me.Label3.TabIndex = 65
+        Me.Label3.Text = "Buscar por Nombre"
         '
-        'id_comida
+        'Panel2
         '
-        Me.id_comida.HeaderText = "Id Comida"
-        Me.id_comida.Name = "id_comida"
-        Me.id_comida.ReadOnly = True
-        Me.id_comida.Visible = False
-        Me.id_comida.Width = 50
+        Me.Panel2.Controls.Add(Me.GroupBox3)
+        Me.Panel2.Controls.Add(Me.dgv_productos)
+        Me.Panel2.Location = New System.Drawing.Point(475, 76)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(278, 427)
+        Me.Panel2.TabIndex = 72
         '
-        'Column17
+        'col_id
         '
-        Me.Column17.HeaderText = "Nombre"
-        Me.Column17.Name = "Column17"
-        Me.Column17.ReadOnly = True
+        Me.col_id.HeaderText = "Id"
+        Me.col_id.Name = "col_id"
+        Me.col_id.ReadOnly = True
+        Me.col_id.Visible = False
+        Me.col_id.Width = 50
         '
-        'Column10
+        'col_id_ped
         '
-        Me.Column10.HeaderText = "Cantidad"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
+        Me.col_id_ped.HeaderText = "Id Ped"
+        Me.col_id_ped.Name = "col_id_ped"
+        Me.col_id_ped.ReadOnly = True
+        Me.col_id_ped.Width = 50
         '
-        'Column11
+        'col_id_tc
         '
-        Me.Column11.HeaderText = "Precio U"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
+        Me.col_id_tc.HeaderText = "Id  Tc"
+        Me.col_id_tc.Name = "col_id_tc"
+        Me.col_id_tc.ReadOnly = True
+        Me.col_id_tc.Width = 50
         '
-        'Column12
+        'col_id_comida
         '
-        Me.Column12.HeaderText = "Descuento"
-        Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
+        Me.col_id_comida.HeaderText = "Id Comida"
+        Me.col_id_comida.Name = "col_id_comida"
+        Me.col_id_comida.ReadOnly = True
+        Me.col_id_comida.Visible = False
+        Me.col_id_comida.Width = 50
         '
-        'Column13
+        'col_nombre
         '
-        Me.Column13.HeaderText = "Porcentaje"
-        Me.Column13.Name = "Column13"
-        Me.Column13.ReadOnly = True
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        Me.col_nombre.ReadOnly = True
         '
-        'Column15
+        'col_cantidad
         '
-        Me.Column15.HeaderText = "Subtotal"
-        Me.Column15.Name = "Column15"
-        Me.Column15.ReadOnly = True
+        Me.col_cantidad.HeaderText = "Cantidad"
+        Me.col_cantidad.Name = "col_cantidad"
+        Me.col_cantidad.ReadOnly = True
         '
-        'Column16
+        'col_precio
         '
-        Me.Column16.HeaderText = "Total"
-        Me.Column16.Name = "Column16"
-        Me.Column16.ReadOnly = True
+        Me.col_precio.HeaderText = "Precio U"
+        Me.col_precio.Name = "col_precio"
+        Me.col_precio.ReadOnly = True
         '
-        'Column14
+        'col_descuento
         '
-        Me.Column14.HeaderText = "Estado"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.Visible = False
+        Me.col_descuento.HeaderText = "Descuento"
+        Me.col_descuento.Name = "col_descuento"
+        Me.col_descuento.ReadOnly = True
+        '
+        'col_porcentaje
+        '
+        Me.col_porcentaje.HeaderText = "Porcentaje"
+        Me.col_porcentaje.Name = "col_porcentaje"
+        Me.col_porcentaje.ReadOnly = True
+        '
+        'col_subtotal
+        '
+        Me.col_subtotal.HeaderText = "Subtotal"
+        Me.col_subtotal.Name = "col_subtotal"
+        Me.col_subtotal.ReadOnly = True
+        '
+        'col_total
+        '
+        Me.col_total.HeaderText = "Total"
+        Me.col_total.Name = "col_total"
+        Me.col_total.ReadOnly = True
+        '
+        'col_estado
+        '
+        Me.col_estado.HeaderText = "Estado"
+        Me.col_estado.Name = "col_estado"
+        Me.col_estado.ReadOnly = True
+        Me.col_estado.Visible = False
         '
         'frm_pedido
         '
@@ -714,16 +714,16 @@ Partial Class frm_pedido
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents id_comida As DataGridViewTextBoxColumn
-    Friend WithEvents Column17 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Column11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As DataGridViewTextBoxColumn
-    Friend WithEvents Column15 As DataGridViewTextBoxColumn
-    Friend WithEvents Column16 As DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents col_id As DataGridViewTextBoxColumn
+    Friend WithEvents col_id_ped As DataGridViewTextBoxColumn
+    Friend WithEvents col_id_tc As DataGridViewTextBoxColumn
+    Friend WithEvents col_id_comida As DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As DataGridViewTextBoxColumn
+    Friend WithEvents col_cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents col_precio As DataGridViewTextBoxColumn
+    Friend WithEvents col_descuento As DataGridViewTextBoxColumn
+    Friend WithEvents col_porcentaje As DataGridViewTextBoxColumn
+    Friend WithEvents col_subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents col_total As DataGridViewTextBoxColumn
+    Friend WithEvents col_estado As DataGridViewTextBoxColumn
 End Class

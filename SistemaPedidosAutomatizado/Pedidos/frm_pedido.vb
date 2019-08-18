@@ -169,29 +169,6 @@ Public Class frm_pedido
         End Try
     End Function
 
-    Private Sub Multiplicar()
-        Try
-            If (dgv_pedido.RowCount > 0) Then
-
-                For fila = 0 To dgv_pedido.RowCount - 1
-                    'dgv_pedido.Rows(fila).Cells(subototal_p).Value = (dgv.Rows(fila).Cells(cant_p).Value) * (dgv_pedido.Rows(fila).Cells(precio_p).Value)
-                    'Calcular el Iva'
-                    If (dgv_pedido.Rows(fila).Cells(descuento_col).Value = True) Then  'Aplica descuento
-                        Dim axu_desc As Double
-                        axu_desc = (dgv_pedido.Rows(fila).Cells(precio_col).Value * dgv_pedido.Rows(fila).Cells(porcentaje_col).Value) / 100
-                        dgv_pedido.Rows(fila).Cells(subtotal_col).Value = (dgv_pedido.Rows(fila).Cells(precio_col).Value - axu_desc)
-                    Else
-                        dgv_pedido.Rows(fila).Cells(subtotal_col).Value = dgv_pedido.Rows(fila).Cells(precio_col).Value
-                    End If
-
-                    dgv_pedido.Rows(fila).Cells(total_col).Value = dgv_pedido.Rows(fila).Cells(subtotal_col).Value * dgv_pedido.Rows(fila).Cells(cantidad_col).Value
-                Next
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
     Private Sub LimpiarOrden()
         txt_codigo.Text = ""
         txt_descripcion.Text = ""
@@ -204,6 +181,30 @@ Public Class frm_pedido
     Private Sub AgregarTabla(objeto As DetallePedido)
         dgv_pedido.Rows.Add(0, objeto.Id_Pedido, objeto.Id_tipoComida, objeto.Id_Comida, objeto.Nombre, objeto.Cantidad, objeto.PrecioUnitario, objeto.Descuento, objeto.Porcentaje, objeto.Subtotal, objeto.Total, "A")
     End Sub
+
+    Private Function Validar() As Boolean
+        Validar = False
+
+        If (dgv_pedido.RowCount < 1) Then
+            mensaje("Pedido", "Ingrese al menos un plato o un combo", "info")
+            txt_codigo.Focus()
+            Exit Function
+        End If
+
+        Validar = True
+    End Function
+
+    Private Sub Limpiar()
+        txt_codigo.Text = ""
+        rdb_plato.Checked = True
+        rdb_combo.Checked = False
+        txt_descripcion.Text = ""
+        txt_cantidad.Text = ""
+        txt_precio.Text = ""
+        dgv_pedido.Rows.Clear()
+        txt_codigo_pedido.Focus()
+    End Sub
+
     Private Sub frm_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             Me.Width = 484
@@ -220,6 +221,86 @@ Public Class frm_pedido
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Function crearPedido() As Pedido
+        Dim nuevo As New Pedido
+
+        nuevo.Id = Integer.Parse(txt_codigo_pedido.Text)
+        nuevo.Estado = "A"
+        nuevo.Id_mesa = cmb_mesa.SelectedValue.ToString
+        nuevo.Id_usuario = usuario.Id
+        nuevo.Id_estadoPedido = 1
+        nuevo.Observacion = txt_descripcion.Text
+
+        Return nuevo
+    End Function
+
+    Private Function crearListaDetalles() As List(Of DetallePedido)
+        Dim i As Integer = 1
+        crearListaDetalles = Nothing
+        Try
+            Dim lista As New List(Of DetallePedido)
+            For Each Fila In dgv_pedido.Rows.Cast(Of DataGridViewRow)()
+                Dim dp As New DetallePedido
+
+
+                dp.Id = Fila.Cells("col_id").Value.ToString()
+                dp.Id_Pedido = Fila.Cells("col_id_ped").Value.ToString()
+                dp.Id_tipoComida = Fila.Cells("col_id_tc").Value.ToString
+                dp.Id_Comida = Fila.Cells("col_id_comida").Value.ToString
+                dp.Nombre = Fila.Cells("col_nombre").Value.ToString
+                dp.Cantidad = Integer.Parse(Fila.Cells("col_cantidad").Value.ToString)
+                dp.PrecioUnitario = Fila.Cells("col_precio").Value.ToString
+                dp.Descuento = Fila.Cells("col_descuento").Value.ToString
+                dp.Porcentaje = Integer.Parse(Fila.Cells("col_porcentaje").Value.ToString)
+                dp.Subtotal = Fila.Cells("col_subtotal").Value.ToString
+                dp.Total = Fila.Cells("col_total").Value.ToString
+                dp.Estado = Fila.Cells("col_estado").Value.ToString
+
+                lista.Add(dp)
+                'Relizar insercciones en la tabla Detalle-Pedido
+                'If (GrabarDetallePedido(pedido_id) = False) Then
+                'End If
+                i = i + 1
+            Next
+            Return lista
+        Catch ex As Exception
+            crearListaDetalles = Nothing
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Private Function GrabarPedido() As Boolean
+        Try
+            GrabarPedido = False
+            Dim listadetalles As New List(Of DetallePedido)
+
+            pedido = crearPedido()
+            listadetalles = crearListaDetalles()
+            pedido.Detalles = listadetalles
+
+            GrabarPedido = pedidoNegocio.grabar(pedido)
+            'Guardar datos en la tabla cab_movimiento con su procedure store
+            'If (GrabarCabeceraPedido()) Then
+            '    Dim cadena As String = "select ped_id from Pedido where ped_estad = 'A' and pe_codigo = '" & txt_codigo_pedido.Text & "'"
+            '    id_pedido = ObtenerId(cadena, "ped_id")
+            '    GrabarPedido = True
+            'Else
+            '    GrabarPedido = False
+            'End If
+
+            ''Guardar dlos detalle pedido
+            'If (id_pedido > 0 And GrabarPedido = True) Then
+            '    If (ObtenerDatosTablaDetallePedido(id_pedido) = False) Then
+            '        mensaje("Pedido", "Error al grabaar los detalle-pedido", "danger")
+            '    End If
+            'End If
+
+        Catch ex As Exception
+            GrabarPedido = False
+            MsgBox(ex.Message)
+        End Try
+    End Function
 
     Private Sub btn_buscar_p_Click(sender As Object, e As EventArgs)
         If rdb_combo.Checked = True Then
@@ -340,6 +421,34 @@ Public Class frm_pedido
             End If
         Catch ex As Exception
             'MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
+        Try
+            If (Validar() = False) Then
+                Exit Sub
+            End If
+
+            If (PreguntaRespuesta("Realmente desea Grabar ? ", "Confirmar Transacción") = MsgBoxResult.Yes) Then
+                'MsgBox("Procediendo a guardar la factura", MsgBoxStyle.Information, "Registrar datos")
+
+                If (GrabarPedido() = False) Then
+                    'Actualizar estado de la mesa 
+                    'If (actualizarMesaOcupado(cmb_estado.SelectedValue) = False) Then
+                    '    MsgBox("Error al actualizar la mesa")
+                    'End If
+
+                    MsgBox("Hubo un error al guardar el Pedido", MsgBoxStyle.Critical, "Error")
+                Else
+                    Limpiar()
+                    MsgBox("Pedido guardado correctamente", MsgBoxStyle.Information, "Exito al Guardar")
+                End If
+            Else
+                MsgBox("No se registrara los datos")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
     End Sub
 End Class
