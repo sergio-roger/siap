@@ -15,4 +15,8 @@ Public Class PedidoNegocio
     Public Function getListaPedidos() As ArrayList
         Return pedidoDatos.geListaPedidos()
     End Function
+
+    Public Function numero() As Integer
+        Return pedidoDatos.numero()
+    End Function
 End Class

@@ -3,11 +3,13 @@
     Private _codigo As String
     Private _nombre As String
     Private _mod_id As Integer
-    Private _precio As String
+    Private _modalidad As String
+    Private _precio As Double
     Private _estado As String
     Private _descripcion As String
     Private _fecha As Date
     Private _imagen As Byte()
+
 
     Public Property Id As Integer
         Get
@@ -27,14 +29,7 @@
         End Set
     End Property
 
-    Public Property Precio As String
-        Get
-            Return _precio
-        End Get
-        Set(value As String)
-            _precio = value
-        End Set
-    End Property
+
 
     Public Property Estado As String
         Get
@@ -87,6 +82,24 @@
         End Get
         Set(value As Date)
             _fecha = value
+        End Set
+    End Property
+
+    Public Property Precio As Double
+        Get
+            Return _precio
+        End Get
+        Set(value As Double)
+            _precio = value
+        End Set
+    End Property
+
+    Public Property Modalidad As String
+        Get
+            Return _modalidad
+        End Get
+        Set(value As String)
+            _modalidad = value
         End Set
     End Property
 End Class

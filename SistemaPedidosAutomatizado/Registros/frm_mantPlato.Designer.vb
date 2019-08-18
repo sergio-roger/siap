@@ -22,70 +22,23 @@ Partial Class frm_mantPlato
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgv_usuarios = New System.Windows.Forms.DataGridView()
-        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_plato = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_modalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmb_opcion = New System.Windows.Forms.ComboBox()
         Me.txt_buscar = New System.Windows.Forms.TextBox()
-        CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgv_platos = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_modalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modalidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.imagen = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.dgv_platos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgv_usuarios
-        '
-        Me.dgv_usuarios.AllowUserToAddRows = False
-        Me.dgv_usuarios.BackgroundColor = System.Drawing.SystemColors.Highlight
-        Me.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_plato, Me.col_modalidad, Me.col_precio, Me.col_estado})
-        Me.dgv_usuarios.Location = New System.Drawing.Point(12, 93)
-        Me.dgv_usuarios.Name = "dgv_usuarios"
-        Me.dgv_usuarios.ReadOnly = True
-        Me.dgv_usuarios.Size = New System.Drawing.Size(607, 131)
-        Me.dgv_usuarios.TabIndex = 19
-        '
-        'col_id
-        '
-        Me.col_id.HeaderText = "ID"
-        Me.col_id.Name = "col_id"
-        Me.col_id.ReadOnly = True
-        '
-        'col_codigo
-        '
-        Me.col_codigo.HeaderText = "Codigo"
-        Me.col_codigo.Name = "col_codigo"
-        Me.col_codigo.ReadOnly = True
-        '
-        'col_plato
-        '
-        Me.col_plato.HeaderText = "Plato"
-        Me.col_plato.Name = "col_plato"
-        Me.col_plato.ReadOnly = True
-        Me.col_plato.Width = 180
-        '
-        'col_modalidad
-        '
-        Me.col_modalidad.HeaderText = "Modalidad"
-        Me.col_modalidad.Name = "col_modalidad"
-        Me.col_modalidad.ReadOnly = True
-        Me.col_modalidad.Width = 120
-        '
-        'col_precio
-        '
-        Me.col_precio.HeaderText = "Precio"
-        Me.col_precio.Name = "col_precio"
-        Me.col_precio.ReadOnly = True
-        '
-        'col_estado
-        '
-        Me.col_estado.HeaderText = "Estado"
-        Me.col_estado.Name = "col_estado"
-        Me.col_estado.ReadOnly = True
-        Me.col_estado.Width = 70
         '
         'GroupBox3
         '
@@ -96,7 +49,7 @@ Partial Class frm_mantPlato
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.Highlight
         Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(607, 61)
+        Me.GroupBox3.Size = New System.Drawing.Size(488, 61)
         Me.GroupBox3.TabIndex = 20
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscar por Código"
@@ -117,32 +70,92 @@ Partial Class frm_mantPlato
         Me.txt_buscar.Size = New System.Drawing.Size(194, 22)
         Me.txt_buscar.TabIndex = 0
         '
+        'dgv_platos
+        '
+        Me.dgv_platos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_platos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.codigo, Me.nombre, Me.id_modalidad, Me.Modalidad, Me.precio, Me.descripcion, Me.imagen, Me.estado})
+        Me.dgv_platos.GridColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.dgv_platos.Location = New System.Drawing.Point(12, 82)
+        Me.dgv_platos.Name = "dgv_platos"
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgv_platos.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgv_platos.Size = New System.Drawing.Size(488, 150)
+        Me.dgv_platos.TabIndex = 21
+        '
+        'id
+        '
+        Me.id.HeaderText = "id"
+        Me.id.Name = "id"
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'id_modalidad
+        '
+        Me.id_modalidad.HeaderText = "id_modalidad"
+        Me.id_modalidad.Name = "id_modalidad"
+        '
+        'Modalidad
+        '
+        Me.Modalidad.HeaderText = "Modalidad"
+        Me.Modalidad.Name = "Modalidad"
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "precio"
+        Me.precio.Name = "precio"
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "descripcion"
+        Me.descripcion.Name = "descripcion"
+        '
+        'imagen
+        '
+        Me.imagen.HeaderText = "imagen"
+        Me.imagen.Name = "imagen"
+        '
+        'estado
+        '
+        Me.estado.HeaderText = "estado"
+        Me.estado.Name = "estado"
+        '
         'frm_mantPlato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(634, 244)
-        Me.Controls.Add(Me.dgv_usuarios)
+        Me.ClientSize = New System.Drawing.Size(523, 244)
+        Me.Controls.Add(Me.dgv_platos)
         Me.Controls.Add(Me.GroupBox3)
         Me.ForeColor = System.Drawing.Color.White
         Me.Name = "frm_mantPlato"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_mantPlato"
-        CType(Me.dgv_usuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.dgv_platos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents dgv_usuarios As DataGridView
-    Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
-    Friend WithEvents col_plato As DataGridViewTextBoxColumn
-    Friend WithEvents col_modalidad As DataGridViewTextBoxColumn
-    Friend WithEvents col_precio As DataGridViewTextBoxColumn
-    Friend WithEvents col_estado As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents cmb_opcion As ComboBox
     Friend WithEvents txt_buscar As TextBox
+    Friend WithEvents dgv_platos As DataGridView
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents id_modalidad As DataGridViewTextBoxColumn
+    Friend WithEvents Modalidad As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents imagen As DataGridViewImageColumn
+    Friend WithEvents estado As DataGridViewTextBoxColumn
 End Class

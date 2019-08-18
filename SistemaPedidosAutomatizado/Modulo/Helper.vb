@@ -51,6 +51,22 @@ Module Helper
         End Select
     End Sub
 
+    Public Function Agregar_cero(numero As String) As String
+        Dim cade As String = ""
+
+        If (numero.Length = 1) Then
+            cade = "0" & numero & ".00"
+        ElseIf (numero.Length = 3) Then
+            cade = "0" & numero & "0"
+        ElseIf (numero.Length = 4) Then
+            cade = "0" & numero
+        Else
+            cade = numero
+        End If
+
+        Return cade
+    End Function
+
     Public Function fun_validafecha(ByVal strfecha As String) As Boolean
         Try
             fun_validafecha = False

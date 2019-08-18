@@ -7,17 +7,26 @@ Public Class PlatoNegocio
         platoDatos = New PlatoDatos()
 
     End Sub
-    Public Function crearPlato(plato As Plato) As Boolean
-        Return platoDatos.ProcesarPlato(plato)
+    Public Function grabar(plato As Plato) As Boolean
+        Return platoDatos.procesarDatos(plato)
     End Function
 
-    Public Function actualizarPlato(plato As Plato) As Boolean
-        Return platoDatos.ProcesarPlato(plato)
-    End Function
 
     Public Function getListaModalidad() As ArrayList
         '  Return platoDatos.getListaModalidad()
         Return platoDatos.getListaModalidad2()
 
+    End Function
+
+    Public Shared Function getPlatos(buscar As String, opcion As String) As List(Of Plato)
+        Return PlatoDatos.getplatos(buscar, opcion)
+    End Function
+
+    Public Function eliminar(plato As Plato) As Boolean
+        Return platoDatos.eliminar(plato)
+    End Function
+
+    Public Function getPlato(codigo As String) As Plato
+        Return platoDatos.getPlato(codigo)
     End Function
 End Class

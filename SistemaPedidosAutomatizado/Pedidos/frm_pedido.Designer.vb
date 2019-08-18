@@ -108,6 +108,7 @@ Partial Class frm_pedido
         Me.txt_codigo_pedido.ReadOnly = True
         Me.txt_codigo_pedido.Size = New System.Drawing.Size(110, 20)
         Me.txt_codigo_pedido.TabIndex = 63
+        Me.txt_codigo_pedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label14
         '
@@ -496,19 +497,19 @@ Partial Class frm_pedido
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(57, 529)
+        Me.Label2.Location = New System.Drawing.Point(47, 529)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.Size = New System.Drawing.Size(78, 13)
         Me.Label2.TabIndex = 66
-        Me.Label2.Text = "Codigo"
+        Me.Label2.Text = "Observacion"
         '
         'txt_observacion
         '
         Me.txt_observacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_observacion.Location = New System.Drawing.Point(124, 521)
+        Me.txt_observacion.Location = New System.Drawing.Point(174, 521)
         Me.txt_observacion.Multiline = True
         Me.txt_observacion.Name = "txt_observacion"
-        Me.txt_observacion.Size = New System.Drawing.Size(447, 32)
+        Me.txt_observacion.Size = New System.Drawing.Size(397, 32)
         Me.txt_observacion.TabIndex = 65
         '
         'frm_pedido

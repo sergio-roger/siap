@@ -17,4 +17,24 @@ Public Class PedidoDatos
         Return lista
     End Function
 
+    Public Function numero() As Integer
+        numero = 0
+        Try
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            Dim cadenaslq As String = "select count(*) as numero from Pedidos"
+
+            dr = ExecuteReader(cadenaslq)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    numero = Integer.Parse(dr("numero")) + 1
+                End While
+            End If
+        Catch ex As Exception
+            numero = 0
+        End Try
+    End Function
 End Class

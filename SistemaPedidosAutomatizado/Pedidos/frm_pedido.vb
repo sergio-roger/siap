@@ -12,6 +12,11 @@ Public Class frm_pedido
             If (cargarComboMesas() = False) Then
                 mensaje(titulo, "Hubo un error al cargar las mesas", "danger")
             End If
+
+            If (cargarComboEstados() = False) Then
+                mensaje(titulo, "Hubo un error al cargar el Estado de los Pedidos", "danger")
+            End If
+
         Catch ex As Exception
 
         End Try
@@ -41,22 +46,17 @@ Public Class frm_pedido
     Private Function cargarComboEstados() As Boolean
         Try
             cargarComboEstados = False
-            Dim lista As New ArrayList()
+            cmb_estado.Items.Add("Ordenado")
+            cmb_estado.Text = "Ordenado"
 
-            lista = pedidoNegocio.getListaPedidos()
-
-            With cmb_mesa
-                .DropDownStyle = ComboBoxStyle.DropDownList
-                '.AutoCompleteMode = AutoCompleteMode.Suggest
-                .AutoCompleteSource = AutoCompleteSource.ListItems
-                .DataSource = lista
-                .ValueMember = "Codigo"
-                .DisplayMember = "Texto"
-            End With
             cargarComboEstados = True
         Catch ex As Exception
             cargarComboEstados = False
         End Try
+    End Function
+
+    Private Function obtenerNPedido() As Integer
+        Return pedidoNegocio.numero()
     End Function
 
     Private Sub frm_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -65,7 +65,7 @@ Public Class frm_pedido
             txt_usuario.Text = usuario.Nombres
 
             CargarCombos()
-            'numero_pedido = Obtener_N_Pedido()
+            txt_codigo_pedido.Text = obtenerNPedido()
             'txt_codigo_pedido.Text = numero_pedido.ToString()
             rdb_combo.Checked = False
             rdb_plato.Checked = True

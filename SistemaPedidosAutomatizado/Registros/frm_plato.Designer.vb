@@ -40,12 +40,16 @@ Partial Class frm_plato
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
         Me.btn_buscaPlato = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.date_fecha = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.pb_foto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.date_fecha)
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.txt_precio)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txt_nombre)
@@ -60,7 +64,7 @@ Partial Class frm_plato
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 54)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(363, 439)
+        Me.GroupBox1.Size = New System.Drawing.Size(363, 451)
         Me.GroupBox1.TabIndex = 42
         Me.GroupBox1.TabStop = False
         '
@@ -108,7 +112,7 @@ Partial Class frm_plato
         Me.btn_imagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btn_imagen.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_imagen.ForeColor = System.Drawing.Color.White
-        Me.btn_imagen.Location = New System.Drawing.Point(25, 381)
+        Me.btn_imagen.Location = New System.Drawing.Point(25, 404)
         Me.btn_imagen.Name = "btn_imagen"
         Me.btn_imagen.Size = New System.Drawing.Size(317, 40)
         Me.btn_imagen.TabIndex = 42
@@ -117,7 +121,7 @@ Partial Class frm_plato
         '
         'pb_foto
         '
-        Me.pb_foto.Location = New System.Drawing.Point(25, 189)
+        Me.pb_foto.Location = New System.Drawing.Point(25, 212)
         Me.pb_foto.Name = "pb_foto"
         Me.pb_foto.Size = New System.Drawing.Size(320, 180)
         Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -139,7 +143,6 @@ Partial Class frm_plato
         '
         Me.txt_codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_codigo.Location = New System.Drawing.Point(138, 13)
-        Me.txt_codigo.MaxLength = 10
         Me.txt_codigo.Name = "txt_codigo"
         Me.txt_codigo.Size = New System.Drawing.Size(204, 22)
         Me.txt_codigo.TabIndex = 31
@@ -245,6 +248,26 @@ Partial Class frm_plato
         Me.btn_buscaPlato.TabIndex = 46
         Me.btn_buscaPlato.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label6.Location = New System.Drawing.Point(27, 192)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(51, 13)
+        Me.Label6.TabIndex = 46
+        Me.Label6.Text = "* Fecha"
+        '
+        'date_fecha
+        '
+        Me.date_fecha.Enabled = False
+        Me.date_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_fecha.Location = New System.Drawing.Point(138, 186)
+        Me.date_fecha.Name = "date_fecha"
+        Me.date_fecha.Size = New System.Drawing.Size(200, 20)
+        Me.date_fecha.TabIndex = 47
+        '
         'frm_plato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +308,6 @@ Partial Class frm_plato
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents date_fecha As DateTimePicker
+    Friend WithEvents Label6 As Label
 End Class
