@@ -115,18 +115,28 @@ Public Class frm_combo
         nuevo.Precio = txt_precio.Text
         nuevo.Foto = ImageToByteArray(pb_foto.Image)
         nuevo.Descuento = IIf(chk_descuento.Checked = True, True, False)
-
         If (chk_descuento.Checked = False) Then
             nuevo.Porcentaje = 0
         Else
             nuevo.Porcentaje = Integer.Parse(txt_porcentaje.Text)
         End If
-
         nuevo.Codigo = txt_codigo.Text
         nuevo.Fecha = date_fecha.Value.ToShortDateString
         nuevo.Estado = "A"
 
         Return nuevo
+    End Function
+    Private Function recuperaCombo(codigo As String) As Boolean
+        Try
+            recuperaCombo = False
+
+            combo = comboNegocio.getCombo(codigo)
+            cargarComboTexbox(combo)
+
+            recuperaCombo = True
+        Catch ex As Exception
+            recuperaCombo = False
+        End Try
     End Function
 
     Private Function grabar() As Boolean
@@ -159,6 +169,7 @@ Public Class frm_combo
             Dim frm As New frm_mantCombo
             frm.ShowDialog()
             combo = auxCombo
+            cargarComboTexbox(combo)
         Catch ex As Exception
 
         End Try
@@ -205,4 +216,78 @@ Public Class frm_combo
     Private Sub btn_nuevo_Click(sender As Object, e As EventArgs) Handles btn_nuevo.Click
         Limpiar()
     End Sub
+    Private Sub cargarComboTexbox(combo As Combo)
+        txt_codigo.Text = combo.Codigo
+        txt_descripcion.Text = combo.Descripcion
+        txt_contenido1.Text = combo.Elemento1
+        txt_contenido2.Text = combo.Elemento2
+        txt_contenido3.Text = combo.Elemento3
+        txt_bebida.Text = combo.Bebida
+        cmb_modalidad.SelectedValue = combo.Id_modalidad.ToString
+        txt_precio.Text = Agregar_cero(combo.Precio.ToString)
+        chk_descuento.Checked = IIf(combo.Descuento = True, True, False)
+        If chk_descuento.Checked = True Then
+            txt_porcentaje.ReadOnly = False
+            txt_porcentaje.Text = combo.Porcentaje
+        Else
+            txt_porcentaje.ReadOnly = True
+            txt_porcentaje.Text = 0
+        End If
+
+        If (combo.Foto Is Nothing) Then
+            pb_foto.Image = Image.FromFile(System.AppDomain.CurrentDomain.BaseDirectory() & "img\image_defualt.jpg")
+        Else
+            pb_foto.Image = ByteArrayToImage(combo.Foto)
+        End If
+    End Sub
+
+    Private Sub txt_codigo_TextChanged(sender As Object, e As EventArgs) Handles txt_codigo.TextChanged
+
+    End Sub
+
+    Private Sub txt_codigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_codigo.KeyPress
+
+        Try
+            If (Asc(e.KeyChar) = 13 Or Asc(e.KeyChar) = 9) Then
+
+                If (recuperaCombo(txt_codigo.Text) = False) Then
+                    MsgBox("El combo no existe", MsgBoxStyle.Information)
+                    Limpiar()
+                    txt_codigo.Focus()
+                End If
+            End If
+        Catch ex As Exception
+            'MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        Try
+            If (txt_codigo.Text = String.Empty) Then
+                MsgBox("Digite una codigo para eliminar el combo", MsgBoxStyle.Information, "Cedula")
+                Exit Sub
+            End If
+
+            If (PreguntaRespuesta("Desea eliminar a " & txt_codigo.Text & " ? ", "Confirmar") = MsgBoxResult.Yes) Then
+
+                If (eliminar(combo) = False) Then
+                    MsgBox("Hubo un error al eliminar al usuario !", MsgBoxStyle.Critical, "Usuario")
+                Else
+                    MsgBox("Usuario eliminado :v ", MsgBoxStyle.Information, "Usuario")
+                    Limpiar()
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Function eliminar(combo) As Boolean
+        Try
+            eliminar = False
+            eliminar = comboNegocio.eliminar(combo)
+        Catch ex As Exception
+            eliminar = False
+        End Try
+    End Function
 End Class

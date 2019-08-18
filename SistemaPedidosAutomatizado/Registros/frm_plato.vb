@@ -87,7 +87,7 @@ Public Class frm_plato
 
             If grabar() Then
                 If (plato.Id = 0) Then
-                    mensaje(titulo, "Registro grabado con éxito", "ifo")
+                    mensaje(titulo, "Registro grabado con éxito", "info")
                 Else
                     mensaje(titulo, "Registro se actualizó", "info")
                 End If

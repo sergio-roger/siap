@@ -1,4 +1,6 @@
-﻿Public Class Combo
+﻿Imports CapaEntidad
+
+Public Class Combo
     Private _id As Integer
     Private _id_modalidad As Integer
     Private _codigo As String
@@ -12,6 +14,7 @@
     Private _descuento As Boolean
     Private _porcentaje As Integer
     Private _fecha As Date
+    Private _modalidad As String
     Private _estado As String
 
     Public Property Id As Integer
@@ -31,6 +34,10 @@
             _descripcion = value
         End Set
     End Property
+
+    Public Shared Function getDatoCombos() As List(Of Combo)
+        Throw New NotImplementedException()
+    End Function
 
     Public Property Elemento1 As String
         Get
@@ -137,6 +144,15 @@
         End Get
         Set(value As Date)
             _fecha = value
+        End Set
+    End Property
+
+    Public Property Modalidad As String
+        Get
+            Return _modalidad
+        End Get
+        Set(value As String)
+            _modalidad = value
         End Set
     End Property
 End Class

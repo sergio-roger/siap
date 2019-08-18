@@ -4,6 +4,7 @@ Imports CapaNegocio
 Public Class frm_pedido
     Private pedido As New Pedido
     Private pedidoNegocio As New PedidoNegocio
+    Private platoNegocio As New PlatoNegocio
     Private usuario As Usuario
     Private titulo As String
 
@@ -59,20 +60,141 @@ Public Class frm_pedido
         Return pedidoNegocio.numero()
     End Function
 
+    Private Function llenarTablaPlatos() As Boolean
+        Try
+            llenarTablaPlatos = False
+            Dim lista As New List(Of Plato)
+
+            lista = pedidoNegocio.getPlatos()
+            dgv_productos.Rows.Clear()
+
+            If (lista.Count > 0) Then
+                For Each item In lista
+                    dgv_productos.Rows.Add(item.Id, item.Nombre, Agregar_cero(item.Precio.ToString), item.Codigo, False, 0)
+                Next
+            End If
+            llenarTablaPlatos = True
+        Catch ex As Exception
+            llenarTablaPlatos = True
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+    Private Function llenarTablaCombo() As Boolean
+        Try
+            llenarTablaCombo = False
+            Dim lista As New List(Of Combo)
+
+            lista = pedidoNegocio.getCombos()
+            dgv_productos.Rows.Clear()
+
+            If (lista.Count > 0) Then
+                For Each item In lista
+                    dgv_productos.Rows.Add(item.Id, item.Descripcion, Agregar_cero(item.Precio.ToString), item.Codigo, item.Descuento, item.Porcentaje)
+                Next
+            End If
+
+            llenarTablaCombo = True
+        Catch ex As Exception
+            llenarTablaCombo = False
+        End Try
+    End Function
+
+    Private Sub CargarTabla()
+        Try
+            If (rdb_plato.Checked = True) Then
+                If (llenarTablaPlatos() = False) Then
+                    mensaje(titulo, "No se cargo los platos", "danger")
+                    Exit Sub
+                End If
+
+            ElseIf (rdb_combo.Checked = True) Then
+                If (llenarTablaCombo() = False) Then
+                    mensaje(titulo, "No se cargo los combos", "danger")
+                    Exit Sub
+                End If
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Function buscarPlatos(buscar As String, opcion As String) As Boolean
+        Try
+            buscarPlatos = False
+            Dim lista As New List(Of Plato)
+
+            lista = PlatoNegocio.getPlatos(buscar, opcion)
+            dgv_productos.Rows.Clear()
+
+            If (lista IsNot Nothing) Then
+                For Each item In lista
+                    If (item.Imagen Is Nothing) Then
+                        dgv_productos.Rows.Add()
+                    Else
+                        Dim img = ByteArrayToImage(item.Imagen)
+                        dgv_productos.Rows.Add(item.Id, item.Codigo, item.Nombre, item.Mod_id, item.Modalidad, item.Precio, item.Descripcion, img, item.Estado)
+
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+            buscarPlatos = False
+            'MsgBox(ex.Message)
+        End Try
+    End Function
+
     Private Sub frm_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             usuario = usuarioSeccion
             txt_usuario.Text = usuario.Nombres
 
-            CargarCombos()
-            txt_codigo_pedido.Text = obtenerNPedido()
-            'txt_codigo_pedido.Text = numero_pedido.ToString()
             rdb_combo.Checked = False
             rdb_plato.Checked = True
+            CargarCombos()
+            CargarTabla()
+            txt_codigo_pedido.Text = obtenerNPedido()
             txt_codigo_pedido.Focus()
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub btn_buscar_p_Click(sender As Object, e As EventArgs)
+        If rdb_combo.Checked = True Then
+            Dim frm As New frm_mantCombo
+            frm.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub rdb_combo_CheckedChanged(sender As Object, e As EventArgs) Handles rdb_combo.CheckedChanged
+        If (rdb_combo.Checked = True) Then
+            If (llenarTablaCombo() = False) Then
+                mensaje(titulo, "No se pudo cargar", "danger")
+            End If
+        End If
+    End Sub
+
+    Private Sub rdb_plato_CheckedChanged(sender As Object, e As EventArgs) Handles rdb_plato.CheckedChanged
+        If (rdb_plato.Checked = True) Then
+            If (llenarTablaPlatos() = False) Then
+                mensaje(titulo, "No se pudo cargar platos", "danger")
+            End If
+        End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar.TextChanged
+        If (rdb_plato.Checked = True) Then
+            'Buscar en platos
+            If buscarPlatos(txt_buscar.Text, "plato") = False Then
+            End If
+
+            If (rdb_combo.Checked = True) Then
+                'Buscar en Combos
+            End If
+        End If
+    End Sub
+
 End Class

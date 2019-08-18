@@ -153,13 +153,13 @@ Partial Class frm_buscar_usuario
         '
         'cmb_opcion
         '
+        Me.cmb_opcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_opcion.FormattingEnabled = True
         Me.cmb_opcion.Items.AddRange(New Object() {"Cedula", "Nombres", "Apellidos"})
         Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
         Me.cmb_opcion.Name = "cmb_opcion"
         Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
         Me.cmb_opcion.TabIndex = 1
-        Me.cmb_opcion.Text = "Apellidos"
         '
         'txt_buscar
         '

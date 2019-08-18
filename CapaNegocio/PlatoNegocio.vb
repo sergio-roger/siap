@@ -3,6 +3,7 @@ Imports CapaDatos
 
 Public Class PlatoNegocio
     Dim platoDatos As PlatoDatos
+
     Public Sub New()
         platoDatos = New PlatoDatos()
 
@@ -11,15 +12,13 @@ Public Class PlatoNegocio
         Return platoDatos.procesarDatos(plato)
     End Function
 
-
     Public Function getListaModalidad() As ArrayList
         '  Return platoDatos.getListaModalidad()
         Return platoDatos.getListaModalidad2()
-
     End Function
 
-    Public Shared Function getPlatos(buscar As String, opcion As String) As List(Of Plato)
-        Return PlatoDatos.getplatos(buscar, opcion)
+    Public Function getPlatos(buscar As String, opcion As String) As List(Of Plato)
+        Return platoDatos.getplatos(buscar, opcion)
     End Function
 
     Public Function eliminar(plato As Plato) As Boolean

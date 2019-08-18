@@ -19,4 +19,15 @@ Public Class PedidoNegocio
     Public Function numero() As Integer
         Return pedidoDatos.numero()
     End Function
+
+    Public Function getPlatos() As List(Of Plato)
+        Dim platoDatos As New PlatoDatos
+
+        Return platoDatos.getplatos("", "codigo")
+    End Function
+
+    Public Function getCombos() As List(Of Combo)
+        Dim comboDatos As New ComboDatos
+        Return comboDatos.getCombos()
+    End Function
 End Class

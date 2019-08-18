@@ -31,10 +31,8 @@ Public Class frm_buscar_usuario
     Private Sub frm_buscar_usuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             cmb_opcion.SelectedValue = "apellidos"
-            ' cmb_opcion.ValueMember = "apellidos"
 
             If buscarUsuario("", "apellidos") = False Then
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

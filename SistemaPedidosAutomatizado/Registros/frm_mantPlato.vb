@@ -2,28 +2,29 @@
 Imports CapaNegocio
 
 Public Class frm_mantPlato
-    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs) Handles GroupBox3.Enter
 
-    End Sub
+    Private platoNegocio As New PlatoNegocio
+    Private titulo As String = "Mantenimiento Plato"
 
     Private Sub frm_mantPlato_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            cmb_opcion.SelectedValue = "Codigo"
+            cmb_opcion.SelectedValue = "codigo"
             ' cmb_opcion.ValueMember = "apellidos"
 
             If buscarPlatos("", "codigo") = False Then
-
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Function buscarPlatos(buscar As String, opcion As String) As Boolean
         Try
             buscarPlatos = False
             Dim lista As New List(Of Plato)
 
-            lista = PlatoNegocio.getPlatos(buscar, opcion)
+            lista = platoNegocio.getPlatos(buscar, opcion)
             dgv_platos.Rows.Clear()
 
             If (lista IsNot Nothing) Then
@@ -47,20 +48,17 @@ Public Class frm_mantPlato
         Try
             'cmb_opcion.SelectedValue = "apellidos"
 
-            If buscarPlatos(txt_buscar.Text, cmb_opcion.SelectedItem) = False Then
+            If (cmb_opcion.SelectedItem Is Nothing) Then
+                mensaje(titulo, "Seleccione una opcion ", "info")
+                txt_buscar.Text = ""
+                Exit Sub
+            End If
 
+            If buscarPlatos(txt_buscar.Text, cmb_opcion.SelectedItem) = False Then
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Sub
-
-    Private Sub dgv_usuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub dgv_platos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_platos.CellContentClick
-
     End Sub
 
     Private Sub dgv_platos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_platos.CellDoubleClick

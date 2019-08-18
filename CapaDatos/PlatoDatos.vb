@@ -8,17 +8,18 @@ Public Class PlatoDatos
             If (Conectar() = False) Then
                 Exit Function
             End If
-            cmd = New SqlClient.SqlCommand("sp_insertar_actualizar_plato", cnn)
+
+            cmd = New SqlClient.SqlCommand("sp_CrearActualizarPlato", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@id", plato.Id)
-            cmd.Parameters.AddWithValue("@pla_nombre", plato.Nombre)
-            cmd.Parameters.AddWithValue("@mod_id", plato.Mod_id)
-            cmd.Parameters.AddWithValue("@pla_precio", plato.Precio)
-            cmd.Parameters.AddWithValue("@pla_estado", plato.Estado)
-            cmd.Parameters.AddWithValue("@pla_descripcion", plato.Descripcion)
-            cmd.Parameters.AddWithValue("@pla_imagen", plato.Imagen)
-            cmd.Parameters.AddWithValue("@pla_codigo", plato.Codigo)
-            cmd.Parameters.AddWithValue("@pla_fecha", plato.Fecha.ToShortDateString)
+            cmd.Parameters.AddWithValue("@codigo", plato.Codigo)
+            cmd.Parameters.AddWithValue("@nombre", plato.Nombre)
+            cmd.Parameters.AddWithValue("@precio", plato.Precio)
+            cmd.Parameters.AddWithValue("@estado", plato.Estado)
+            cmd.Parameters.AddWithValue("@descripcion", plato.Descripcion)
+            cmd.Parameters.AddWithValue("@id_mod", plato.Mod_id)
+            cmd.Parameters.AddWithValue("@image", plato.Imagen)
+            cmd.Parameters.AddWithValue("@fecha", plato.Fecha)
 
             cmd.ExecuteNonQuery()
             procesarDatos = True
@@ -29,6 +30,10 @@ Public Class PlatoDatos
             dr.Close()
             Desconectar()
         End Try
+    End Function
+
+    Public Function getCombos() As List(Of Combo)
+        Throw New NotImplementedException()
     End Function
 
     Public Function getPlato(codigo As String) As Plato
@@ -44,12 +49,6 @@ Public Class PlatoDatos
 		(select m.mod_id from Modalidad m where m.mod_id= p.mod_id ) as modalidad
 		 from plato p where pla_estado='A' and pla_codigo like '" & codigo & "'"
 
-
-            '"select *,
-            ' (select p.per_nombre from seg_Perfil p where p.per_id = s.per_Id) as perfil
-            ' from seg_Usuarios s where usu_estado = 'A' and usu_cedula = '" & codigo & "'" ' arreglar la sentencia para la base de datos
-
-            '2 hacer la tarea dentro de la BD
             dr = ExecuteReader(str_cadenaSql)
 
             If dr.HasRows Then
@@ -76,7 +75,7 @@ Public Class PlatoDatos
         End Try
     End Function
 
-    Public Shared Function getplatos(buscar As String, opcion As String) As List(Of Plato)
+    Public Function getplatos(buscar As String, opcion As String) As List(Of Plato)
         getplatos = Nothing
         Try
             Dim lista As New List(Of Plato)
@@ -111,6 +110,8 @@ Public Class PlatoDatos
         End Try
 
     End Function
+
+
 
     Public Function eliminar(plato As Plato) As Boolean
         Try

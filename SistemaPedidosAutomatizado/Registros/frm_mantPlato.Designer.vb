@@ -22,7 +22,7 @@ Partial Class frm_mantPlato
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmb_opcion = New System.Windows.Forms.ComboBox()
         Me.txt_buscar = New System.Windows.Forms.TextBox()
@@ -56,8 +56,9 @@ Partial Class frm_mantPlato
         '
         'cmb_opcion
         '
+        Me.cmb_opcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_opcion.FormattingEnabled = True
-        Me.cmb_opcion.Items.AddRange(New Object() {"Código", "Plato"})
+        Me.cmb_opcion.Items.AddRange(New Object() {"codigo", "plato"})
         Me.cmb_opcion.Location = New System.Drawing.Point(6, 21)
         Me.cmb_opcion.Name = "cmb_opcion"
         Me.cmb_opcion.Size = New System.Drawing.Size(186, 24)
@@ -77,8 +78,8 @@ Partial Class frm_mantPlato
         Me.dgv_platos.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.dgv_platos.Location = New System.Drawing.Point(12, 82)
         Me.dgv_platos.Name = "dgv_platos"
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgv_platos.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgv_platos.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_platos.Size = New System.Drawing.Size(488, 150)
         Me.dgv_platos.TabIndex = 21
         '
@@ -94,7 +95,7 @@ Partial Class frm_mantPlato
         '
         'nombre
         '
-        Me.nombre.HeaderText = "nombre"
+        Me.nombre.HeaderText = "Plato"
         Me.nombre.Name = "nombre"
         '
         'id_modalidad
