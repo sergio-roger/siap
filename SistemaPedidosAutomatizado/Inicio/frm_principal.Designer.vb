@@ -131,6 +131,7 @@ Partial Class frm_principal
         Me.pb_foto.Location = New System.Drawing.Point(1197, 40)
         Me.pb_foto.Name = "pb_foto"
         Me.pb_foto.Size = New System.Drawing.Size(106, 92)
+        Me.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pb_foto.TabIndex = 18
         Me.pb_foto.TabStop = False
         '

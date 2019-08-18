@@ -139,6 +139,7 @@ Partial Class frm_plato
         '
         Me.txt_codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_codigo.Location = New System.Drawing.Point(138, 13)
+        Me.txt_codigo.MaxLength = 10
         Me.txt_codigo.Name = "txt_codigo"
         Me.txt_codigo.Size = New System.Drawing.Size(204, 22)
         Me.txt_codigo.TabIndex = 31

@@ -9,9 +9,11 @@ Public Class UsuarioDatos
         Try
             Dim str_cadenaSql As String = ""
 
-            str_cadenaSql = "select usu_nombres,usu_apellidos,per_id,usu_id from seg_usuarios where usu_usuario='" & usuario & "' and usu_clave='" & clave & "'"
-            '1 conectar a la BD
+            str_cadenaSql = "select usu_id, usu_cedula,usu_nombres, usu_apellidos,per_id,usu_foto,
+(select p.per_nombre from seg_Perfil p where p.per_id = u.per_Id)as perfil
+from seg_usuarios u where usu_estado='A' and usu_usuario='" & usuario & "' and usu_clave='" & clave & "'"
 
+            '1 conectar a la BD
             If Conectar() = False Then
                 Exit Function
             End If
@@ -24,8 +26,11 @@ Public Class UsuarioDatos
                     Dim objUsuario As New Usuario
 
                     objUsuario.Id = dr("usu_id")
+                    objUsuario.Cedula = dr("usu_cedula")
                     objUsuario.Id_perfil = dr("per_id")
+                    objUsuario.Perfil = dr("perfil")
                     objUsuario.Nombres = dr("usu_nombres") & " " & dr("usu_apellidos")
+                    objUsuario.Foto = IIf(dr("usu_foto") Is DBNull.Value, Nothing, dr("usu_foto"))
 
                     'cargar a la lista
                     listaUsuarios.Add(objUsuario)

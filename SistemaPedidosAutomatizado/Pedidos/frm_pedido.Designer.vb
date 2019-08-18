@@ -29,6 +29,9 @@ Partial Class frm_pedido
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btn_nuevo = New System.Windows.Forms.Button()
+        Me.btn_borrar = New System.Windows.Forms.Button()
+        Me.btn_grabar = New System.Windows.Forms.Button()
         Me.dgv_pedido = New System.Windows.Forms.DataGridView()
         Me.col_check = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -44,11 +47,11 @@ Partial Class frm_pedido
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.rdb_combo = New System.Windows.Forms.RadioButton()
         Me.rdb_plato = New System.Windows.Forms.RadioButton()
+        Me.btn_buscar_p = New System.Windows.Forms.Button()
         Me.txt_precio = New System.Windows.Forms.MaskedTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -64,10 +67,8 @@ Partial Class frm_pedido
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_usuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btn_nuevo = New System.Windows.Forms.Button()
-        Me.btn_borrar = New System.Windows.Forms.Button()
-        Me.btn_grabar = New System.Windows.Forms.Button()
-        Me.btn_buscar_p = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_observacion = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
@@ -142,6 +143,37 @@ Partial Class frm_pedido
         Me.Label10.TabIndex = 28
         Me.Label10.Text = "Módulo de Pedidos"
         '
+        'btn_nuevo
+        '
+        Me.btn_nuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btn_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_nuevo.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_nuevo_n
+        Me.btn_nuevo.Location = New System.Drawing.Point(344, 5)
+        Me.btn_nuevo.Name = "btn_nuevo"
+        Me.btn_nuevo.Size = New System.Drawing.Size(50, 53)
+        Me.btn_nuevo.TabIndex = 55
+        Me.btn_nuevo.UseVisualStyleBackColor = False
+        '
+        'btn_borrar
+        '
+        Me.btn_borrar.BackColor = System.Drawing.Color.Tomato
+        Me.btn_borrar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_borrar_n
+        Me.btn_borrar.Location = New System.Drawing.Point(456, 7)
+        Me.btn_borrar.Name = "btn_borrar"
+        Me.btn_borrar.Size = New System.Drawing.Size(50, 51)
+        Me.btn_borrar.TabIndex = 53
+        Me.btn_borrar.UseVisualStyleBackColor = False
+        '
+        'btn_grabar
+        '
+        Me.btn_grabar.BackColor = System.Drawing.Color.LimeGreen
+        Me.btn_grabar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_guardar_n
+        Me.btn_grabar.Location = New System.Drawing.Point(400, 6)
+        Me.btn_grabar.Name = "btn_grabar"
+        Me.btn_grabar.Size = New System.Drawing.Size(50, 53)
+        Me.btn_grabar.TabIndex = 54
+        Me.btn_grabar.UseVisualStyleBackColor = False
+        '
         'dgv_pedido
         '
         Me.dgv_pedido.AllowUserToAddRows = False
@@ -150,9 +182,9 @@ Partial Class frm_pedido
         Me.dgv_pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_check, Me.col_id, Me.col_codigo, Me.col_pedido, Me.col_tipo, Me.col_cantidad, Me.col_precio, Me.col_descuento, Me.col_porcentaje, Me.col_subtotal, Me.col_total})
         Me.dgv_pedido.GridColor = System.Drawing.Color.White
-        Me.dgv_pedido.Location = New System.Drawing.Point(56, 328)
+        Me.dgv_pedido.Location = New System.Drawing.Point(45, 300)
         Me.dgv_pedido.Name = "dgv_pedido"
-        Me.dgv_pedido.Size = New System.Drawing.Size(498, 227)
+        Me.dgv_pedido.Size = New System.Drawing.Size(526, 203)
         Me.dgv_pedido.TabIndex = 66
         '
         'col_check
@@ -219,8 +251,7 @@ Partial Class frm_pedido
         '
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.cmb_estado)
-        Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Location = New System.Drawing.Point(422, 111)
+        Me.GroupBox5.Location = New System.Drawing.Point(422, 101)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(149, 74)
         Me.GroupBox5.TabIndex = 65
@@ -231,7 +262,7 @@ Partial Class frm_pedido
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Lime
-        Me.Label12.Location = New System.Drawing.Point(10, 16)
+        Me.Label12.Location = New System.Drawing.Point(10, 5)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(70, 13)
         Me.Label12.TabIndex = 50
@@ -241,7 +272,6 @@ Partial Class frm_pedido
         '
         Me.cmb_estado.BackColor = System.Drawing.Color.Black
         Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_estado.Enabled = False
         Me.cmb_estado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_estado.ForeColor = System.Drawing.Color.White
         Me.cmb_estado.FormattingEnabled = True
@@ -249,16 +279,6 @@ Partial Class frm_pedido
         Me.cmb_estado.Name = "cmb_estado"
         Me.cmb_estado.Size = New System.Drawing.Size(133, 24)
         Me.cmb_estado.TabIndex = 49
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(14, 16)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(37, 13)
-        Me.Label13.TabIndex = 48
-        Me.Label13.Text = "Mesa"
         '
         'GroupBox4
         '
@@ -276,7 +296,7 @@ Partial Class frm_pedido
         Me.GroupBox4.Controls.Add(Me.txt_codigo)
         Me.GroupBox4.Font = New System.Drawing.Font("Modern No. 20", 8.249999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox4.Location = New System.Drawing.Point(43, 195)
+        Me.GroupBox4.Location = New System.Drawing.Point(43, 179)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(528, 112)
         Me.GroupBox4.TabIndex = 62
@@ -317,6 +337,16 @@ Partial Class frm_pedido
         Me.rdb_plato.TabStop = True
         Me.rdb_plato.Text = "Plato"
         Me.rdb_plato.UseVisualStyleBackColor = True
+        '
+        'btn_buscar_p
+        '
+        Me.btn_buscar_p.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_buscar_p.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_buscar
+        Me.btn_buscar_p.Location = New System.Drawing.Point(400, 54)
+        Me.btn_buscar_p.Name = "btn_buscar_p"
+        Me.btn_buscar_p.Size = New System.Drawing.Size(90, 50)
+        Me.btn_buscar_p.TabIndex = 55
+        Me.btn_buscar_p.UseVisualStyleBackColor = True
         '
         'txt_precio
         '
@@ -396,7 +426,7 @@ Partial Class frm_pedido
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.cmb_mesa)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(256, 111)
+        Me.GroupBox2.Location = New System.Drawing.Point(256, 100)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(148, 74)
         Me.GroupBox2.TabIndex = 61
@@ -437,7 +467,7 @@ Partial Class frm_pedido
         '
         Me.GroupBox1.Controls.Add(Me.txt_usuario)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Location = New System.Drawing.Point(43, 111)
+        Me.GroupBox1.Location = New System.Drawing.Point(43, 100)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(194, 71)
         Me.GroupBox1.TabIndex = 60
@@ -447,6 +477,7 @@ Partial Class frm_pedido
         '
         Me.txt_usuario.Location = New System.Drawing.Point(17, 38)
         Me.txt_usuario.Name = "txt_usuario"
+        Me.txt_usuario.ReadOnly = True
         Me.txt_usuario.Size = New System.Drawing.Size(166, 20)
         Me.txt_usuario.TabIndex = 0
         '
@@ -461,46 +492,24 @@ Partial Class frm_pedido
         Me.Label5.TabIndex = 47
         Me.Label5.Text = "Usuario"
         '
-        'btn_nuevo
+        'Label2
         '
-        Me.btn_nuevo.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btn_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_nuevo.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_nuevo_n
-        Me.btn_nuevo.Location = New System.Drawing.Point(344, 5)
-        Me.btn_nuevo.Name = "btn_nuevo"
-        Me.btn_nuevo.Size = New System.Drawing.Size(50, 53)
-        Me.btn_nuevo.TabIndex = 55
-        Me.btn_nuevo.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(57, 529)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.TabIndex = 66
+        Me.Label2.Text = "Codigo"
         '
-        'btn_borrar
+        'txt_observacion
         '
-        Me.btn_borrar.BackColor = System.Drawing.Color.Tomato
-        Me.btn_borrar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_borrar_n
-        Me.btn_borrar.Location = New System.Drawing.Point(456, 7)
-        Me.btn_borrar.Name = "btn_borrar"
-        Me.btn_borrar.Size = New System.Drawing.Size(50, 51)
-        Me.btn_borrar.TabIndex = 53
-        Me.btn_borrar.UseVisualStyleBackColor = False
-        '
-        'btn_grabar
-        '
-        Me.btn_grabar.BackColor = System.Drawing.Color.LimeGreen
-        Me.btn_grabar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_guardar_n
-        Me.btn_grabar.Location = New System.Drawing.Point(400, 6)
-        Me.btn_grabar.Name = "btn_grabar"
-        Me.btn_grabar.Size = New System.Drawing.Size(50, 53)
-        Me.btn_grabar.TabIndex = 54
-        Me.btn_grabar.UseVisualStyleBackColor = False
-        '
-        'btn_buscar_p
-        '
-        Me.btn_buscar_p.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_buscar_p.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_buscar
-        Me.btn_buscar_p.Location = New System.Drawing.Point(400, 54)
-        Me.btn_buscar_p.Name = "btn_buscar_p"
-        Me.btn_buscar_p.Size = New System.Drawing.Size(90, 50)
-        Me.btn_buscar_p.TabIndex = 55
-        Me.btn_buscar_p.UseVisualStyleBackColor = True
+        Me.txt_observacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_observacion.Location = New System.Drawing.Point(124, 521)
+        Me.txt_observacion.Multiline = True
+        Me.txt_observacion.Name = "txt_observacion"
+        Me.txt_observacion.Size = New System.Drawing.Size(447, 32)
+        Me.txt_observacion.TabIndex = 65
         '
         'frm_pedido
         '
@@ -508,7 +517,9 @@ Partial Class frm_pedido
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(602, 565)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txt_id_aux)
+        Me.Controls.Add(Me.txt_observacion)
         Me.Controls.Add(Me.txt_porcentaje)
         Me.Controls.Add(Me.txt_descuento)
         Me.Controls.Add(Me.txt_codigo_pedido)
@@ -562,7 +573,6 @@ Partial Class frm_pedido
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label12 As Label
     Friend WithEvents cmb_estado As ComboBox
-    Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents btn_add As Button
     Friend WithEvents rdb_combo As RadioButton
@@ -583,4 +593,6 @@ Partial Class frm_pedido
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txt_usuario As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txt_observacion As TextBox
 End Class

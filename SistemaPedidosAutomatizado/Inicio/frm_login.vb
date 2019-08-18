@@ -99,14 +99,6 @@ Public Class frm_login
             usuarioSeccion = listaAux.Item(0)
             n = listaAux.Count - 1
 
-            'If n >= 0 Then
-            '    For i = 0 To n
-            '        g_str_nombreUsuario = listaAux.Item(i).Nombres
-            '        g_int_perfil = listaAux.Item(i).Id_perfil
-            '        g_int_Id_usuario = listaAux.Item(i).Id
-            '    Next
-            'End If
-
             VerificarUsuario = True
         Catch ex As Exception
             VerificarUsuario = False

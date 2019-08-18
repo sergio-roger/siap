@@ -4,7 +4,6 @@ Public Class MesaDatos
 
     Public Function procesarMesa(mesa As Mesa) As Boolean
         'Esta funcion va a crear y actualizar las mesas
-
         Try
             procesarMesa = False
 
@@ -90,4 +89,5 @@ Public Class MesaDatos
             Desconectar()
         End Try
     End Function
+
 End Class

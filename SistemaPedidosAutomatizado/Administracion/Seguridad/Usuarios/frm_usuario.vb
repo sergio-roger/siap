@@ -177,7 +177,7 @@ Public Class frm_usuario
         nuevo.Clave = txt_clave.Text
         nuevo.Foto = ImageToByteArray(pb_foto.Image)
         nuevo.Fecha = date_fecha.Value.ToShortDateString
-        MsgBox(nuevo.Fecha)
+        'MsgBox(nuevo.Fecha)
         nuevo.Estado = "A"
 
         Return nuevo

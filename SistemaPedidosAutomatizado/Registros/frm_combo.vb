@@ -115,7 +115,13 @@ Public Class frm_combo
         nuevo.Precio = txt_precio.Text
         nuevo.Foto = ImageToByteArray(pb_foto.Image)
         nuevo.Descuento = IIf(chk_descuento.Checked = True, True, False)
-        nuevo.Porcentaje = IIf(txt_porcentaje.Text = "", 0, Integer.Parse(txt_porcentaje.Text))
+
+        If (chk_descuento.Checked = False) Then
+            nuevo.Porcentaje = 0
+        Else
+            nuevo.Porcentaje = Integer.Parse(txt_porcentaje.Text)
+        End If
+
         nuevo.Codigo = txt_codigo.Text
         nuevo.Fecha = date_fecha.Value.ToShortDateString
         nuevo.Estado = "A"

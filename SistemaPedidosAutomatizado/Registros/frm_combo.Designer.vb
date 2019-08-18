@@ -24,6 +24,9 @@ Partial Class frm_combo
     Private Sub InitializeComponent()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.date_fecha = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.txt_codigo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.panel_descuento = New System.Windows.Forms.GroupBox()
@@ -49,9 +52,6 @@ Partial Class frm_combo
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
         Me.btn_buscaPCombo = New System.Windows.Forms.Button()
-        Me.txt_descripcion = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.date_fecha = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.panel_descuento.SuspendLayout()
         CType(Me.pb_foto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,10 +98,39 @@ Partial Class frm_combo
         Me.GroupBox1.TabIndex = 45
         Me.GroupBox1.TabStop = False
         '
+        'date_fecha
+        '
+        Me.date_fecha.Enabled = False
+        Me.date_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.date_fecha.Location = New System.Drawing.Point(368, 176)
+        Me.date_fecha.Name = "date_fecha"
+        Me.date_fecha.Size = New System.Drawing.Size(180, 20)
+        Me.date_fecha.TabIndex = 65
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label8.Location = New System.Drawing.Point(13, 178)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(83, 13)
+        Me.Label8.TabIndex = 64
+        Me.Label8.Text = "* Descripcion"
+        '
+        'txt_descripcion
+        '
+        Me.txt_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_descripcion.Location = New System.Drawing.Point(130, 173)
+        Me.txt_descripcion.Name = "txt_descripcion"
+        Me.txt_descripcion.Size = New System.Drawing.Size(204, 22)
+        Me.txt_descripcion.TabIndex = 63
+        '
         'txt_codigo
         '
         Me.txt_codigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_codigo.Location = New System.Drawing.Point(130, 19)
+        Me.txt_codigo.MaxLength = 10
         Me.txt_codigo.Name = "txt_codigo"
         Me.txt_codigo.Size = New System.Drawing.Size(136, 22)
         Me.txt_codigo.TabIndex = 62
@@ -356,34 +385,6 @@ Partial Class frm_combo
         Me.btn_buscaPCombo.Size = New System.Drawing.Size(90, 50)
         Me.btn_buscaPCombo.TabIndex = 50
         Me.btn_buscaPCombo.UseVisualStyleBackColor = True
-        '
-        'txt_descripcion
-        '
-        Me.txt_descripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_descripcion.Location = New System.Drawing.Point(130, 173)
-        Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(204, 22)
-        Me.txt_descripcion.TabIndex = 63
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label8.Location = New System.Drawing.Point(13, 178)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(83, 13)
-        Me.Label8.TabIndex = 64
-        Me.Label8.Text = "* Descripcion"
-        '
-        'date_fecha
-        '
-        Me.date_fecha.Enabled = False
-        Me.date_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.date_fecha.Location = New System.Drawing.Point(368, 176)
-        Me.date_fecha.Name = "date_fecha"
-        Me.date_fecha.Size = New System.Drawing.Size(180, 20)
-        Me.date_fecha.TabIndex = 65
         '
         'frm_combo
         '

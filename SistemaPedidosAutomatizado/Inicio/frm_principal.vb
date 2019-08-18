@@ -146,7 +146,13 @@ Public Class frm_principal
             lbl_usuario.Text = usuarioSeccion.Nombres
             lbl_usuario_estado.Text = usuarioSeccion.Nombres
             lbl_fecha.Text = fecha
+            lbl_perfil.Text = usuarioSeccion.Perfil
 
+            If (usuarioSeccion.Foto Is Nothing) Then
+                pb_foto.Image = Image.FromFile(System.AppDomain.CurrentDomain.BaseDirectory() & "img\user_default.jpg")
+            Else
+                pb_foto.Image = ByteArrayToImage(usuarioSeccion.Foto)
+            End If
             'cargar el menu de la aplicación
             CargarMenus(usuarioSeccion.Id_perfil)
         Catch ex As Exception
