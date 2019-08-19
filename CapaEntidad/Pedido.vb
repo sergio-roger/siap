@@ -7,6 +7,8 @@ Public Class Pedido
     Private _id_mesa As Integer
     Private _estado As String
     Private _observacion As String
+    Private _mesa As String
+    Private _estadoPedido As String
     Private _detalles As List(Of DetallePedido)
 
     Public Property Id As Integer
@@ -69,6 +71,24 @@ Public Class Pedido
         End Get
         Set(value As List(Of DetallePedido))
             _detalles = value
+        End Set
+    End Property
+
+    Public Property Mesa As String
+        Get
+            Return _mesa
+        End Get
+        Set(value As String)
+            _mesa = value
+        End Set
+    End Property
+
+    Public Property EstadoPedido As String
+        Get
+            Return _estadoPedido
+        End Get
+        Set(value As String)
+            _estadoPedido = value
         End Set
     End Property
 End Class

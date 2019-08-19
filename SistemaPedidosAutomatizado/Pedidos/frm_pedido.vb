@@ -279,7 +279,7 @@ Public Class frm_pedido
             listadetalles = crearListaDetalles()
             pedido.Detalles = listadetalles
 
-            GrabarPedido = pedidoNegocio.grabar(pedido)
+            GrabarPedido = pedidoNegocio.grabar(pedido, "m-ocupado")
             'Guardar datos en la tabla cab_movimiento con su procedure store
             'If (GrabarCabeceraPedido()) Then
             '    Dim cadena As String = "select ped_id from Pedido where ped_estad = 'A' and pe_codigo = '" & txt_codigo_pedido.Text & "'"

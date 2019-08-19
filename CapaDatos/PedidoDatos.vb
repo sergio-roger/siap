@@ -20,6 +20,14 @@ Public Class PedidoDatos
         Return lista
     End Function
 
+    Public Function getEstadoPedidos() As ArrayList
+        Dim sql = "select ep_id, ep_descripcion from Estados_Pedidos where ep_estado='A' order by 2"
+        Dim lista As New ArrayList()
+
+        lista = CargarComboDesdeSql(sql)
+        Return lista
+    End Function
+
     Public Function numero() As Integer
         numero = 0
         Try
@@ -70,7 +78,70 @@ Public Class PedidoDatos
         End Try
     End Function
 
-    Public Function procederDetalle(pedido As Pedido) As Boolean
+    Public Function getDetallePedido(id As Integer) As ArrayList
+        Try
+            Dim lista As New ArrayList
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            dr = ExecuteReader("sp_obtener_detalle_Pedido", id)
+
+            If dr.HasRows Then
+                While dr.Read
+                    Dim coleccion() As String = dr("items").Split(",")
+
+                    For i = 0 To coleccion.Length - 1
+
+                        If (coleccion(i) <> "") Then
+                            lista.Add("* " & coleccion(i))
+                        End If
+                    Next
+                End While
+                Return lista
+            End If
+
+        Catch ex As Exception
+            getDetallePedido = Nothing
+        End Try
+    End Function
+
+    Public Function getPedidos() As List(Of Pedido)
+        Try
+            Dim lista As New List(Of Pedido)
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            Dim cadenasql As String = "select *,
+(select m.mesa_nombre from Mesa m where m.mesa_id =p.mesa_id) as m_mesa, 
+(select ep.ep_descripcion from Estados_Pedidos ep where p.ep_id = ep.ep_id) as ped_estado
+from pedidos p order by per_id asc"
+
+            dr = ExecuteReader(cadenasql)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    Dim p As New Pedido
+
+                    p.Id = dr("per_id")
+                    p.Mesa = dr("m_mesa")
+                    p.EstadoPedido = dr("ped_estado")
+                    p.Estado = dr("per_estado")
+                    p.Observacion = dr("per_observacion")
+                    p.Id_mesa = dr("mesa_id")
+                    p.Id_estadoPedido = dr("ep_id")
+                    lista.Add(p)
+                End While
+                Return lista
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Function
+
+    Public Function procederDetalle(pedido As Pedido, estadoMesa As String) As Boolean
 
         Try
             procederDetalle = False
@@ -93,7 +164,7 @@ Public Class PedidoDatos
             Next
 
             'Actulizar el estado de las mesas
-            If (actualizaEstadoMesa(pedido.Id_mesa) = False) Then
+            If (actualizaEstadoMesa(pedido.Id_mesa, estadoMesa) = False) Then
                 Exit Function
             End If
 
@@ -132,7 +203,7 @@ Public Class PedidoDatos
         End Try
     End Function
 
-    Public Function actualizaEstadoMesa(id As Integer) As Boolean
+    Public Function actualizaEstadoMesa(id As Integer, estadoMesa As String) As Boolean
 
         Try
             actualizaEstadoMesa = False
@@ -141,6 +212,7 @@ Public Class PedidoDatos
             cmd.CommandType = CommandType.StoredProcedure
 
             cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@estado", estadoMesa)
             cmd.ExecuteNonQuery()
 
             actualizaEstadoMesa = True

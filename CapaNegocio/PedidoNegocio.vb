@@ -16,6 +16,10 @@ Public Class PedidoNegocio
         Return pedidoDatos.geListaPedidos()
     End Function
 
+    Public Function getEstadoPedidos() As ArrayList
+        Return pedidoDatos.getEstadoPedidos()
+    End Function
+
     Public Function numero() As Integer
         Return pedidoDatos.numero()
     End Function
@@ -42,7 +46,15 @@ Public Class PedidoNegocio
         Return detalleComida
     End Function
 
-    Public Function grabar(pedido As Pedido) As Boolean
-        Return pedidoDatos.procederDetalle(pedido)
+    Public Function getPedidos() As List(Of Pedido)
+        Return pedidoDatos.getPedidos()
+    End Function
+
+    Public Function grabar(pedido As Pedido, estadoMesa As String) As Boolean
+        Return pedidoDatos.procederDetalle(pedido, estadoMesa)
+    End Function
+
+    Public Function getDetallePedido(id As Integer) As ArrayList
+        Return pedidoDatos.getDetallePedido(id)
     End Function
 End Class

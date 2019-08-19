@@ -35,9 +35,12 @@ Partial Class frm_lista_pedido
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_mesa = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -108,9 +111,9 @@ Partial Class frm_lista_pedido
         Me.Label3.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label3.Location = New System.Drawing.Point(13, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 16)
+        Me.Label3.Size = New System.Drawing.Size(23, 16)
         Me.Label3.TabIndex = 30
-        Me.Label3.Text = "Código"
+        Me.Label3.Text = "ID"
         '
         'GroupBox2
         '
@@ -168,8 +171,10 @@ Partial Class frm_lista_pedido
         '
         'dgv_pedidos
         '
+        Me.dgv_pedidos.AllowUserToAddRows = False
+        Me.dgv_pedidos.AllowUserToDeleteRows = False
         Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_mesa, Me.col_estado})
+        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_mesa, Me.col_estado, Me.Column1, Me.Column4, Me.Column2, Me.Column3})
         Me.dgv_pedidos.Location = New System.Drawing.Point(16, 46)
         Me.dgv_pedidos.Name = "dgv_pedidos"
         Me.dgv_pedidos.ReadOnly = True
@@ -183,13 +188,6 @@ Partial Class frm_lista_pedido
         Me.col_id.ReadOnly = True
         Me.col_id.Width = 70
         '
-        'col_codigo
-        '
-        Me.col_codigo.HeaderText = "Codigo"
-        Me.col_codigo.Name = "col_codigo"
-        Me.col_codigo.ReadOnly = True
-        Me.col_codigo.Width = 120
-        '
         'col_mesa
         '
         Me.col_mesa.HeaderText = "Messa"
@@ -198,9 +196,34 @@ Partial Class frm_lista_pedido
         '
         'col_estado
         '
-        Me.col_estado.HeaderText = "Estado"
+        Me.col_estado.HeaderText = "Estado Pedido"
         Me.col_estado.Name = "col_estado"
         Me.col_estado.ReadOnly = True
+        Me.col_estado.Width = 130
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Estado"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Observacion"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "id_mesa"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "id_estado"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
         'Label10
         '
@@ -250,9 +273,12 @@ Partial Class frm_lista_pedido
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
     Friend WithEvents dgv_pedidos As DataGridView
+    Friend WithEvents Label10 As Label
     Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
     Friend WithEvents col_mesa As DataGridViewTextBoxColumn
     Friend WithEvents col_estado As DataGridViewTextBoxColumn
-    Friend WithEvents Label10 As Label
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class
