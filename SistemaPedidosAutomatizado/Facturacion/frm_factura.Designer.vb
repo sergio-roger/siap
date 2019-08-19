@@ -37,7 +37,6 @@ Partial Class frm_factura
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_correo = New System.Windows.Forms.TextBox()
@@ -58,9 +57,7 @@ Partial Class frm_factura
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txt_total = New System.Windows.Forms.TextBox()
         Me.txt_descuento = New System.Windows.Forms.TextBox()
-        Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_borrar = New System.Windows.Forms.Button()
-        Me.btn_grabar = New System.Windows.Forms.Button()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_id_ped = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_id_tc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -75,12 +72,17 @@ Partial Class frm_factura
         Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txt_subtotal = New System.Windows.Forms.TextBox()
+        Me.bn_buscar_cliente = New System.Windows.Forms.Button()
+        Me.btn_nuevo = New System.Windows.Forms.Button()
+        Me.btn_grabar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chk_activar = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -94,6 +96,7 @@ Partial Class frm_factura
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chk_activar)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.btn_buscar)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -116,7 +119,7 @@ Partial Class frm_factura
         '
         Me.Button2.BackColor = System.Drawing.Color.Tomato
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(699, 28)
+        Me.Button2.Location = New System.Drawing.Point(722, 45)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(79, 71)
         Me.Button2.TabIndex = 60
@@ -127,7 +130,7 @@ Partial Class frm_factura
         '
         Me.btn_buscar.BackColor = System.Drawing.Color.Tomato
         Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_buscar.Location = New System.Drawing.Point(614, 28)
+        Me.btn_buscar.Location = New System.Drawing.Point(627, 45)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(79, 71)
         Me.btn_buscar.TabIndex = 59
@@ -214,16 +217,9 @@ Partial Class frm_factura
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Empresa SIAP S.A"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(20, 19)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(121, 97)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.bn_buscar_cliente)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.txt_correo)
         Me.GroupBox2.Controls.Add(Me.Label12)
@@ -246,7 +242,7 @@ Partial Class frm_factura
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(18, 193)
+        Me.Label13.Location = New System.Drawing.Point(12, 193)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(38, 13)
         Me.Label13.TabIndex = 21
@@ -254,15 +250,15 @@ Partial Class frm_factura
         '
         'txt_correo
         '
-        Me.txt_correo.Location = New System.Drawing.Point(103, 193)
+        Me.txt_correo.Location = New System.Drawing.Point(84, 193)
         Me.txt_correo.Name = "txt_correo"
-        Me.txt_correo.Size = New System.Drawing.Size(140, 20)
+        Me.txt_correo.Size = New System.Drawing.Size(178, 20)
         Me.txt_correo.TabIndex = 20
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(18, 159)
+        Me.Label12.Location = New System.Drawing.Point(12, 159)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(49, 13)
         Me.Label12.TabIndex = 19
@@ -270,15 +266,15 @@ Partial Class frm_factura
         '
         'txt_Telefono
         '
-        Me.txt_Telefono.Location = New System.Drawing.Point(103, 159)
+        Me.txt_Telefono.Location = New System.Drawing.Point(84, 159)
         Me.txt_Telefono.Name = "txt_Telefono"
-        Me.txt_Telefono.Size = New System.Drawing.Size(140, 20)
+        Me.txt_Telefono.Size = New System.Drawing.Size(178, 20)
         Me.txt_Telefono.TabIndex = 18
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 126)
+        Me.Label11.Location = New System.Drawing.Point(12, 126)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 17
@@ -286,15 +282,15 @@ Partial Class frm_factura
         '
         'txt_direccion
         '
-        Me.txt_direccion.Location = New System.Drawing.Point(103, 126)
+        Me.txt_direccion.Location = New System.Drawing.Point(84, 126)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(140, 20)
+        Me.txt_direccion.Size = New System.Drawing.Size(182, 20)
         Me.txt_direccion.TabIndex = 16
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 94)
+        Me.Label10.Location = New System.Drawing.Point(12, 94)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(49, 13)
         Me.Label10.TabIndex = 15
@@ -302,15 +298,15 @@ Partial Class frm_factura
         '
         'txt_apellidos
         '
-        Me.txt_apellidos.Location = New System.Drawing.Point(103, 94)
+        Me.txt_apellidos.Location = New System.Drawing.Point(84, 94)
         Me.txt_apellidos.Name = "txt_apellidos"
-        Me.txt_apellidos.Size = New System.Drawing.Size(140, 20)
+        Me.txt_apellidos.Size = New System.Drawing.Size(182, 20)
         Me.txt_apellidos.TabIndex = 14
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(18, 64)
+        Me.Label9.Location = New System.Drawing.Point(12, 64)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 13
@@ -318,15 +314,15 @@ Partial Class frm_factura
         '
         'txt_nombres
         '
-        Me.txt_nombres.Location = New System.Drawing.Point(103, 64)
+        Me.txt_nombres.Location = New System.Drawing.Point(84, 64)
         Me.txt_nombres.Name = "txt_nombres"
-        Me.txt_nombres.Size = New System.Drawing.Size(140, 20)
+        Me.txt_nombres.Size = New System.Drawing.Size(182, 20)
         Me.txt_nombres.TabIndex = 12
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(18, 34)
+        Me.Label8.Location = New System.Drawing.Point(12, 34)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 13)
         Me.Label8.TabIndex = 11
@@ -334,9 +330,9 @@ Partial Class frm_factura
         '
         'txt_cedula
         '
-        Me.txt_cedula.Location = New System.Drawing.Point(103, 34)
+        Me.txt_cedula.Location = New System.Drawing.Point(84, 34)
         Me.txt_cedula.Name = "txt_cedula"
-        Me.txt_cedula.Size = New System.Drawing.Size(140, 20)
+        Me.txt_cedula.Size = New System.Drawing.Size(104, 20)
         Me.txt_cedula.TabIndex = 10
         '
         'GroupBox3
@@ -420,17 +416,6 @@ Partial Class frm_factura
         Me.txt_descuento.Size = New System.Drawing.Size(138, 20)
         Me.txt_descuento.TabIndex = 1
         '
-        'btn_nuevo
-        '
-        Me.btn_nuevo.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btn_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_nuevo.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_nuevo_n
-        Me.btn_nuevo.Location = New System.Drawing.Point(31, 9)
-        Me.btn_nuevo.Name = "btn_nuevo"
-        Me.btn_nuevo.Size = New System.Drawing.Size(50, 53)
-        Me.btn_nuevo.TabIndex = 58
-        Me.btn_nuevo.UseVisualStyleBackColor = False
-        '
         'btn_borrar
         '
         Me.btn_borrar.BackColor = System.Drawing.Color.Tomato
@@ -441,16 +426,6 @@ Partial Class frm_factura
         Me.btn_borrar.TabIndex = 56
         Me.btn_borrar.Text = "X"
         Me.btn_borrar.UseVisualStyleBackColor = False
-        '
-        'btn_grabar
-        '
-        Me.btn_grabar.BackColor = System.Drawing.Color.LimeGreen
-        Me.btn_grabar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_guardar_n
-        Me.btn_grabar.Location = New System.Drawing.Point(87, 10)
-        Me.btn_grabar.Name = "btn_grabar"
-        Me.btn_grabar.Size = New System.Drawing.Size(50, 53)
-        Me.btn_grabar.TabIndex = 57
-        Me.btn_grabar.UseVisualStyleBackColor = False
         '
         'col_id
         '
@@ -550,6 +525,56 @@ Partial Class frm_factura
         Me.txt_subtotal.Size = New System.Drawing.Size(138, 20)
         Me.txt_subtotal.TabIndex = 65
         '
+        'bn_buscar_cliente
+        '
+        Me.bn_buscar_cliente.BackColor = System.Drawing.Color.Tomato
+        Me.bn_buscar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bn_buscar_cliente.Location = New System.Drawing.Point(207, 19)
+        Me.bn_buscar_cliente.Name = "bn_buscar_cliente"
+        Me.bn_buscar_cliente.Size = New System.Drawing.Size(59, 39)
+        Me.bn_buscar_cliente.TabIndex = 61
+        Me.bn_buscar_cliente.Text = "buscar"
+        Me.bn_buscar_cliente.UseVisualStyleBackColor = False
+        '
+        'btn_nuevo
+        '
+        Me.btn_nuevo.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btn_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_nuevo.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_nuevo_n
+        Me.btn_nuevo.Location = New System.Drawing.Point(31, 9)
+        Me.btn_nuevo.Name = "btn_nuevo"
+        Me.btn_nuevo.Size = New System.Drawing.Size(50, 53)
+        Me.btn_nuevo.TabIndex = 58
+        Me.btn_nuevo.UseVisualStyleBackColor = False
+        '
+        'btn_grabar
+        '
+        Me.btn_grabar.BackColor = System.Drawing.Color.LimeGreen
+        Me.btn_grabar.Image = Global.SistemaPedidosAutomatizado.My.Resources.Resources.boton_guardar_n
+        Me.btn_grabar.Location = New System.Drawing.Point(87, 10)
+        Me.btn_grabar.Name = "btn_grabar"
+        Me.btn_grabar.Size = New System.Drawing.Size(50, 53)
+        Me.btn_grabar.TabIndex = 57
+        Me.btn_grabar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(121, 97)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'chk_activar
+        '
+        Me.chk_activar.AutoSize = True
+        Me.chk_activar.Location = New System.Drawing.Point(627, 19)
+        Me.chk_activar.Name = "chk_activar"
+        Me.chk_activar.Size = New System.Drawing.Size(81, 17)
+        Me.chk_activar.TabIndex = 61
+        Me.chk_activar.Text = "CheckBox1"
+        Me.chk_activar.UseVisualStyleBackColor = True
+        '
         'frm_factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -567,13 +592,13 @@ Partial Class frm_factura
         Me.Text = "frm_factura"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -630,4 +655,6 @@ Partial Class frm_factura
     Friend WithEvents col_estado As DataGridViewTextBoxColumn
     Friend WithEvents txt_subtotal As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents bn_buscar_cliente As Button
+    Friend WithEvents chk_activar As CheckBox
 End Class

@@ -12,7 +12,7 @@ Module Variables
     Public auxCombo As New Combo()
     Public auxPlato As New Plato
     Public auxPedido As New Pedido
-
+    Public auxCliente As New Cliente
     'Public auxProducto As New Producto()
     'Public auxPersona As New Persona()
 End Module

@@ -105,6 +105,12 @@
     <Compile Include="Administracion\Seguridad\Usuarios\frm_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frm_buscar_cliente.Designer.vb">
+      <DependentUpon>frm_buscar_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frm_buscar_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturacion\frm_factura.Designer.vb">
       <DependentUpon>frm_factura.vb</DependentUpon>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\Seguridad\Usuarios\frm_usuario.resx">
       <DependentUpon>frm_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frm_buscar_cliente.resx">
+      <DependentUpon>frm_buscar_cliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_factura.resx">
       <DependentUpon>frm_factura.vb</DependentUpon>
