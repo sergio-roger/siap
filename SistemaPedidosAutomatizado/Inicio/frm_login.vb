@@ -93,7 +93,7 @@ Public Class frm_login
 
             Dim listaAux As New List(Of Usuario)
             Dim usuarioNegocio As New UsuarioNegocio()
-            Dim n, i As Integer
+            Dim n As Integer
 
             listaAux = usuarioNegocio.VerificarUsuario(usuario, clave)
             usuarioSeccion = listaAux.Item(0)

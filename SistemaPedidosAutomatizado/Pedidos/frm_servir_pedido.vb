@@ -79,7 +79,6 @@ Public Class frm_servir_pedido
         End Try
     End Function
 
-
     Private Sub btn_servir_Click(sender As Object, e As EventArgs) Handles btn_servir.Click
         Try
             If (pedido.Id <> 0) Then
@@ -87,7 +86,8 @@ Public Class frm_servir_pedido
                     mensaje("Hups", "Algo salió mal al actualizar el pedido ", "alert")
                 Else
                     mensaje("Exito", "El pedido ha sido servido", "info")
-                    If (cargarPedidos() = False) Then
+
+                    If (consultarEstadoPedidos() = False) Then
                         mensaje(titulo, "No se pudo cargar los pedidos", "danger")
                     End If
                     pedido.Id = 0

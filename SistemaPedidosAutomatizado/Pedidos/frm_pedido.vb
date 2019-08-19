@@ -243,7 +243,6 @@ Public Class frm_pedido
             For Each Fila In dgv_pedido.Rows.Cast(Of DataGridViewRow)()
                 Dim dp As New DetallePedido
 
-
                 dp.Id = Fila.Cells("col_id").Value.ToString()
                 dp.Id_Pedido = Fila.Cells("col_id_ped").Value.ToString()
                 dp.Id_tipoComida = Fila.Cells("col_id_tc").Value.ToString

@@ -11,6 +11,7 @@ Module Variables
     Public usuarioSeccion As New Usuario()
     Public auxCombo As New Combo()
     Public auxPlato As New Plato
+    Public auxPedido As New Pedido
 
     'Public auxProducto As New Producto()
     'Public auxPersona As New Persona()

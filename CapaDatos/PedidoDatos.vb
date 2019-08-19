@@ -28,6 +28,44 @@ Public Class PedidoDatos
         Return lista
     End Function
 
+    Public Function getListaDetallePedidos(id As Integer) As List(Of DetallePedido)
+        getListaDetallePedidos = Nothing
+        Try
+            Dim lista As New List(Of DetallePedido)
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            Dim cadenasql As String = "select * from Detalle_Pedidos where per_id = " & id
+
+            dr = ExecuteReader(cadenasql)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    Dim d As New DetallePedido
+
+                    d.Id = dr("detp_id")
+                    d.Id_tipoComida = dr("tc_id")
+                    d.Id_Pedido = dr("per_id")
+                    d.Estado = dr("ep_estado")
+                    d.Cantidad = dr("detp_cantidad")
+                    d.PrecioUnitario = dr("detp_precioUnitario")
+                    d.Descuento = dr("detp_descuento")
+                    d.Porcentaje = dr("detp_porcentaje")
+                    d.Subtotal = dr("detp_subtotal")
+                    d.Total = dr("detp_total")
+                    d.Id_Comida = dr("id_comida")
+                    d.Nombre = dr("detp_nombre")
+
+                    lista.Add(d)
+                End While
+                Return lista
+            End If
+        Catch ex As Exception
+            getListaDetallePedidos = Nothing
+        End Try
+    End Function
+
     Public Function numero() As Integer
         numero = 0
         Try
@@ -63,7 +101,10 @@ Public Class PedidoDatos
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@id", pedido.Id)
             cmd.Parameters.AddWithValue("@per_estado", pedido.Estado)
-
+            cmd.Parameters.AddWithValue("@mesa_id", pedido.Id_mesa)
+            cmd.Parameters.AddWithValue("@usu_id", pedido.Id_usuario)
+            cmd.Parameters.AddWithValue("@ep_id", pedido.Id_estadoPedido)
+            cmd.Parameters.AddWithValue("@per_observacion", pedido.Observacion)
 
             cmd.ExecuteNonQuery()
             grabar = True
@@ -76,6 +117,7 @@ Public Class PedidoDatos
     End Function
 
     Public Function getPedidos() As List(Of Pedido)
+        getPedidos = Nothing
         Try
             Dim lista As New List(Of Pedido)
             If (Conectar() = False) Then
@@ -105,7 +147,7 @@ from pedidos p order by per_id asc"
                 Return lista
             End If
         Catch ex As Exception
-
+            getPedidos = Nothing
         End Try
     End Function
 
@@ -140,7 +182,11 @@ from pedidos p order by per_id asc"
                 Exit Function
             End If
 
-            dr = ExecuteReader("sp_obtener_detalle_Pedido", id)
+            dr = ExecuteReader("select (case tc_id
+when '1' then detp_nombre
+when '2' then (select c.com_elemento1  + ','+ c.com_elemento2  + ',' + c.com_elemento3 + ','+c.com_bebida from Combo c where c.com_id = dp.id_comida)
+end) as items
+from Detalle_Pedidos dp where ep_estado='A' and dp.per_id =" & id)
 
             If dr.HasRows Then
                 While dr.Read
@@ -161,7 +207,7 @@ from pedidos p order by per_id asc"
         End Try
     End Function
 
-    Public Function getPedidosVista(id As Integer) As List(Of Pedido)
+    Public Function getPedidosVista(estado As Integer) As List(Of Pedido)
 
         getPedidosVista = Nothing
 
@@ -172,17 +218,18 @@ from pedidos p order by per_id asc"
             End If
             Dim lista As New List(Of Pedido)
 
-            dr = ExecuteReader("sp_busqueda_Pedidos", id)
+            dr = ExecuteReader("sp_busqueda_Pedidos", estado)
 
             If (dr.HasRows) Then
                 While (dr.Read)
                     Dim b As New Pedido
 
-                    b.Id = dr("id")
+                    b.Id = dr("per_id")
+                    b.Estado = dr("per_estado")
                     b.Mesa = dr("mesa")
                     b.EstadoPedido = dr("estado_pedido")
-                    b.Estado = ("per_estado")
-
+                    b.Observacion = dr("per_observacion")
+                    b.Id_mesa = dr("mesa_id")
                     lista.Add(b)
                 End While
                 Return lista
@@ -207,10 +254,11 @@ from pedidos p order by per_id asc"
             'If (Conectar() = False) Then
             '    Exit Function
             'End If
+            Dim auxPedido = getUltimoPedido()
 
             'Grabar los detalles del pedido
             For Each item In pedido.Detalles
-                If (grabarDetalle(item) = False) Then
+                If (grabarDetalle(item, auxPedido.Id) = False) Then
                     Exit Function
                 End If
             Next
@@ -226,7 +274,28 @@ from pedidos p order by per_id asc"
         End Try
     End Function
 
-    Public Function grabarDetalle(detalle As DetallePedido) As Boolean
+    Private Function getUltimoPedido() As Pedido
+        getUltimoPedido = Nothing
+        Try
+            Dim aux = New Pedido
+            Dim sql As String = "select top(1) * from Pedidos order by 1 desc"
+
+            dr = ExecuteReader(sql)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    aux.Id = dr("per_id")
+                End While
+                Return aux
+            End If
+        Catch ex As Exception
+            getUltimoPedido = Nothing
+        Finally
+            dr.Close()
+        End Try
+    End Function
+
+    Public Function grabarDetalle(detalle As DetallePedido, id_pedido As Integer) As Boolean
         Try
             grabarDetalle = False
 
@@ -236,7 +305,7 @@ from pedidos p order by per_id asc"
 
             cmd.Parameters.AddWithValue("@id", detalle.Id)
             cmd.Parameters.AddWithValue("@tc_id", detalle.Id_tipoComida)
-            cmd.Parameters.AddWithValue("@per_id", detalle.Id_Pedido)
+            cmd.Parameters.AddWithValue("@per_id", id_pedido)
             cmd.Parameters.AddWithValue("@ep_estado", detalle.Estado)
             cmd.Parameters.AddWithValue("@detp_cantidad", detalle.Cantidad)
             cmd.Parameters.AddWithValue("@detp_precioUnitario", detalle.PrecioUnitario)

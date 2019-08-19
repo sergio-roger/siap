@@ -24,6 +24,10 @@ Public Class PedidoNegocio
         Return pedidoDatos.numero()
     End Function
 
+    Public Function getListaDetallePedidos(id As Integer) As List(Of DetallePedido)
+        Return pedidoDatos.getListaDetallePedidos(id)
+    End Function
+
     Public Function getPlatos() As List(Of Plato)
         Dim platoDatos As New PlatoDatos
 

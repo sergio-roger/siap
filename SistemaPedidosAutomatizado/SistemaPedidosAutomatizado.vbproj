@@ -105,6 +105,12 @@
     <Compile Include="Administracion\Seguridad\Usuarios\frm_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Facturacion\frm_factura.Designer.vb">
+      <DependentUpon>frm_factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frm_factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio\frm_login.designer.vb">
       <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Facturacion\frm_buscar_pedido.Designer.vb">
+      <DependentUpon>frm_buscar_pedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\frm_buscar_pedido.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pedidos\frm_estado_pedido.designer.vb">
       <DependentUpon>frm_estado_pedido.vb</DependentUpon>
@@ -226,6 +238,9 @@
     <EmbeddedResource Include="Administracion\Seguridad\Usuarios\frm_usuario.resx">
       <DependentUpon>frm_usuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frm_factura.resx">
+      <DependentUpon>frm_factura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\frm_buscar_pedido.resx">
+      <DependentUpon>frm_buscar_pedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frm_estado_pedido.resx">
       <DependentUpon>frm_estado_pedido.vb</DependentUpon>
@@ -413,7 +431,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auditoria\" />
-    <Folder Include="Facturacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

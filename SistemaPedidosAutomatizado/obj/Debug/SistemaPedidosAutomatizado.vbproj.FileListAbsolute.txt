@@ -56,3 +56,5 @@ D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAut
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_movimiento.resources
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_disponibles.resources
 D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_ventas_platos.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_factura.resources
+D:\2Upse\6 Sexto Semestre\Programacion Visual II\ProyectoFinal\SistemaPedidosAutomatizado\obj\Debug\SistemaPedidosAutomatizado.frm_buscar_pedido.resources

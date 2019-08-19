@@ -31,7 +31,7 @@ Public Class frm_lista_pedido
         Try
             cargarPedidos = False
             Dim lista As New List(Of Pedido)
-            lista = pedidoNegocio.getPedidos()
+            lista = pedidoNegocio.getPedidosVista(1)
             dgv_pedidos.Rows.Clear()
 
             If (lista IsNot Nothing) Then
@@ -111,11 +111,6 @@ Public Class frm_lista_pedido
                 For Each item In lista
                     list_detalle_pedido.Items.Add(item)
                 Next
-
-                'Ejecutar el procedimiento almacenado
-                'If (ObtenerDetallePedido(id_pedido) = False) Then
-                '    mensaje("Hups", "Algo salio mal al cargar los detales ", "danger")
-                'End If
             End If
 
         Catch ex As Exception
