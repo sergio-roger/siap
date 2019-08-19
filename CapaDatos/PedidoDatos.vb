@@ -63,10 +63,7 @@ Public Class PedidoDatos
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@id", pedido.Id)
             cmd.Parameters.AddWithValue("@per_estado", pedido.Estado)
-            cmd.Parameters.AddWithValue("@mesa_id", pedido.Id_mesa)
-            cmd.Parameters.AddWithValue("@usu_id", pedido.Id_usuario)
-            cmd.Parameters.AddWithValue("@ep_id", pedido.Id_estadoPedido)
-            cmd.Parameters.AddWithValue("@per_observacion", pedido.Observacion)
+
 
             cmd.ExecuteNonQuery()
             grabar = True
@@ -75,35 +72,6 @@ Public Class PedidoDatos
             grabar = False
         Finally
             'Desconectar()
-        End Try
-    End Function
-
-    Public Function getDetallePedido(id As Integer) As ArrayList
-        Try
-            Dim lista As New ArrayList
-
-            If (Conectar() = False) Then
-                Exit Function
-            End If
-
-            dr = ExecuteReader("sp_obtener_detalle_Pedido", id)
-
-            If dr.HasRows Then
-                While dr.Read
-                    Dim coleccion() As String = dr("items").Split(",")
-
-                    For i = 0 To coleccion.Length - 1
-
-                        If (coleccion(i) <> "") Then
-                            lista.Add("* " & coleccion(i))
-                        End If
-                    Next
-                End While
-                Return lista
-            End If
-
-        Catch ex As Exception
-            getDetallePedido = Nothing
         End Try
     End Function
 
@@ -137,6 +105,90 @@ from pedidos p order by per_id asc"
                 Return lista
             End If
         Catch ex As Exception
+
+        End Try
+    End Function
+
+    Public Function actualizarPedido(id As Integer, opcion As Integer) As Boolean
+        Try
+            actualizarPedido = False
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            cmd = New SqlClient.SqlCommand("sp_despachar_pedido", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id_pedido", id)
+            cmd.Parameters.AddWithValue("@id_estado", opcion)
+
+            cmd.ExecuteNonQuery()
+
+            actualizarPedido = True
+        Catch ex As Exception
+            actualizarPedido = False
+        End Try
+    End Function
+
+    Public Function getDetallePedido(id As Integer) As ArrayList
+        getDetallePedido = Nothing
+
+        Try
+            Dim lista As New ArrayList
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            dr = ExecuteReader("sp_obtener_detalle_Pedido", id)
+
+            If dr.HasRows Then
+                While dr.Read
+                    Dim coleccion() As String = dr("items").Split(",")
+
+                    For i = 0 To coleccion.Length - 1
+
+                        If (coleccion(i) <> "") Then
+                            lista.Add("* " & coleccion(i))
+                        End If
+                    Next
+                End While
+                Return lista
+            End If
+
+        Catch ex As Exception
+            getDetallePedido = Nothing
+        End Try
+    End Function
+
+    Public Function getPedidosVista(id As Integer) As List(Of Pedido)
+
+        getPedidosVista = Nothing
+
+        Try
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+            Dim lista As New List(Of Pedido)
+
+            dr = ExecuteReader("sp_busqueda_Pedidos", id)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    Dim b As New Pedido
+
+                    b.Id = dr("id")
+                    b.Mesa = dr("mesa")
+                    b.EstadoPedido = dr("estado_pedido")
+                    b.Estado = ("per_estado")
+
+                    lista.Add(b)
+                End While
+                Return lista
+            End If
+        Catch ex As Exception
+            getPedidosVista = Nothing
 
         End Try
     End Function
@@ -220,4 +272,5 @@ from pedidos p order by per_id asc"
             actualizaEstadoMesa = False
         End Try
     End Function
+
 End Class

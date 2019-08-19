@@ -24,29 +24,30 @@ Partial Class frm_estado_pedido
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
-        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_mesa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_consultar = New System.Windows.Forms.Button()
         Me.lbl_perfil = New System.Windows.Forms.Label()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
-        Me.txt_codigo_pedido = New System.Windows.Forms.TextBox()
+        Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
+        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_mesa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
-        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(12, 17)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(581, 55)
+        Me.Panel1.Size = New System.Drawing.Size(427, 55)
         Me.Panel1.TabIndex = 60
         '
         'Label10
@@ -54,81 +55,35 @@ Partial Class frm_estado_pedido
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(162, 15)
+        Me.Label10.Location = New System.Drawing.Point(13, 16)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(255, 25)
         Me.Label10.TabIndex = 28
         Me.Label10.Text = "Estado de los Pedidos "
         '
-        'dgv_pedidos
-        '
-        Me.dgv_pedidos.AllowUserToAddRows = False
-        Me.dgv_pedidos.BackgroundColor = System.Drawing.SystemColors.Highlight
-        Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_cliente, Me.col_mesa, Me.col_estado})
-        Me.dgv_pedidos.Location = New System.Drawing.Point(25, 181)
-        Me.dgv_pedidos.Name = "dgv_pedidos"
-        Me.dgv_pedidos.ReadOnly = True
-        Me.dgv_pedidos.Size = New System.Drawing.Size(568, 265)
-        Me.dgv_pedidos.TabIndex = 58
-        '
-        'col_id
-        '
-        Me.col_id.HeaderText = "ID"
-        Me.col_id.Name = "col_id"
-        Me.col_id.ReadOnly = True
-        '
-        'col_codigo
-        '
-        Me.col_codigo.HeaderText = "Codigo"
-        Me.col_codigo.Name = "col_codigo"
-        Me.col_codigo.ReadOnly = True
-        '
-        'col_cliente
-        '
-        Me.col_cliente.HeaderText = "Cliente"
-        Me.col_cliente.Name = "col_cliente"
-        Me.col_cliente.ReadOnly = True
-        '
-        'col_mesa
-        '
-        Me.col_mesa.HeaderText = "Mesa"
-        Me.col_mesa.Name = "col_mesa"
-        Me.col_mesa.ReadOnly = True
-        '
-        'col_estado
-        '
-        Me.col_estado.HeaderText = "Estado"
-        Me.col_estado.Name = "col_estado"
-        Me.col_estado.ReadOnly = True
-        '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.btn_consultar)
         Me.GroupBox3.Controls.Add(Me.lbl_perfil)
         Me.GroupBox3.Controls.Add(Me.cmb_estado)
-        Me.GroupBox3.Controls.Add(Me.txt_codigo_pedido)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.Highlight
         Me.GroupBox3.Location = New System.Drawing.Point(12, 79)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(581, 82)
+        Me.GroupBox3.Size = New System.Drawing.Size(427, 73)
         Me.GroupBox3.TabIndex = 59
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscar"
         '
-        'Label1
+        'btn_consultar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label1.Location = New System.Drawing.Point(237, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 18)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Codigo del Pedido"
+        Me.btn_consultar.Location = New System.Drawing.Point(304, 21)
+        Me.btn_consultar.Name = "btn_consultar"
+        Me.btn_consultar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_consultar.TabIndex = 13
+        Me.btn_consultar.Text = "Consultar"
+        Me.btn_consultar.UseVisualStyleBackColor = True
         '
         'lbl_perfil
         '
@@ -136,7 +91,7 @@ Partial Class frm_estado_pedido
         Me.lbl_perfil.BackColor = System.Drawing.Color.White
         Me.lbl_perfil.Font = New System.Drawing.Font("Garamond", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_perfil.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lbl_perfil.Location = New System.Drawing.Point(13, 20)
+        Me.lbl_perfil.Location = New System.Drawing.Point(13, 31)
         Me.lbl_perfil.Name = "lbl_perfil"
         Me.lbl_perfil.Size = New System.Drawing.Size(56, 18)
         Me.lbl_perfil.TabIndex = 12
@@ -146,49 +101,99 @@ Partial Class frm_estado_pedido
         '
         Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_estado.FormattingEnabled = True
-        Me.cmb_estado.Location = New System.Drawing.Point(13, 46)
+        Me.cmb_estado.Location = New System.Drawing.Point(130, 25)
         Me.cmb_estado.Name = "cmb_estado"
-        Me.cmb_estado.Size = New System.Drawing.Size(186, 24)
+        Me.cmb_estado.Size = New System.Drawing.Size(146, 24)
         Me.cmb_estado.TabIndex = 1
         '
-        'txt_codigo_pedido
+        'dgv_pedidos
         '
-        Me.txt_codigo_pedido.Location = New System.Drawing.Point(240, 46)
-        Me.txt_codigo_pedido.Name = "txt_codigo_pedido"
-        Me.txt_codigo_pedido.Size = New System.Drawing.Size(194, 22)
-        Me.txt_codigo_pedido.TabIndex = 0
+        Me.dgv_pedidos.AllowUserToAddRows = False
+        Me.dgv_pedidos.AllowUserToDeleteRows = False
+        Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_mesa, Me.col_estado, Me.Column1, Me.Column4, Me.Column2, Me.Column3})
+        Me.dgv_pedidos.Location = New System.Drawing.Point(12, 168)
+        Me.dgv_pedidos.Name = "dgv_pedidos"
+        Me.dgv_pedidos.ReadOnly = True
+        Me.dgv_pedidos.Size = New System.Drawing.Size(427, 298)
+        Me.dgv_pedidos.TabIndex = 29
+        '
+        'col_id
+        '
+        Me.col_id.HeaderText = "ID"
+        Me.col_id.Name = "col_id"
+        Me.col_id.ReadOnly = True
+        Me.col_id.Width = 70
+        '
+        'col_mesa
+        '
+        Me.col_mesa.HeaderText = "Messa"
+        Me.col_mesa.Name = "col_mesa"
+        Me.col_mesa.ReadOnly = True
+        '
+        'col_estado
+        '
+        Me.col_estado.HeaderText = "Estado Pedido"
+        Me.col_estado.Name = "col_estado"
+        Me.col_estado.ReadOnly = True
+        Me.col_estado.Width = 130
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Estado"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Observacion"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "id_mesa"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "id_estado"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
         'frm_estado_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(621, 478)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(450, 478)
         Me.Controls.Add(Me.dgv_pedidos)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Name = "frm_estado_pedido"
         Me.Text = "frm_estado_pedido"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label10 As Label
-    Friend WithEvents dgv_pedidos As DataGridView
-    Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
-    Friend WithEvents col_cliente As DataGridViewTextBoxColumn
-    Friend WithEvents col_mesa As DataGridViewTextBoxColumn
-    Friend WithEvents col_estado As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents lbl_perfil As Label
     Friend WithEvents cmb_estado As ComboBox
-    Friend WithEvents txt_codigo_pedido As TextBox
+    Friend WithEvents dgv_pedidos As DataGridView
+    Friend WithEvents col_id As DataGridViewTextBoxColumn
+    Friend WithEvents col_mesa As DataGridViewTextBoxColumn
+    Friend WithEvents col_estado As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents btn_consultar As Button
 End Class

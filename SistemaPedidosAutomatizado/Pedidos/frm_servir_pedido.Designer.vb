@@ -23,139 +23,66 @@ Partial Class frm_servir_pedido
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cmb_estado = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_nombres = New System.Windows.Forms.TextBox()
-        Me.cmb_mesa = New System.Windows.Forms.ComboBox()
+        Me.txt_mesa = New System.Windows.Forms.TextBox()
+        Me.txt_id = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_cedula = New System.Windows.Forms.TextBox()
-        Me.txt_codigo_pedido = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
-        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cedula = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_mesa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_servir = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
+        Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_mesa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.cmb_estado)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txt_nombres)
-        Me.GroupBox1.Controls.Add(Me.cmb_mesa)
+        Me.GroupBox1.Controls.Add(Me.txt_mesa)
+        Me.GroupBox1.Controls.Add(Me.txt_id)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txt_cedula)
-        Me.GroupBox1.Controls.Add(Me.txt_codigo_pedido)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 80)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(528, 188)
+        Me.GroupBox1.Size = New System.Drawing.Size(427, 82)
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         '
-        'cmb_estado
+        'txt_mesa
         '
-        Me.cmb_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_estado.Enabled = False
-        Me.cmb_estado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_estado.FormattingEnabled = True
-        Me.cmb_estado.Location = New System.Drawing.Point(277, 87)
-        Me.cmb_estado.Name = "cmb_estado"
-        Me.cmb_estado.Size = New System.Drawing.Size(178, 24)
-        Me.cmb_estado.TabIndex = 56
+        Me.txt_mesa.Location = New System.Drawing.Point(216, 45)
+        Me.txt_mesa.Name = "txt_mesa"
+        Me.txt_mesa.ReadOnly = True
+        Me.txt_mesa.Size = New System.Drawing.Size(149, 22)
+        Me.txt_mesa.TabIndex = 53
         '
-        'Label3
+        'txt_id
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label3.Location = New System.Drawing.Point(274, 67)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(46, 13)
-        Me.Label3.TabIndex = 57
-        Me.Label3.Text = "Estado"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label1.Location = New System.Drawing.Point(9, 131)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 13)
-        Me.Label1.TabIndex = 55
-        Me.Label1.Text = "Nombres"
-        '
-        'txt_nombres
-        '
-        Me.txt_nombres.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nombres.Location = New System.Drawing.Point(12, 147)
-        Me.txt_nombres.Name = "txt_nombres"
-        Me.txt_nombres.Size = New System.Drawing.Size(193, 22)
-        Me.txt_nombres.TabIndex = 54
-        '
-        'cmb_mesa
-        '
-        Me.cmb_mesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_mesa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_mesa.FormattingEnabled = True
-        Me.cmb_mesa.Location = New System.Drawing.Point(277, 34)
-        Me.cmb_mesa.Name = "cmb_mesa"
-        Me.cmb_mesa.Size = New System.Drawing.Size(178, 24)
-        Me.cmb_mesa.TabIndex = 49
+        Me.txt_id.Location = New System.Drawing.Point(12, 45)
+        Me.txt_id.Name = "txt_id"
+        Me.txt_id.ReadOnly = True
+        Me.txt_id.Size = New System.Drawing.Size(149, 22)
+        Me.txt_id.TabIndex = 52
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label4.Location = New System.Drawing.Point(274, 17)
+        Me.Label4.Location = New System.Drawing.Point(213, 17)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Mesa"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label2.Location = New System.Drawing.Point(9, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 13)
-        Me.Label2.TabIndex = 53
-        Me.Label2.Text = " Cedula"
-        '
-        'txt_cedula
-        '
-        Me.txt_cedula.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_cedula.Location = New System.Drawing.Point(11, 90)
-        Me.txt_cedula.Name = "txt_cedula"
-        Me.txt_cedula.Size = New System.Drawing.Size(194, 22)
-        Me.txt_cedula.TabIndex = 52
-        '
-        'txt_codigo_pedido
-        '
-        Me.txt_codigo_pedido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_codigo_pedido.Location = New System.Drawing.Point(11, 38)
-        Me.txt_codigo_pedido.Name = "txt_codigo_pedido"
-        Me.txt_codigo_pedido.Size = New System.Drawing.Size(194, 22)
-        Me.txt_codigo_pedido.TabIndex = 50
         '
         'Label14
         '
@@ -164,53 +91,9 @@ Partial Class frm_servir_pedido
         Me.Label14.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label14.Location = New System.Drawing.Point(9, 17)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(46, 13)
+        Me.Label14.Size = New System.Drawing.Size(20, 13)
         Me.Label14.TabIndex = 51
-        Me.Label14.Text = "Código"
-        '
-        'dgv_pedidos
-        '
-        Me.dgv_pedidos.BackgroundColor = System.Drawing.SystemColors.Highlight
-        Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_codigo, Me.col_cedula, Me.col_cliente, Me.col_mesa, Me.col_estado})
-        Me.dgv_pedidos.GridColor = System.Drawing.Color.White
-        Me.dgv_pedidos.Location = New System.Drawing.Point(12, 287)
-        Me.dgv_pedidos.Name = "dgv_pedidos"
-        Me.dgv_pedidos.Size = New System.Drawing.Size(528, 265)
-        Me.dgv_pedidos.TabIndex = 61
-        '
-        'col_id
-        '
-        Me.col_id.HeaderText = "ID"
-        Me.col_id.Name = "col_id"
-        Me.col_id.Width = 70
-        '
-        'col_codigo
-        '
-        Me.col_codigo.HeaderText = "Código"
-        Me.col_codigo.Name = "col_codigo"
-        Me.col_codigo.Width = 70
-        '
-        'col_cedula
-        '
-        Me.col_cedula.HeaderText = "Cédula"
-        Me.col_cedula.Name = "col_cedula"
-        '
-        'col_cliente
-        '
-        Me.col_cliente.HeaderText = "Clientes"
-        Me.col_cliente.Name = "col_cliente"
-        Me.col_cliente.Width = 160
-        '
-        'col_mesa
-        '
-        Me.col_mesa.HeaderText = "Mesa"
-        Me.col_mesa.Name = "col_mesa"
-        '
-        'col_estado
-        '
-        Me.col_estado.HeaderText = "Estado"
-        Me.col_estado.Name = "col_estado"
+        Me.Label14.Text = "ID"
         '
         'Panel1
         '
@@ -220,7 +103,7 @@ Partial Class frm_servir_pedido
         Me.Panel1.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(528, 62)
+        Me.Panel1.Size = New System.Drawing.Size(427, 62)
         Me.Panel1.TabIndex = 60
         '
         'btn_servir
@@ -229,7 +112,7 @@ Partial Class frm_servir_pedido
         Me.btn_servir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_servir.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_servir.ForeColor = System.Drawing.Color.White
-        Me.btn_servir.Location = New System.Drawing.Point(412, 7)
+        Me.btn_servir.Location = New System.Drawing.Point(322, 7)
         Me.btn_servir.Name = "btn_servir"
         Me.btn_servir.Size = New System.Drawing.Size(100, 45)
         Me.btn_servir.TabIndex = 55
@@ -247,45 +130,97 @@ Partial Class frm_servir_pedido
         Me.Label10.TabIndex = 28
         Me.Label10.Text = "Servir Pedidos"
         '
+        'dgv_pedidos
+        '
+        Me.dgv_pedidos.AllowUserToAddRows = False
+        Me.dgv_pedidos.AllowUserToDeleteRows = False
+        Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_mesa, Me.col_estado, Me.Column1, Me.Column4, Me.Column2, Me.Column3})
+        Me.dgv_pedidos.Location = New System.Drawing.Point(9, 183)
+        Me.dgv_pedidos.Name = "dgv_pedidos"
+        Me.dgv_pedidos.ReadOnly = True
+        Me.dgv_pedidos.Size = New System.Drawing.Size(427, 318)
+        Me.dgv_pedidos.TabIndex = 58
+        '
+        'col_id
+        '
+        Me.col_id.HeaderText = "ID"
+        Me.col_id.Name = "col_id"
+        Me.col_id.ReadOnly = True
+        Me.col_id.Width = 70
+        '
+        'col_mesa
+        '
+        Me.col_mesa.HeaderText = "Messa"
+        Me.col_mesa.Name = "col_mesa"
+        Me.col_mesa.ReadOnly = True
+        '
+        'col_estado
+        '
+        Me.col_estado.HeaderText = "Estado Pedido"
+        Me.col_estado.Name = "col_estado"
+        Me.col_estado.ReadOnly = True
+        Me.col_estado.Width = 130
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Estado"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Observacion"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "id_mesa"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "id_estado"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Visible = False
+        '
         'frm_servir_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(556, 568)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(451, 568)
         Me.Controls.Add(Me.dgv_pedidos)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frm_servir_pedido"
         Me.Text = "frm_servir_pedido"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents cmb_estado As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txt_nombres As TextBox
-    Friend WithEvents cmb_mesa As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txt_cedula As TextBox
-    Friend WithEvents txt_codigo_pedido As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents dgv_pedidos As DataGridView
-    Friend WithEvents col_id As DataGridViewTextBoxColumn
-    Friend WithEvents col_codigo As DataGridViewTextBoxColumn
-    Friend WithEvents col_cedula As DataGridViewTextBoxColumn
-    Friend WithEvents col_cliente As DataGridViewTextBoxColumn
-    Friend WithEvents col_mesa As DataGridViewTextBoxColumn
-    Friend WithEvents col_estado As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_servir As Button
     Friend WithEvents Label10 As Label
+    Friend WithEvents dgv_pedidos As DataGridView
+    Friend WithEvents txt_mesa As TextBox
+    Friend WithEvents txt_id As TextBox
+    Friend WithEvents col_id As DataGridViewTextBoxColumn
+    Friend WithEvents col_mesa As DataGridViewTextBoxColumn
+    Friend WithEvents col_estado As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
 End Class

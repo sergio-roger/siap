@@ -46,12 +46,20 @@ Public Class PedidoNegocio
         Return detalleComida
     End Function
 
+    Public Function getPedidosVista(estado As Integer) As List(Of Pedido)
+        Return pedidoDatos.getPedidosVista(estado)
+    End Function
+
     Public Function getPedidos() As List(Of Pedido)
         Return pedidoDatos.getPedidos()
     End Function
 
     Public Function grabar(pedido As Pedido, estadoMesa As String) As Boolean
         Return pedidoDatos.procederDetalle(pedido, estadoMesa)
+    End Function
+
+    Public Function actualizarPedido(id As Integer, opcion As Integer) As Boolean
+        Return pedidoDatos.actualizarPedido(id, opcion)
     End Function
 
     Public Function getDetallePedido(id As Integer) As ArrayList

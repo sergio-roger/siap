@@ -46,6 +46,16 @@ Public Class frm_lista_pedido
         End Try
     End Function
 
+    Private Function actualizarPedido() As Boolean
+        Try
+            actualizarPedido = False
+            actualizarPedido = pedidoNegocio.actualizarPedido(pedido.Id, cmb_estado.SelectedValue)
+
+        Catch ex As Exception
+            actualizarPedido = False
+        End Try
+    End Function
+
     Private Sub frm_lista_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pedido.Id = 0
 
@@ -63,14 +73,18 @@ Public Class frm_lista_pedido
         Try
 
             If (Pedido.Id <> 0) Then
-                'If (ActualizarPedido(id_pedido, cmb_estado.SelectedValue) = False) Then
-                '    mensaje("Hups", "Algo salió mal al actualizar el pedido ", "alert")
-                'Else
-                '    mensaje("Exito", "El pedido ha sido despachado", "info")
-                '    VolverCargarPedidos()
-                'End If
+                If (actualizarPedido() = False) Then
+                    mensaje("Hups", "Algo salió mal al actualizar el pedido ", "alert")
+                Else
+                    mensaje("Exito", "El pedido ha sido despachado", "info")
+                    If (cargarPedidos() = False) Then
+                        mensaje(titulo, "No se pudo cargar los pedidos", "danger")
+                    End If
+                    pedido.Id = 0
+                    list_detalle_pedido.Items.Clear()
+                End If
             Else
-                mensaje("Lista de Pedidos", "Seleccione un pedido para atender", "info")
+                    mensaje("Lista de Pedidos", "Seleccione un pedido para atender", "info")
             End If
 
         Catch ex As Exception
