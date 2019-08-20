@@ -333,6 +333,7 @@ Public Class frm_factura
         Dim buscar As New Pedido
 
         buscar = pedidoNegocio.getPedidoxNumero(numero)
+        pedido = buscar
 
         If (buscar Is Nothing) Then
             txt_num_ped.Text = ""
