@@ -40,10 +40,10 @@ Public Class frm_buscar_pedido
         Try
             If e.RowIndex > -1 Then
                 auxPedido.Id = dgv_pedidos.Rows(e.RowIndex).Cells(0).Value
-                pedido.Mesa = dgv_pedidos.Rows(e.RowIndex).Cells(1).Value
-                pedido.EstadoPedido = dgv_pedidos.Rows(e.RowIndex).Cells(2).Value
-                pedido.Estado = dgv_pedidos.Rows(e.RowIndex).Cells(3).Value
-                pedido.Id_mesa = dgv_pedidos.Rows(e.RowIndex).Cells(4).Value
+                auxPedido.Mesa = dgv_pedidos.Rows(e.RowIndex).Cells(1).Value
+                auxPedido.EstadoPedido = dgv_pedidos.Rows(e.RowIndex).Cells(2).Value
+                auxPedido.Estado = dgv_pedidos.Rows(e.RowIndex).Cells(3).Value
+                auxPedido.Id_mesa = dgv_pedidos.Rows(e.RowIndex).Cells(4).Value
                 Me.Close()
             End If
         Catch ex As exception

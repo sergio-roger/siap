@@ -87,6 +87,33 @@ Public Class PedidoDatos
         End Try
     End Function
 
+    Public Function getPedidoxNumero(numero As String) As Pedido
+        Try
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            Dim p As New Pedido
+            Dim cadenaslq As String = "select * from Pedidos where ep_id = 3"
+
+            dr = ExecuteReader(cadenaslq)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    p.Id = dr("per_id")
+                    p.Estado = dr("per_estado")
+                    p.Id_mesa = dr("mesa_id")
+                    p.Id_usuario = dr("usu_id")
+                    p.Id_estadoPedido = dr("ep_id")
+                    p.Observacion = dr("per_observacion")
+                End While
+                Return p
+            End If
+        Catch ex As Exception
+            numero = 0
+        End Try
+    End Function
+
     Public Function grabar(pedido As Pedido) As Boolean
 
         Try

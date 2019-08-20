@@ -28,6 +28,28 @@ Public Class MesaDatos
         End Try
     End Function
 
+    Public Function actualizarEstadoMesa(id_mesa As Integer, estado As String) As Boolean
+        Try
+            actualizarEstadoMesa = False
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            If (id_mesa > 0) Then
+                dr = ExecuteReader("sp_actualiza_estado_mesa", id_mesa, estado)
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            actualizarEstadoMesa = False
+        Finally
+            dr.Close()
+        End Try
+    End Function
+
     Public Function eliminar(mesa As Mesa) As Boolean
         Try
             eliminar = False

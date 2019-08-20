@@ -23,4 +23,8 @@ Public Class MesaNegocio
     Public Function eliminar(mesa As Mesa) As Boolean
         Return mesaDatos.eliminar(mesa)
     End Function
+
+    Public Function actualizarEstadoMesa(id_mesa As Integer, estado As String) As Boolean
+        Return mesaDatos.actualizarEstadoMesa(id_mesa, estado)
+    End Function
 End Class

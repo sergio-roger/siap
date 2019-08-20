@@ -70,6 +70,7 @@
     <Compile Include="DetallePedido.vb" />
     <Compile Include="ElementoCombo.vb" />
     <Compile Include="EstadoPedido.vb" />
+    <Compile Include="Factura.vb" />
     <Compile Include="Menu.vb" />
     <Compile Include="Mesa.vb" />
     <Compile Include="Modalidad.vb" />

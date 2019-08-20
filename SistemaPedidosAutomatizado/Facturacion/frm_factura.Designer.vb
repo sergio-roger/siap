@@ -22,10 +22,11 @@ Partial Class frm_factura
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chk_activar = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -37,7 +38,9 @@ Partial Class frm_factura
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.bn_buscar_cliente = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_correo = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -52,12 +55,6 @@ Partial Class frm_factura
         Me.txt_cedula = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgv_pedido = New System.Windows.Forms.DataGridView()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.hjj = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.txt_total = New System.Windows.Forms.TextBox()
-        Me.txt_descuento = New System.Windows.Forms.TextBox()
-        Me.btn_borrar = New System.Windows.Forms.Button()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_id_ped = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_id_tc = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,19 +67,26 @@ Partial Class frm_factura
         Me.col_subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txt_subtotal = New System.Windows.Forms.TextBox()
-        Me.bn_buscar_cliente = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.hjj = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txt_total = New System.Windows.Forms.TextBox()
+        Me.txt_descuento = New System.Windows.Forms.TextBox()
+        Me.btn_borrar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.chk_activar = New System.Windows.Forms.CheckBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txt_num_ped = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -114,6 +118,16 @@ Partial Class frm_factura
         Me.GroupBox1.Size = New System.Drawing.Size(807, 130)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'chk_activar
+        '
+        Me.chk_activar.AutoSize = True
+        Me.chk_activar.Location = New System.Drawing.Point(627, 19)
+        Me.chk_activar.Name = "chk_activar"
+        Me.chk_activar.Size = New System.Drawing.Size(93, 17)
+        Me.chk_activar.TabIndex = 61
+        Me.chk_activar.Text = "Validar cédula"
+        Me.chk_activar.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -217,6 +231,14 @@ Partial Class frm_factura
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Empresa SIAP S.A"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(121, 97)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.bn_buscar_cliente)
@@ -232,12 +254,23 @@ Partial Class frm_factura
         Me.GroupBox2.Controls.Add(Me.txt_nombres)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.txt_cedula)
-        Me.GroupBox2.Location = New System.Drawing.Point(25, 213)
+        Me.GroupBox2.Location = New System.Drawing.Point(25, 287)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(278, 233)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cliente"
+        '
+        'bn_buscar_cliente
+        '
+        Me.bn_buscar_cliente.BackColor = System.Drawing.Color.Tomato
+        Me.bn_buscar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bn_buscar_cliente.Location = New System.Drawing.Point(207, 19)
+        Me.bn_buscar_cliente.Name = "bn_buscar_cliente"
+        Me.bn_buscar_cliente.Size = New System.Drawing.Size(59, 39)
+        Me.bn_buscar_cliente.TabIndex = 61
+        Me.bn_buscar_cliente.Text = "buscar"
+        Me.bn_buscar_cliente.UseVisualStyleBackColor = False
         '
         'Label13
         '
@@ -340,7 +373,7 @@ Partial Class frm_factura
         Me.GroupBox3.Controls.Add(Me.dgv_pedido)
         Me.GroupBox3.Location = New System.Drawing.Point(321, 213)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(511, 233)
+        Me.GroupBox3.Size = New System.Drawing.Size(511, 249)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Pedido"
@@ -351,81 +384,22 @@ Partial Class frm_factura
         Me.dgv_pedido.BackgroundColor = System.Drawing.SystemColors.Highlight
         Me.dgv_pedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pedido.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_id_ped, Me.col_id_tc, Me.col_id_comida, Me.col_nombre, Me.col_cantidad, Me.col_precio, Me.col_descuento, Me.col_porcentaje, Me.col_subtotal, Me.col_total, Me.col_estado})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Cornsilk
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_pedido.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Cornsilk
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_pedido.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgv_pedido.GridColor = System.Drawing.Color.White
         Me.dgv_pedido.Location = New System.Drawing.Point(15, 19)
         Me.dgv_pedido.Name = "dgv_pedido"
         Me.dgv_pedido.ReadOnly = True
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgv_pedido.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.dgv_pedido.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgv_pedido.Size = New System.Drawing.Size(490, 194)
         Me.dgv_pedido.TabIndex = 67
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.txt_subtotal)
-        Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.hjj)
-        Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.txt_total)
-        Me.GroupBox4.Controls.Add(Me.txt_descuento)
-        Me.GroupBox4.Location = New System.Drawing.Point(321, 458)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(511, 84)
-        Me.GroupBox4.TabIndex = 4
-        Me.GroupBox4.TabStop = False
-        '
-        'hjj
-        '
-        Me.hjj.AutoSize = True
-        Me.hjj.Location = New System.Drawing.Point(364, 22)
-        Me.hjj.Name = "hjj"
-        Me.hjj.Size = New System.Drawing.Size(31, 13)
-        Me.hjj.TabIndex = 63
-        Me.hjj.Text = "Total"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(185, 22)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(59, 13)
-        Me.Label15.TabIndex = 62
-        Me.Label15.Text = "Descuento"
-        '
-        'txt_total
-        '
-        Me.txt_total.Location = New System.Drawing.Point(367, 48)
-        Me.txt_total.Name = "txt_total"
-        Me.txt_total.ReadOnly = True
-        Me.txt_total.Size = New System.Drawing.Size(138, 20)
-        Me.txt_total.TabIndex = 2
-        '
-        'txt_descuento
-        '
-        Me.txt_descuento.Location = New System.Drawing.Point(188, 48)
-        Me.txt_descuento.Name = "txt_descuento"
-        Me.txt_descuento.ReadOnly = True
-        Me.txt_descuento.Size = New System.Drawing.Size(138, 20)
-        Me.txt_descuento.TabIndex = 1
-        '
-        'btn_borrar
-        '
-        Me.btn_borrar.BackColor = System.Drawing.Color.Tomato
-        Me.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn_borrar.Location = New System.Drawing.Point(143, 11)
-        Me.btn_borrar.Name = "btn_borrar"
-        Me.btn_borrar.Size = New System.Drawing.Size(50, 51)
-        Me.btn_borrar.TabIndex = 56
-        Me.btn_borrar.Text = "X"
-        Me.btn_borrar.UseVisualStyleBackColor = False
         '
         'col_id
         '
@@ -508,14 +482,19 @@ Partial Class frm_factura
         Me.col_estado.ReadOnly = True
         Me.col_estado.Visible = False
         '
-        'Label14
+        'GroupBox4
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(25, 22)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(46, 13)
-        Me.Label14.TabIndex = 64
-        Me.Label14.Text = "Subtotal"
+        Me.GroupBox4.Controls.Add(Me.txt_subtotal)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.hjj)
+        Me.GroupBox4.Controls.Add(Me.Label15)
+        Me.GroupBox4.Controls.Add(Me.txt_total)
+        Me.GroupBox4.Controls.Add(Me.txt_descuento)
+        Me.GroupBox4.Location = New System.Drawing.Point(321, 468)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(511, 74)
+        Me.GroupBox4.TabIndex = 4
+        Me.GroupBox4.TabStop = False
         '
         'txt_subtotal
         '
@@ -525,16 +504,59 @@ Partial Class frm_factura
         Me.txt_subtotal.Size = New System.Drawing.Size(138, 20)
         Me.txt_subtotal.TabIndex = 65
         '
-        'bn_buscar_cliente
+        'Label14
         '
-        Me.bn_buscar_cliente.BackColor = System.Drawing.Color.Tomato
-        Me.bn_buscar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.bn_buscar_cliente.Location = New System.Drawing.Point(207, 19)
-        Me.bn_buscar_cliente.Name = "bn_buscar_cliente"
-        Me.bn_buscar_cliente.Size = New System.Drawing.Size(59, 39)
-        Me.bn_buscar_cliente.TabIndex = 61
-        Me.bn_buscar_cliente.Text = "buscar"
-        Me.bn_buscar_cliente.UseVisualStyleBackColor = False
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(25, 22)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(46, 13)
+        Me.Label14.TabIndex = 64
+        Me.Label14.Text = "Subtotal"
+        '
+        'hjj
+        '
+        Me.hjj.AutoSize = True
+        Me.hjj.Location = New System.Drawing.Point(364, 22)
+        Me.hjj.Name = "hjj"
+        Me.hjj.Size = New System.Drawing.Size(31, 13)
+        Me.hjj.TabIndex = 63
+        Me.hjj.Text = "Total"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(185, 22)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(59, 13)
+        Me.Label15.TabIndex = 62
+        Me.Label15.Text = "Descuento"
+        '
+        'txt_total
+        '
+        Me.txt_total.Location = New System.Drawing.Point(367, 48)
+        Me.txt_total.Name = "txt_total"
+        Me.txt_total.ReadOnly = True
+        Me.txt_total.Size = New System.Drawing.Size(138, 20)
+        Me.txt_total.TabIndex = 2
+        '
+        'txt_descuento
+        '
+        Me.txt_descuento.Location = New System.Drawing.Point(188, 48)
+        Me.txt_descuento.Name = "txt_descuento"
+        Me.txt_descuento.ReadOnly = True
+        Me.txt_descuento.Size = New System.Drawing.Size(138, 20)
+        Me.txt_descuento.TabIndex = 1
+        '
+        'btn_borrar
+        '
+        Me.btn_borrar.BackColor = System.Drawing.Color.Tomato
+        Me.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btn_borrar.Location = New System.Drawing.Point(143, 11)
+        Me.btn_borrar.Name = "btn_borrar"
+        Me.btn_borrar.Size = New System.Drawing.Size(50, 51)
+        Me.btn_borrar.TabIndex = 56
+        Me.btn_borrar.Text = "X"
+        Me.btn_borrar.UseVisualStyleBackColor = False
         '
         'btn_nuevo
         '
@@ -557,29 +579,38 @@ Partial Class frm_factura
         Me.btn_grabar.TabIndex = 57
         Me.btn_grabar.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'GroupBox5
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(20, 19)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(121, 97)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.GroupBox5.Controls.Add(Me.Label16)
+        Me.GroupBox5.Controls.Add(Me.txt_num_ped)
+        Me.GroupBox5.Location = New System.Drawing.Point(25, 213)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(278, 68)
+        Me.GroupBox5.TabIndex = 59
+        Me.GroupBox5.TabStop = False
         '
-        'chk_activar
+        'Label16
         '
-        Me.chk_activar.AutoSize = True
-        Me.chk_activar.Location = New System.Drawing.Point(627, 19)
-        Me.chk_activar.Name = "chk_activar"
-        Me.chk_activar.Size = New System.Drawing.Size(81, 17)
-        Me.chk_activar.TabIndex = 61
-        Me.chk_activar.Text = "CheckBox1"
-        Me.chk_activar.UseVisualStyleBackColor = True
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(24, 31)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(80, 13)
+        Me.Label16.TabIndex = 63
+        Me.Label16.Text = "Numero Pedido"
+        '
+        'txt_num_ped
+        '
+        Me.txt_num_ped.Location = New System.Drawing.Point(134, 28)
+        Me.txt_num_ped.Name = "txt_num_ped"
+        Me.txt_num_ped.Size = New System.Drawing.Size(128, 20)
+        Me.txt_num_ped.TabIndex = 62
         '
         'frm_factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(852, 553)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.btn_nuevo)
         Me.Controls.Add(Me.btn_borrar)
         Me.Controls.Add(Me.btn_grabar)
@@ -592,13 +623,15 @@ Partial Class frm_factura
         Me.Text = "frm_factura"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dgv_pedido, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -657,4 +690,7 @@ Partial Class frm_factura
     Friend WithEvents Label14 As Label
     Friend WithEvents bn_buscar_cliente As Button
     Friend WithEvents chk_activar As CheckBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txt_num_ped As TextBox
 End Class

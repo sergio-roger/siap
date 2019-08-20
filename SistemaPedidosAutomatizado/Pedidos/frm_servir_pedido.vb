@@ -85,10 +85,12 @@ Public Class frm_servir_pedido
                 If (actualizarPedido() = False) Then
                     mensaje("Hups", "Algo salió mal al actualizar el pedido ", "alert")
                 Else
+                    txt_id.Text = ""
+                    txt_mesa.Text = ""
                     mensaje("Exito", "El pedido ha sido servido", "info")
 
                     If (consultarEstadoPedidos() = False) Then
-                        mensaje(titulo, "No se pudo cargar los pedidos", "danger")
+                        'mensaje(titulo, "No se pudo cargar los pedidos", "danger")
                     End If
                     pedido.Id = 0
                 End If

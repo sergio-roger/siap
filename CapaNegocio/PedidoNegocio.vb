@@ -69,4 +69,8 @@ Public Class PedidoNegocio
     Public Function getDetallePedido(id As Integer) As ArrayList
         Return pedidoDatos.getDetallePedido(id)
     End Function
+
+    Public Function getPedidoxNumero(numero As String) As Pedido
+        Return pedidoDatos.getPedidoxNumero(numero)
+    End Function
 End Class

@@ -1,5 +1,5 @@
 ﻿Public Class Factura
- |   Private _id As Integer
+    Private _id As Integer
     Private _id_usuario As Integer
     Private _id_cliente As Integer
     Private _id_pedido As Integer
@@ -8,6 +8,7 @@
     Private _subtotal As Double
     Private _descuento As Double
     Private _total As Double
+    Private _estado As String
 
     Public Property Id_usuario As Integer
         Get
@@ -78,6 +79,24 @@
         End Get
         Set(value As Double)
             _total = value
+        End Set
+    End Property
+
+    Public Property Id As Integer
+        Get
+            Return _id
+        End Get
+        Set(value As Integer)
+            _id = value
+        End Set
+    End Property
+
+    Public Property Estado As String
+        Get
+            Return _estado
+        End Get
+        Set(value As String)
+            _estado = value
         End Set
     End Property
 End Class

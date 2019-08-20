@@ -279,21 +279,6 @@ Public Class frm_pedido
             pedido.Detalles = listadetalles
 
             GrabarPedido = pedidoNegocio.grabar(pedido, "m-ocupado")
-            'Guardar datos en la tabla cab_movimiento con su procedure store
-            'If (GrabarCabeceraPedido()) Then
-            '    Dim cadena As String = "select ped_id from Pedido where ped_estad = 'A' and pe_codigo = '" & txt_codigo_pedido.Text & "'"
-            '    id_pedido = ObtenerId(cadena, "ped_id")
-            '    GrabarPedido = True
-            'Else
-            '    GrabarPedido = False
-            'End If
-
-            ''Guardar dlos detalle pedido
-            'If (id_pedido > 0 And GrabarPedido = True) Then
-            '    If (ObtenerDatosTablaDetallePedido(id_pedido) = False) Then
-            '        mensaje("Pedido", "Error al grabaar los detalle-pedido", "danger")
-            '    End If
-            'End If
 
         Catch ex As Exception
             GrabarPedido = False
@@ -433,11 +418,6 @@ Public Class frm_pedido
                 'MsgBox("Procediendo a guardar la factura", MsgBoxStyle.Information, "Registrar datos")
 
                 If (GrabarPedido() = False) Then
-                    'Actualizar estado de la mesa 
-                    'If (actualizarMesaOcupado(cmb_estado.SelectedValue) = False) Then
-                    '    MsgBox("Error al actualizar la mesa")
-                    'End If
-
                     MsgBox("Hubo un error al guardar el Pedido", MsgBoxStyle.Critical, "Error")
                 Else
                     Limpiar()

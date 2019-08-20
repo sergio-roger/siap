@@ -23,10 +23,10 @@ Partial Class frm_buscar_cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txt_buscar = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dgv_clientes = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -35,56 +35,56 @@ Partial Class frm_buscar_cliente
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txt_buscar)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(28, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 17)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(663, 95)
+        Me.GroupBox1.Size = New System.Drawing.Size(546, 95)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'DataGridView1
+        'PictureBox1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 160)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(663, 262)
-        Me.DataGridView1.TabIndex = 1
+        Me.PictureBox1.Location = New System.Drawing.Point(437, 19)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 70)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'txt_buscar
+        '
+        Me.txt_buscar.Location = New System.Drawing.Point(146, 40)
+        Me.txt_buscar.Name = "txt_buscar"
+        Me.txt_buscar.Size = New System.Drawing.Size(182, 20)
+        Me.txt_buscar.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(27, 43)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 13)
+        Me.Label1.Size = New System.Drawing.Size(93, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Buscar por apellido"
+        Me.Label1.Text = "Buscar por cédula"
         '
-        'TextBox1
+        'dgv_clientes
         '
-        Me.TextBox1.Location = New System.Drawing.Point(146, 40)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(182, 20)
-        Me.TextBox1.TabIndex = 1
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(554, 16)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 70)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
+        Me.dgv_clientes.AllowUserToAddRows = False
+        Me.dgv_clientes.AllowUserToDeleteRows = False
+        Me.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.Column7})
+        Me.dgv_clientes.Location = New System.Drawing.Point(17, 136)
+        Me.dgv_clientes.Name = "dgv_clientes"
+        Me.dgv_clientes.ReadOnly = True
+        Me.dgv_clientes.Size = New System.Drawing.Size(546, 191)
+        Me.dgv_clientes.TabIndex = 1
         '
         'Column1
         '
@@ -132,24 +132,25 @@ Partial Class frm_buscar_cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 450)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(582, 346)
+        Me.Controls.Add(Me.dgv_clientes)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_buscar_cliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_buscar_cliente"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_buscar As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_clientes As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
