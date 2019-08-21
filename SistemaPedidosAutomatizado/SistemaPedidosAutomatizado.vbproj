@@ -218,17 +218,29 @@
     <Compile Include="Reportes\Factura\frm_movimiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\PlatosCombos\frm_disponibles.Designer.vb">
-      <DependentUpon>frm_disponibles.vb</DependentUpon>
+    <Compile Include="Reportes\PlatosCombos\Platos.Designer.vb">
+      <DependentUpon>Platos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\PlatosCombos\frm_disponibles.vb">
+    <Compile Include="Reportes\PlatosCombos\Platos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\PlatosCombos\frm_ventas_platos.Designer.vb">
-      <DependentUpon>frm_ventas_platos.vb</DependentUpon>
+    <Compile Include="Reportes\PlatosCombos\Combos.Designer.vb">
+      <DependentUpon>Combos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\PlatosCombos\frm_ventas_platos.vb">
+    <Compile Include="Reportes\PlatosCombos\Combos.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_ventas_reporte.Designer.vb">
+      <DependentUpon>frm_ventas_reporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\PlatosCombos\frm_ventas_reporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt\rpt_combos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_combos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -295,11 +307,18 @@
     <EmbeddedResource Include="Reportes\Factura\frm_movimiento.resx">
       <DependentUpon>frm_movimiento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PlatosCombos\frm_disponibles.resx">
-      <DependentUpon>frm_disponibles.vb</DependentUpon>
+    <EmbeddedResource Include="Reportes\PlatosCombos\Combos.resx">
+      <DependentUpon>Combos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\PlatosCombos\frm_ventas_platos.resx">
-      <DependentUpon>frm_ventas_platos.vb</DependentUpon>
+    <EmbeddedResource Include="Reportes\PlatosCombos\frm_ventas_reporte.resx">
+      <DependentUpon>frm_ventas_reporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\PlatosCombos\Platos.resx">
+      <DependentUpon>Platos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt\rpt_combos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_combos.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -440,6 +459,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Auditoria\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

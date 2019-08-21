@@ -232,6 +232,9 @@ Public Class frm_factura
                     Exit Sub
                 End If
 
+                '
+                'Aki va auditoria 
+                '
                 mensaje(titulo, "Factura registrado con exito !", "info")
                 Limpiar()
             End If

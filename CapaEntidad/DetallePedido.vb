@@ -10,6 +10,7 @@
     Private _porcentaje As Integer
     Private _subtotal As Double
     Private _total As Double
+    Private _fecha As Date
     Private _estado As String
 
     Public Property Id As Integer
@@ -117,6 +118,15 @@
         End Get
         Set(value As String)
             _estado = value
+        End Set
+    End Property
+
+    Public Property Fecha As Date
+        Get
+            Return _fecha
+        End Get
+        Set(value As Date)
+            _fecha = value
         End Set
     End Property
 End Class

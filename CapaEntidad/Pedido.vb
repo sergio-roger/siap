@@ -9,6 +9,7 @@ Public Class Pedido
     Private _observacion As String
     Private _mesa As String
     Private _estadoPedido As String
+    Private _fecha As Date
     Private _detalles As List(Of DetallePedido)
 
     Public Property Id As Integer
@@ -89,6 +90,15 @@ Public Class Pedido
         End Get
         Set(value As String)
             _estadoPedido = value
+        End Set
+    End Property
+
+    Public Property Fecha As Date
+        Get
+            Return _fecha
+        End Get
+        Set(value As Date)
+            _fecha = value
         End Set
     End Property
 End Class

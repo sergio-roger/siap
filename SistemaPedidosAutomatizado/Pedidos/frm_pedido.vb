@@ -231,6 +231,7 @@ Public Class frm_pedido
         nuevo.Id_usuario = usuario.Id
         nuevo.Id_estadoPedido = 1
         nuevo.Observacion = txt_descripcion.Text
+        nuevo.Fecha = date_fecha.Value.ToShortDateString
 
         Return nuevo
     End Function
@@ -255,6 +256,7 @@ Public Class frm_pedido
                 dp.Subtotal = Fila.Cells("col_subtotal").Value.ToString
                 dp.Total = Fila.Cells("col_total").Value.ToString
                 dp.Estado = Fila.Cells("col_estado").Value.ToString
+                dp.Fecha = date_fecha.Value.ToShortDateString
 
                 lista.Add(dp)
                 'Relizar insercciones en la tabla Detalle-Pedido

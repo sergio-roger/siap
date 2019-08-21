@@ -132,6 +132,7 @@ Public Class PedidoDatos
             cmd.Parameters.AddWithValue("@usu_id", pedido.Id_usuario)
             cmd.Parameters.AddWithValue("@ep_id", pedido.Id_estadoPedido)
             cmd.Parameters.AddWithValue("@per_observacion", pedido.Observacion)
+            cmd.Parameters.AddWithValue("@per_fecha", pedido.Fecha.ToShortDateString)
 
             cmd.ExecuteNonQuery()
             grabar = True
@@ -342,6 +343,7 @@ from Detalle_Pedidos dp where ep_estado='A' and dp.per_id =" & id)
             cmd.Parameters.AddWithValue("@detp_total", detalle.Total)
             cmd.Parameters.AddWithValue("@id_comida", detalle.Id_Comida)
             cmd.Parameters.AddWithValue("@detp_nombre", detalle.Nombre)
+            cmd.Parameters.AddWithValue("detp_fecha", detalle.Fecha.ToShortDateString)
 
             cmd.ExecuteNonQuery()
 
