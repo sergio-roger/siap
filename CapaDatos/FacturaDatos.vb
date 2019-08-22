@@ -30,4 +30,25 @@ Public Class FacturaDatos
             grabar = False
         End Try
     End Function
+
+    Public Function getUltimaFactura() As Integer
+        getUltimaFactura = 0
+        Try
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            Dim cadenaslq As String = "select top(1) * from Factura order by 1 desc"
+            dr = ExecuteReader(cadenaslq)
+
+            If (dr.HasRows) Then
+                While (dr.Read)
+                    Return dr("fac_id")
+                End While
+            End If
+
+        Catch ex As Exception
+            getUltimaFactura = 0
+        End Try
+    End Function
 End Class

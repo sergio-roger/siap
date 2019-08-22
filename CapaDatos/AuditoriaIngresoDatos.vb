@@ -36,4 +36,30 @@ Public Class AuditoriaIngresoDatos
             dr.Close()
         End Try
     End Function
+
+    Public Function guardar(objeto As AuditoriaIngreso) As Boolean
+        Try
+            guardar = False
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            cmd = New SqlClient.SqlCommand("sp_insertar_auditoria_ingresos", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@aud_detalle", objeto.Detalle)
+            cmd.Parameters.AddWithValue("@usu_id", objeto.Id_usuario)
+            cmd.Parameters.AddWithValue("@usu_fecha", objeto.Fecha.ToShortDateString)
+            cmd.Parameters.AddWithValue("@usu_hora", objeto.Hora.ToShortTimeString)
+            cmd.Parameters.AddWithValue("@fac_id", objeto.Id_factura)
+            cmd.Parameters.AddWithValue("@aud_dinero", objeto.Dinero)
+            cmd.Parameters.AddWithValue("@per_id", objeto.Id_perfil)
+
+            cmd.ExecuteNonQuery()
+            guardar = True
+        Catch ex As Exception
+            guardar = False
+        End Try
+    End Function
 End Class

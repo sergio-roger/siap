@@ -2,14 +2,17 @@
 Imports CapaDatos
 
 Public Class FacturaNegocio
-    Private factuaDatos As FacturaDatos
+    Private facturaDatos As FacturaDatos
 
     Public Sub New()
-        factuaDatos = New FacturaDatos
+        facturaDatos = New FacturaDatos
     End Sub
 
     Public Function grabar(factura As Factura) As Boolean
-        Return factuaDatos.grabar(factura)
+        Return facturaDatos.grabar(factura)
     End Function
 
+    Public Function getUltimaFactura() As Integer
+        Return facturaDatos.getUltimaFactura()
+    End Function
 End Class

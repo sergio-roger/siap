@@ -5,12 +5,14 @@ Public Class frm_factura
     Private pedidoNegocio As New PedidoNegocio
     Private clienteNegocio As New ClienteNegocio
     Private facturaNegocio As New FacturaNegocio
+    Private audiNegocio As New AuditoriaIngresoNegocio
 
     Private pedido As New Pedido
     Private titulo As String = "Factura"
     Private descuento, subtotal, total As Double
     Private cliente As New Cliente
     Private factura As New Factura
+    Private idCliente As Integer
 
     Public Function cargarCliente(objeto As Cliente) As Boolean
         Try
@@ -138,9 +140,33 @@ Public Class frm_factura
         End Try
     End Function
 
+    Private Function crearAudiotoriaIngresos() As AuditoriaIngreso
+        Dim audi = New AuditoriaIngreso
+
+        audi.Detalle = "Creo factura"
+        audi.Id_usuario = usuarioSeccion.Id
+        audi.Fecha = date_fecha.Value
+        audi.Hora = date_fecha.Value
+        audi.Id_factura = facturaNegocio.getUltimaFactura()
+        audi.Dinero = total
+        audi.Id_perfil = usuarioSeccion.Id_perfil
+
+        Return audi
+    End Function
+
+    Private Function guardarAuditoriaIngreso(objeto As AuditoriaIngreso) As Boolean
+        Try
+            guardarAuditoriaIngreso = False
+            guardarAuditoriaIngreso = audiNegocio.guardar(objeto)
+        Catch ex As Exception
+            guardarAuditoriaIngreso = False
+        End Try
+    End Function
+
     Private Function grabarCliente() As Boolean
         Try
             grabarCliente = False
+            cliente = cearCliente()
 
             grabarCliente = clienteNegocio.grabar(cliente)
         Catch ex As Exception
@@ -195,26 +221,13 @@ Public Class frm_factura
                 Exit Sub
             End If
 
-            Dim c As Cliente = clienteNegocio.getCliente(cliente.Cedula)
-
-            If (c Is Nothing) Then
-                cliente.Id = 0
-            Else
-                cliente.Id = c.Id
-            End If
-
-            cliente = cearCliente()
-
             If (grabarCliente() = False) Then
                 mensaje(titulo, "No se ha grabado el cliente", "danger")
                 Exit Sub
             End If
 
             factura = cearFactura()
-            If (cliente.Id = 0) Then
-                c = clienteNegocio.getCliente(cliente.Cedula)
-            End If
-            factura.Id_cliente = c.Id
+            factura.Id_cliente = clienteNegocio.getCliente(cliente.Cedula).Id
 
             If (grabar() = False) Then
                 mensaje(titulo, "No se ha grabado", "danger")
@@ -235,6 +248,12 @@ Public Class frm_factura
                 '
                 'Aki va auditoria 
                 '
+                Dim auditoria = crearAudiotoriaIngresos()
+                If (guardarAuditoriaIngreso(auditoria) = False) Then
+                    mensaje("Error", "Error grave en el sistema", "danger")
+                    Exit Sub
+                End If
+
                 mensaje(titulo, "Factura registrado con exito !", "info")
                 Limpiar()
             End If
