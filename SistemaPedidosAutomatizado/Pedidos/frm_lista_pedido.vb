@@ -104,8 +104,11 @@ Public Class frm_lista_pedido
                 pedido.Id_estadoPedido = dgv_pedidos.Rows(e.RowIndex).Cells(6).Value
 
                 txt_codigo.Text = pedido.Id
+                txt_observacion.Text = pedido.Observacion
+
                 Dim lista As New ArrayList
                 lista = pedidoNegocio.getDetallePedido(pedido.Id)
+
                 list_detalle_pedido.Items.Clear()
 
                 For Each item In lista
@@ -117,4 +120,5 @@ Public Class frm_lista_pedido
             MsgBox(ex.Message)
         End Try
     End Sub
+
 End Class

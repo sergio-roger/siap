@@ -213,8 +213,9 @@ from pedidos p order by per_id asc"
             dr = ExecuteReader("select (case tc_id
 when '1' then detp_nombre
 when '2' then (select c.com_elemento1  + ','+ c.com_elemento2  + ',' + c.com_elemento3 + ','+c.com_bebida from Combo c where c.com_id = dp.id_comida)
-end) as items
-from Detalle_Pedidos dp where ep_estado='A' and dp.per_id =" & id)
+end) as items,
+detp_cantidad as cantidad
+from Detalle_Pedidos dp where ep_estado='A' and dp.per_id = " & id)
 
             If dr.HasRows Then
                 While dr.Read
@@ -223,7 +224,7 @@ from Detalle_Pedidos dp where ep_estado='A' and dp.per_id =" & id)
                     For i = 0 To coleccion.Length - 1
 
                         If (coleccion(i) <> "") Then
-                            lista.Add("* " & coleccion(i))
+                            lista.Add(dr("cantidad") & "   * " & coleccion(i))
                         End If
                     Next
                 End While

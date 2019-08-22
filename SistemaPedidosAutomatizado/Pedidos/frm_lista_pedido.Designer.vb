@@ -24,6 +24,8 @@ Partial Class frm_lista_pedido
     Private Sub InitializeComponent()
         Me.btn_despachar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txt_observacion = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_codigo = New System.Windows.Forms.TextBox()
@@ -42,6 +44,7 @@ Partial Class frm_lista_pedido
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -54,7 +57,7 @@ Partial Class frm_lista_pedido
         Me.btn_despachar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_despachar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_despachar.ForeColor = System.Drawing.Color.White
-        Me.btn_despachar.Location = New System.Drawing.Point(496, 399)
+        Me.btn_despachar.Location = New System.Drawing.Point(28, 407)
         Me.btn_despachar.Name = "btn_despachar"
         Me.btn_despachar.Size = New System.Drawing.Size(161, 64)
         Me.btn_despachar.TabIndex = 40
@@ -63,15 +66,37 @@ Partial Class frm_lista_pedido
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.txt_observacion)
+        Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.cmb_estado)
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.txt_codigo)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 394)
+        Me.GroupBox3.Location = New System.Drawing.Point(487, 367)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(463, 64)
+        Me.GroupBox3.Size = New System.Drawing.Size(445, 125)
         Me.GroupBox3.TabIndex = 39
         Me.GroupBox3.TabStop = False
+        '
+        'txt_observacion
+        '
+        Me.txt_observacion.Location = New System.Drawing.Point(128, 64)
+        Me.txt_observacion.Multiline = True
+        Me.txt_observacion.Name = "txt_observacion"
+        Me.txt_observacion.ReadOnly = True
+        Me.txt_observacion.Size = New System.Drawing.Size(315, 55)
+        Me.txt_observacion.TabIndex = 36
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label5.Location = New System.Drawing.Point(13, 68)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(96, 16)
+        Me.Label5.TabIndex = 35
+        Me.Label5.Text = "Observación"
         '
         'cmb_estado
         '
@@ -117,11 +142,12 @@ Partial Class frm_lista_pedido
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.list_detalle_pedido)
-        Me.GroupBox2.Location = New System.Drawing.Point(496, 61)
+        Me.GroupBox2.Location = New System.Drawing.Point(487, 61)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(449, 316)
+        Me.GroupBox2.Size = New System.Drawing.Size(449, 303)
         Me.GroupBox2.TabIndex = 38
         Me.GroupBox2.TabStop = False
         '
@@ -132,9 +158,9 @@ Partial Class frm_lista_pedido
         Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label2.Location = New System.Drawing.Point(6, 16)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(155, 20)
+        Me.Label2.Size = New System.Drawing.Size(81, 20)
         Me.Label2.TabIndex = 30
-        Me.Label2.Text = "Detalle del Pedido"
+        Me.Label2.Text = "Cantidad"
         '
         'list_detalle_pedido
         '
@@ -145,6 +171,7 @@ Partial Class frm_lista_pedido
         Me.list_detalle_pedido.ItemHeight = 24
         Me.list_detalle_pedido.Location = New System.Drawing.Point(10, 50)
         Me.list_detalle_pedido.Name = "list_detalle_pedido"
+        Me.list_detalle_pedido.ScrollAlwaysVisible = True
         Me.list_detalle_pedido.Size = New System.Drawing.Size(421, 244)
         Me.list_detalle_pedido.TabIndex = 31
         '
@@ -154,7 +181,7 @@ Partial Class frm_lista_pedido
         Me.GroupBox1.Controls.Add(Me.dgv_pedidos)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 61)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(463, 316)
+        Me.GroupBox1.Size = New System.Drawing.Size(463, 291)
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
         '
@@ -178,7 +205,7 @@ Partial Class frm_lista_pedido
         Me.dgv_pedidos.Location = New System.Drawing.Point(16, 46)
         Me.dgv_pedidos.Name = "dgv_pedidos"
         Me.dgv_pedidos.ReadOnly = True
-        Me.dgv_pedidos.Size = New System.Drawing.Size(427, 260)
+        Me.dgv_pedidos.Size = New System.Drawing.Size(427, 239)
         Me.dgv_pedidos.TabIndex = 28
         '
         'col_id
@@ -236,6 +263,17 @@ Partial Class frm_lista_pedido
         Me.Label10.TabIndex = 36
         Me.Label10.Text = "Lista de Pedidos"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label6.Location = New System.Drawing.Point(95, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 20)
+        Me.Label6.TabIndex = 32
+        Me.Label6.Text = "Detalle"
+        '
         'frm_lista_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -281,4 +319,7 @@ Partial Class frm_lista_pedido
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents txt_observacion As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

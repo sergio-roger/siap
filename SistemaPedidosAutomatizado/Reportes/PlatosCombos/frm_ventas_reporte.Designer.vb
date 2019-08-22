@@ -59,7 +59,7 @@ Partial Class frm_ventas_reporte
         'fecha_fin
         '
         Me.fecha_fin.CustomFormat = "yyy/MM/dd"
-        Me.fecha_fin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fecha_fin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.fecha_fin.Location = New System.Drawing.Point(233, 56)
         Me.fecha_fin.Name = "fecha_fin"
         Me.fecha_fin.Size = New System.Drawing.Size(166, 20)
@@ -68,7 +68,7 @@ Partial Class frm_ventas_reporte
         'fecha_ini
         '
         Me.fecha_ini.CustomFormat = "yyy/MM/dd"
-        Me.fecha_ini.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fecha_ini.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.fecha_ini.Location = New System.Drawing.Point(27, 56)
         Me.fecha_ini.Name = "fecha_ini"
         Me.fecha_ini.Size = New System.Drawing.Size(166, 20)

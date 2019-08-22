@@ -65,6 +65,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditoriaIngresoDatos.vb" />
     <Compile Include="ClienteDatos.vb" />
     <Compile Include="ComboDatos.vb" />
     <Compile Include="DatosConexion.vb" />

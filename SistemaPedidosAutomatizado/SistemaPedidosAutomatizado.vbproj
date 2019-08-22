@@ -105,6 +105,12 @@
     <Compile Include="Administracion\Seguridad\Usuarios\frm_usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Auditoria\fmr_auditoria_ingreso.Designer.vb">
+      <DependentUpon>fmr_auditoria_ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Auditoria\fmr_auditoria_ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturacion\frm_buscar_cliente.Designer.vb">
       <DependentUpon>frm_buscar_cliente.vb</DependentUpon>
     </Compile>
@@ -242,6 +248,12 @@
       <DependentUpon>rpt_combos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\rpt\rpt_platos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_platos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Administracion\Configuracion\frm_modalidad_aux.resx">
@@ -255,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion\Seguridad\Usuarios\frm_usuario.resx">
       <DependentUpon>frm_usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditoria\fmr_auditoria_ingreso.resx">
+      <DependentUpon>fmr_auditoria_ingreso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_buscar_cliente.resx">
       <DependentUpon>frm_buscar_cliente.vb</DependentUpon>
@@ -319,6 +334,10 @@
     <EmbeddedResource Include="Reportes\rpt\rpt_combos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_combos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt\rpt_platos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_platos.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -457,9 +476,7 @@
   <ItemGroup>
     <None Include="Resources\Windows_Turn_Off_Icon_32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Auditoria\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

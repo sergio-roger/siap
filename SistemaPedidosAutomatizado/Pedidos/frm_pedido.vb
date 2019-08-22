@@ -201,6 +201,7 @@ Public Class frm_pedido
         txt_descripcion.Text = ""
         txt_cantidad.Text = ""
         txt_precio.Text = ""
+        txt_observacion.Text = ""
         dgv_pedido.Rows.Clear()
         txt_codigo_pedido.Focus()
     End Sub
@@ -230,7 +231,7 @@ Public Class frm_pedido
         nuevo.Id_mesa = cmb_mesa.SelectedValue.ToString
         nuevo.Id_usuario = usuario.Id
         nuevo.Id_estadoPedido = 1
-        nuevo.Observacion = txt_descripcion.Text
+        nuevo.Observacion = txt_observacion.Text
         nuevo.Fecha = date_fecha.Value.ToShortDateString
 
         Return nuevo
