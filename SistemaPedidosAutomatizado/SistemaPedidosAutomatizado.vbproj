@@ -158,6 +158,12 @@
     <Compile Include="Facturacion\frm_buscar_pedido.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pedidos\frm_eliminar_pedidos.Designer.vb">
+      <DependentUpon>frm_eliminar_pedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frm_eliminar_pedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pedidos\frm_estado_pedido.designer.vb">
       <DependentUpon>frm_estado_pedido.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\frm_buscar_pedido.resx">
       <DependentUpon>frm_buscar_pedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frm_eliminar_pedidos.resx">
+      <DependentUpon>frm_eliminar_pedidos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\frm_estado_pedido.resx">
       <DependentUpon>frm_estado_pedido.vb</DependentUpon>

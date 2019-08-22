@@ -13,6 +13,7 @@ Public Class frm_factura
     Private cliente As New Cliente
     Private factura As New Factura
     Private idCliente As Integer
+    Private pedidosServidos As Integer = 3
 
     Public Function cargarCliente(objeto As Cliente) As Boolean
         Try
@@ -280,6 +281,7 @@ Public Class frm_factura
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         Try
             Dim frm As New frm_buscar_pedido
+            frm.estadoPedido = 3    'Pedidos servidos
             frm.ShowDialog()
             pedido = auxPedido
 
@@ -354,7 +356,7 @@ Public Class frm_factura
     Private Sub recuperarPedido(numero As String)
         Dim buscar As New Pedido
 
-        buscar = pedidoNegocio.getPedidoxNumero(numero)
+        buscar = pedidoNegocio.getPedidoxNumero(numero, pedidosServidos)
         pedido = buscar
 
         If (buscar Is Nothing) Then

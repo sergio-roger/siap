@@ -6,13 +6,15 @@ Public Class frm_buscar_pedido
     Private pedidoNegocio As New PedidoNegocio
     Private pedido As New Pedido
     Private titulo As String = "Factura"
+    Public estadoPedido As Integer
 
     Private Function cargarPedidos(estado As Integer) As Boolean
         Try
             cargarPedidos = False
             Dim lista As New List(Of Pedido)
 
-            lista = pedidoNegocio.getPedidosVista(3)
+            lista = pedidoNegocio.getPedidosVista(estadoPedido)
+            dgv_pedidos.Rows.Clear()
 
             If (lista IsNot Nothing) Then
                 For Each item In lista
@@ -28,7 +30,7 @@ Public Class frm_buscar_pedido
     Private Sub frm_buscar_pedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
 
-            If (cargarPedidos(3) = False) Then
+            If (cargarPedidos(estadoPedido) = False) Then
                 mensaje(titulo, "Hubo un error al cagar los pedidos", "danger")
             End If
         Catch ex As Exception
@@ -49,5 +51,9 @@ Public Class frm_buscar_pedido
         Catch ex As exception
 
         End Try
+    End Sub
+
+    Private Sub frm_buscar_pedido_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
     End Sub
 End Class

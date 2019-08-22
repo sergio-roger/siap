@@ -39,9 +39,9 @@ Partial Class frm_buscar_pedido
         '
         Me.GroupBox1.Controls.Add(Me.txt_codigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 30)
+        Me.GroupBox1.Location = New System.Drawing.Point(27, 21)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(441, 68)
+        Me.GroupBox1.Size = New System.Drawing.Size(391, 68)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar"
@@ -68,10 +68,10 @@ Partial Class frm_buscar_pedido
         Me.dgv_pedidos.AllowUserToDeleteRows = False
         Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.dgv_pedidos.Location = New System.Drawing.Point(26, 122)
+        Me.dgv_pedidos.Location = New System.Drawing.Point(27, 104)
         Me.dgv_pedidos.Name = "dgv_pedidos"
         Me.dgv_pedidos.ReadOnly = True
-        Me.dgv_pedidos.Size = New System.Drawing.Size(441, 183)
+        Me.dgv_pedidos.Size = New System.Drawing.Size(391, 147)
         Me.dgv_pedidos.TabIndex = 1
         '
         'Column1
@@ -79,6 +79,7 @@ Partial Class frm_buscar_pedido
         Me.Column1.HeaderText = "Id"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
         '
         'Column2
         '
@@ -103,12 +104,13 @@ Partial Class frm_buscar_pedido
         Me.Column5.HeaderText = "id Mesa"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
         '
         'frm_buscar_pedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 325)
+        Me.ClientSize = New System.Drawing.Size(445, 267)
         Me.Controls.Add(Me.dgv_pedidos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_buscar_pedido"

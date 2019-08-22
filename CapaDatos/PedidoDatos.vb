@@ -3,6 +3,7 @@ Imports CapaEntidad
 
 Public Class PedidoDatos
     Private auxpedido As New Pedido
+    Private auxlistaDetalleEliminar As New List(Of DetallePedido)
 
     Public Function getListaMesas() As ArrayList
         Dim sql = "select mesa_id,mesa_nombre from mesa where mesa_estado='A' or mesa_estado='D' order by 2"
@@ -60,9 +61,66 @@ Public Class PedidoDatos
                     lista.Add(d)
                 End While
                 Return lista
+            Else
+                Return Nothing
             End If
         Catch ex As Exception
             getListaDetallePedidos = Nothing
+        End Try
+    End Function
+
+    Public Function eliminarDetallePedido(idDetalle As Integer) As Boolean
+        Try
+            eliminarDetallePedido = False
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+            cmd = New SqlClient.SqlCommand("sp_eliminarRegistro", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id", idDetalle)
+            cmd.Parameters.AddWithValue("@tabla", "DetallePedido")
+
+            cmd.ExecuteNonQuery()
+            eliminarDetallePedido = True
+
+        Catch ex As Exception
+            eliminarDetallePedido = False
+        End Try
+    End Function
+
+    Public Function eliminar(pedido As Pedido) As Boolean
+        Try
+            eliminar = False
+            auxlistaDetalleEliminar = getListaDetallePedidos(pedido.Id)
+
+            If (auxlistaDetalleEliminar IsNot Nothing) Then
+                For Each item In auxlistaDetalleEliminar
+                    If (eliminarDetallePedido(item.Id) = False) Then
+                        Exit Function
+                    End If
+                Next
+            End If
+            dr.Close()
+
+            If (Conectar() = False) Then
+                Exit Function
+            End If
+
+
+            cmd = New SqlClient.SqlCommand("sp_eliminarRegistro", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@id", pedido.Id)
+            cmd.Parameters.AddWithValue("@tabla", "Pedido")
+
+            cmd.ExecuteNonQuery()
+            eliminar = True
+
+        Catch ex As Exception
+            eliminar = False
         End Try
     End Function
 
@@ -87,14 +145,16 @@ Public Class PedidoDatos
         End Try
     End Function
 
-    Public Function getPedidoxNumero(numero As String) As Pedido
+    Public Function getPedidoxNumero(numero As String, estadoPedido As Integer) As Pedido
+        getPedidoxNumero = Nothing
+
         Try
             If (Conectar() = False) Then
                 Exit Function
             End If
 
             Dim p As New Pedido
-            Dim cadenaslq As String = "select * from Pedidos where ep_id = 3"
+            Dim cadenaslq As String = "select * from Pedidos where per_estado='A' and ep_id = " & estadoPedido & "and per_id = " & numero
 
             dr = ExecuteReader(cadenaslq)
 
@@ -108,9 +168,11 @@ Public Class PedidoDatos
                     p.Observacion = dr("per_observacion")
                 End While
                 Return p
+            Else
+                Return Nothing
             End If
         Catch ex As Exception
-            numero = 0
+            getPedidoxNumero = Nothing
         End Try
     End Function
 

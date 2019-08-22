@@ -50,6 +50,10 @@ Public Class PedidoNegocio
         Return detalleComida
     End Function
 
+    Public Function eliminar(pedido As Pedido) As Boolean
+        Return pedidoDatos.eliminar(pedido)
+    End Function
+
     Public Function getPedidosVista(estado As Integer) As List(Of Pedido)
         Return pedidoDatos.getPedidosVista(estado)
     End Function
@@ -70,7 +74,7 @@ Public Class PedidoNegocio
         Return pedidoDatos.getDetallePedido(id)
     End Function
 
-    Public Function getPedidoxNumero(numero As String) As Pedido
-        Return pedidoDatos.getPedidoxNumero(numero)
+    Public Function getPedidoxNumero(numero As String, estadoPedido As Integer) As Pedido
+        Return pedidoDatos.getPedidoxNumero(numero, estadoPedido)
     End Function
 End Class
